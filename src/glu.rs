@@ -5829,17 +5829,17 @@ pub const GLU_TESS_WINDING_NONZERO: u32 = 100131;
 pub const GLU_TESS_WINDING_POSITIVE: u32 = 100132;
 pub const GLU_TESS_WINDING_NEGATIVE: u32 = 100133;
 pub const GLU_TESS_WINDING_ABS_GEQ_TWO: u32 = 100134;
-pub type GLenum = ::std::os::raw::c_uint;
-pub type GLboolean = ::std::os::raw::c_uchar;
-pub type GLbitfield = ::std::os::raw::c_uint;
-pub type GLvoid = ::std::os::raw::c_void;
-pub type GLbyte = ::std::os::raw::c_schar;
-pub type GLshort = ::std::os::raw::c_short;
-pub type GLint = ::std::os::raw::c_int;
-pub type GLubyte = ::std::os::raw::c_uchar;
-pub type GLushort = ::std::os::raw::c_ushort;
-pub type GLuint = ::std::os::raw::c_uint;
-pub type GLsizei = ::std::os::raw::c_int;
+pub type GLenum = libc::c_uint;
+pub type GLboolean = libc::c_uchar;
+pub type GLbitfield = libc::c_uint;
+pub type GLvoid = libc::c_void;
+pub type GLbyte = libc::c_schar;
+pub type GLshort = libc::c_short;
+pub type GLint = libc::c_int;
+pub type GLubyte = libc::c_uchar;
+pub type GLushort = libc::c_ushort;
+pub type GLuint = libc::c_uint;
+pub type GLsizei = libc::c_int;
 pub type GLfloat = f32;
 pub type GLclampf = f32;
 pub type GLdouble = f64;
@@ -7073,7 +7073,7 @@ extern "C" {
         height: GLsizei,
     );
 }
-pub type PFNGLDRAWRANGEELEMENTSPROC = ::std::option::Option<
+pub type PFNGLDRAWRANGEELEMENTSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         start: GLuint,
@@ -7083,7 +7083,7 @@ pub type PFNGLDRAWRANGEELEMENTSPROC = ::std::option::Option<
         indices: *const GLvoid,
     ),
 >;
-pub type PFNGLTEXIMAGE3DPROC = ::std::option::Option<
+pub type PFNGLTEXIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7097,7 +7097,7 @@ pub type PFNGLTEXIMAGE3DPROC = ::std::option::Option<
         pixels: *const GLvoid,
     ),
 >;
-pub type PFNGLTEXSUBIMAGE3DPROC = ::std::option::Option<
+pub type PFNGLTEXSUBIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7112,7 +7112,7 @@ pub type PFNGLTEXSUBIMAGE3DPROC = ::std::option::Option<
         pixels: *const GLvoid,
     ),
 >;
-pub type PFNGLCOPYTEXSUBIMAGE3DPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXSUBIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7503,10 +7503,10 @@ extern "C" {
 extern "C" {
     pub fn glSampleCoverage(value: GLclampf, invert: GLboolean);
 }
-pub type PFNGLACTIVETEXTUREPROC = ::std::option::Option<unsafe extern "C" fn(texture: GLenum)>;
+pub type PFNGLACTIVETEXTUREPROC = ::core::option::Option<unsafe extern "C" fn(texture: GLenum)>;
 pub type PFNGLSAMPLECOVERAGEPROC =
-    ::std::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
-pub type PFNGLCOMPRESSEDTEXIMAGE3DPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
+pub type PFNGLCOMPRESSEDTEXIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7519,7 +7519,7 @@ pub type PFNGLCOMPRESSEDTEXIMAGE3DPROC = ::std::option::Option<
         data: *const GLvoid,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXIMAGE2DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXIMAGE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7531,7 +7531,7 @@ pub type PFNGLCOMPRESSEDTEXIMAGE2DPROC = ::std::option::Option<
         data: *const GLvoid,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXIMAGE1DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXIMAGE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7542,7 +7542,7 @@ pub type PFNGLCOMPRESSEDTEXIMAGE1DPROC = ::std::option::Option<
         data: *const GLvoid,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7557,7 +7557,7 @@ pub type PFNGLCOMPRESSEDTEXSUBIMAGE3DPROC = ::std::option::Option<
         data: *const GLvoid,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7570,7 +7570,7 @@ pub type PFNGLCOMPRESSEDTEXSUBIMAGE2DPROC = ::std::option::Option<
         data: *const GLvoid,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXSUBIMAGE1DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXSUBIMAGE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -7582,7 +7582,7 @@ pub type PFNGLCOMPRESSEDTEXSUBIMAGE1DPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETCOMPRESSEDTEXIMAGEPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, level: GLint, img: *mut GLvoid)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, level: GLint, img: *mut GLvoid)>;
 extern "C" {
     pub fn glActiveTextureARB(texture: GLenum);
 }
@@ -7685,123 +7685,123 @@ extern "C" {
 extern "C" {
     pub fn glMultiTexCoord4svARB(target: GLenum, v: *const GLshort);
 }
-pub type PFNGLACTIVETEXTUREARBPROC = ::std::option::Option<unsafe extern "C" fn(texture: GLenum)>;
+pub type PFNGLACTIVETEXTUREARBPROC = ::core::option::Option<unsafe extern "C" fn(texture: GLenum)>;
 pub type PFNGLCLIENTACTIVETEXTUREARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum)>;
 pub type PFNGLMULTITEXCOORD1DARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLdouble)>;
 pub type PFNGLMULTITEXCOORD1DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
 pub type PFNGLMULTITEXCOORD1FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLfloat)>;
 pub type PFNGLMULTITEXCOORD1FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
 pub type PFNGLMULTITEXCOORD1IARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLint)>;
 pub type PFNGLMULTITEXCOORD1IVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
 pub type PFNGLMULTITEXCOORD1SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLshort)>;
 pub type PFNGLMULTITEXCOORD1SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
 pub type PFNGLMULTITEXCOORD2DARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLdouble, t: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLdouble, t: GLdouble)>;
 pub type PFNGLMULTITEXCOORD2DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
 pub type PFNGLMULTITEXCOORD2FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLfloat, t: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLfloat, t: GLfloat)>;
 pub type PFNGLMULTITEXCOORD2FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
 pub type PFNGLMULTITEXCOORD2IARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLint, t: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLint, t: GLint)>;
 pub type PFNGLMULTITEXCOORD2IVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
 pub type PFNGLMULTITEXCOORD2SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLshort, t: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLshort, t: GLshort)>;
 pub type PFNGLMULTITEXCOORD2SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
-pub type PFNGLMULTITEXCOORD3DARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
+pub type PFNGLMULTITEXCOORD3DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, s: GLdouble, t: GLdouble, r: GLdouble),
 >;
 pub type PFNGLMULTITEXCOORD3DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
 pub type PFNGLMULTITEXCOORD3FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLfloat, t: GLfloat, r: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLfloat, t: GLfloat, r: GLfloat)>;
 pub type PFNGLMULTITEXCOORD3FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
 pub type PFNGLMULTITEXCOORD3IARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLint, t: GLint, r: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLint, t: GLint, r: GLint)>;
 pub type PFNGLMULTITEXCOORD3IVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
 pub type PFNGLMULTITEXCOORD3SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLshort, t: GLshort, r: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLshort, t: GLshort, r: GLshort)>;
 pub type PFNGLMULTITEXCOORD3SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
-pub type PFNGLMULTITEXCOORD4DARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
+pub type PFNGLMULTITEXCOORD4DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, s: GLdouble, t: GLdouble, r: GLdouble, q: GLdouble),
 >;
 pub type PFNGLMULTITEXCOORD4DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
-pub type PFNGLMULTITEXCOORD4FARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLdouble)>;
+pub type PFNGLMULTITEXCOORD4FARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, s: GLfloat, t: GLfloat, r: GLfloat, q: GLfloat),
 >;
 pub type PFNGLMULTITEXCOORD4FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
-pub type PFNGLMULTITEXCOORD4IARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLfloat)>;
+pub type PFNGLMULTITEXCOORD4IARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, s: GLint, t: GLint, r: GLint, q: GLint),
 >;
 pub type PFNGLMULTITEXCOORD4IVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
-pub type PFNGLMULTITEXCOORD4SARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLint)>;
+pub type PFNGLMULTITEXCOORD4SARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, s: GLshort, t: GLshort, r: GLshort, q: GLshort),
 >;
 pub type PFNGLMULTITEXCOORD4SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
-pub type __u_char = ::std::os::raw::c_uchar;
-pub type __u_short = ::std::os::raw::c_ushort;
-pub type __u_int = ::std::os::raw::c_uint;
-pub type __u_long = ::std::os::raw::c_ulong;
-pub type __int8_t = ::std::os::raw::c_schar;
-pub type __uint8_t = ::std::os::raw::c_uchar;
-pub type __int16_t = ::std::os::raw::c_short;
-pub type __uint16_t = ::std::os::raw::c_ushort;
-pub type __int32_t = ::std::os::raw::c_int;
-pub type __uint32_t = ::std::os::raw::c_uint;
-pub type __int64_t = ::std::os::raw::c_long;
-pub type __uint64_t = ::std::os::raw::c_ulong;
-pub type __quad_t = ::std::os::raw::c_long;
-pub type __u_quad_t = ::std::os::raw::c_ulong;
-pub type __intmax_t = ::std::os::raw::c_long;
-pub type __uintmax_t = ::std::os::raw::c_ulong;
-pub type __dev_t = ::std::os::raw::c_ulong;
-pub type __uid_t = ::std::os::raw::c_uint;
-pub type __gid_t = ::std::os::raw::c_uint;
-pub type __ino_t = ::std::os::raw::c_ulong;
-pub type __ino64_t = ::std::os::raw::c_ulong;
-pub type __mode_t = ::std::os::raw::c_uint;
-pub type __nlink_t = ::std::os::raw::c_ulong;
-pub type __off_t = ::std::os::raw::c_long;
-pub type __off64_t = ::std::os::raw::c_long;
-pub type __pid_t = ::std::os::raw::c_int;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLshort)>;
+pub type __u_char = libc::c_uchar;
+pub type __u_short = libc::c_ushort;
+pub type __u_int = libc::c_uint;
+pub type __u_long = libc::c_ulong;
+pub type __int8_t = libc::c_schar;
+pub type __uint8_t = libc::c_uchar;
+pub type __int16_t = libc::c_short;
+pub type __uint16_t = libc::c_ushort;
+pub type __int32_t = libc::c_int;
+pub type __uint32_t = libc::c_uint;
+pub type __int64_t = libc::c_long;
+pub type __uint64_t = libc::c_ulong;
+pub type __quad_t = libc::c_long;
+pub type __u_quad_t = libc::c_ulong;
+pub type __intmax_t = libc::c_long;
+pub type __uintmax_t = libc::c_ulong;
+pub type __dev_t = libc::c_ulong;
+pub type __uid_t = libc::c_uint;
+pub type __gid_t = libc::c_uint;
+pub type __ino_t = libc::c_ulong;
+pub type __ino64_t = libc::c_ulong;
+pub type __mode_t = libc::c_uint;
+pub type __nlink_t = libc::c_ulong;
+pub type __off_t = libc::c_long;
+pub type __off64_t = libc::c_long;
+pub type __pid_t = libc::c_int;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct __fsid_t {
-    pub __val: [::std::os::raw::c_int; 2usize],
+    pub __val: [libc::c_int; 2usize],
 }
 #[test]
 fn bindgen_test_layout___fsid_t() {
     assert_eq!(
-        ::std::mem::size_of::<__fsid_t>(),
+        ::core::mem::size_of::<__fsid_t>(),
         8usize,
         concat!("Size of: ", stringify!(__fsid_t))
     );
     assert_eq!(
-        ::std::mem::align_of::<__fsid_t>(),
+        ::core::mem::align_of::<__fsid_t>(),
         4usize,
         concat!("Alignment of ", stringify!(__fsid_t))
     );
     assert_eq!(
-        unsafe { &(*(::std::ptr::null::<__fsid_t>())).__val as *const _ as usize },
+        unsafe { &(*(::core::ptr::null::<__fsid_t>())).__val as *const _ as usize },
         0usize,
         concat!(
             "Offset of field: ",
@@ -7811,63 +7811,63 @@ fn bindgen_test_layout___fsid_t() {
         )
     );
 }
-pub type __clock_t = ::std::os::raw::c_long;
-pub type __rlim_t = ::std::os::raw::c_ulong;
-pub type __rlim64_t = ::std::os::raw::c_ulong;
-pub type __id_t = ::std::os::raw::c_uint;
-pub type __time_t = ::std::os::raw::c_long;
-pub type __useconds_t = ::std::os::raw::c_uint;
-pub type __suseconds_t = ::std::os::raw::c_long;
-pub type __daddr_t = ::std::os::raw::c_int;
-pub type __key_t = ::std::os::raw::c_int;
-pub type __clockid_t = ::std::os::raw::c_int;
-pub type __timer_t = *mut ::std::os::raw::c_void;
-pub type __blksize_t = ::std::os::raw::c_long;
-pub type __blkcnt_t = ::std::os::raw::c_long;
-pub type __blkcnt64_t = ::std::os::raw::c_long;
-pub type __fsblkcnt_t = ::std::os::raw::c_ulong;
-pub type __fsblkcnt64_t = ::std::os::raw::c_ulong;
-pub type __fsfilcnt_t = ::std::os::raw::c_ulong;
-pub type __fsfilcnt64_t = ::std::os::raw::c_ulong;
-pub type __fsword_t = ::std::os::raw::c_long;
-pub type __ssize_t = ::std::os::raw::c_long;
-pub type __syscall_slong_t = ::std::os::raw::c_long;
-pub type __syscall_ulong_t = ::std::os::raw::c_ulong;
+pub type __clock_t = libc::c_long;
+pub type __rlim_t = libc::c_ulong;
+pub type __rlim64_t = libc::c_ulong;
+pub type __id_t = libc::c_uint;
+pub type __time_t = libc::c_long;
+pub type __useconds_t = libc::c_uint;
+pub type __suseconds_t = libc::c_long;
+pub type __daddr_t = libc::c_int;
+pub type __key_t = libc::c_int;
+pub type __clockid_t = libc::c_int;
+pub type __timer_t = *mut libc::c_void;
+pub type __blksize_t = libc::c_long;
+pub type __blkcnt_t = libc::c_long;
+pub type __blkcnt64_t = libc::c_long;
+pub type __fsblkcnt_t = libc::c_ulong;
+pub type __fsblkcnt64_t = libc::c_ulong;
+pub type __fsfilcnt_t = libc::c_ulong;
+pub type __fsfilcnt64_t = libc::c_ulong;
+pub type __fsword_t = libc::c_long;
+pub type __ssize_t = libc::c_long;
+pub type __syscall_slong_t = libc::c_long;
+pub type __syscall_ulong_t = libc::c_ulong;
 pub type __loff_t = __off64_t;
-pub type __caddr_t = *mut ::std::os::raw::c_char;
-pub type __intptr_t = ::std::os::raw::c_long;
-pub type __socklen_t = ::std::os::raw::c_uint;
-pub type __sig_atomic_t = ::std::os::raw::c_int;
-pub type int_least8_t = ::std::os::raw::c_schar;
-pub type int_least16_t = ::std::os::raw::c_short;
-pub type int_least32_t = ::std::os::raw::c_int;
-pub type int_least64_t = ::std::os::raw::c_long;
-pub type uint_least8_t = ::std::os::raw::c_uchar;
-pub type uint_least16_t = ::std::os::raw::c_ushort;
-pub type uint_least32_t = ::std::os::raw::c_uint;
-pub type uint_least64_t = ::std::os::raw::c_ulong;
-pub type int_fast8_t = ::std::os::raw::c_schar;
-pub type int_fast16_t = ::std::os::raw::c_long;
-pub type int_fast32_t = ::std::os::raw::c_long;
-pub type int_fast64_t = ::std::os::raw::c_long;
-pub type uint_fast8_t = ::std::os::raw::c_uchar;
-pub type uint_fast16_t = ::std::os::raw::c_ulong;
-pub type uint_fast32_t = ::std::os::raw::c_ulong;
-pub type uint_fast64_t = ::std::os::raw::c_ulong;
+pub type __caddr_t = *mut libc::c_char;
+pub type __intptr_t = libc::c_long;
+pub type __socklen_t = libc::c_uint;
+pub type __sig_atomic_t = libc::c_int;
+pub type int_least8_t = libc::c_schar;
+pub type int_least16_t = libc::c_short;
+pub type int_least32_t = libc::c_int;
+pub type int_least64_t = libc::c_long;
+pub type uint_least8_t = libc::c_uchar;
+pub type uint_least16_t = libc::c_ushort;
+pub type uint_least32_t = libc::c_uint;
+pub type uint_least64_t = libc::c_ulong;
+pub type int_fast8_t = libc::c_schar;
+pub type int_fast16_t = libc::c_long;
+pub type int_fast32_t = libc::c_long;
+pub type int_fast64_t = libc::c_long;
+pub type uint_fast8_t = libc::c_uchar;
+pub type uint_fast16_t = libc::c_ulong;
+pub type uint_fast32_t = libc::c_ulong;
+pub type uint_fast64_t = libc::c_ulong;
 pub type intmax_t = __intmax_t;
 pub type uintmax_t = __uintmax_t;
 pub type khronos_int32_t = i32;
 pub type khronos_uint32_t = u32;
 pub type khronos_int64_t = i64;
 pub type khronos_uint64_t = u64;
-pub type khronos_int8_t = ::std::os::raw::c_schar;
-pub type khronos_uint8_t = ::std::os::raw::c_uchar;
-pub type khronos_int16_t = ::std::os::raw::c_short;
-pub type khronos_uint16_t = ::std::os::raw::c_ushort;
-pub type khronos_intptr_t = ::std::os::raw::c_long;
-pub type khronos_uintptr_t = ::std::os::raw::c_ulong;
-pub type khronos_ssize_t = ::std::os::raw::c_long;
-pub type khronos_usize_t = ::std::os::raw::c_ulong;
+pub type khronos_int8_t = libc::c_schar;
+pub type khronos_uint8_t = libc::c_uchar;
+pub type khronos_int16_t = libc::c_short;
+pub type khronos_uint16_t = libc::c_ushort;
+pub type khronos_intptr_t = libc::c_long;
+pub type khronos_uintptr_t = libc::c_ulong;
+pub type khronos_ssize_t = libc::c_long;
+pub type khronos_usize_t = libc::c_ulong;
 pub type khronos_float_t = f32;
 pub type khronos_utime_nanoseconds_t = khronos_uint64_t;
 pub type khronos_stime_nanoseconds_t = khronos_int64_t;
@@ -7876,7 +7876,7 @@ pub const khronos_boolean_enum_t_KHRONOS_TRUE: khronos_boolean_enum_t = 1;
 pub const khronos_boolean_enum_t_KHRONOS_BOOLEAN_ENUM_FORCE_SIZE: khronos_boolean_enum_t =
     2147483647;
 pub type khronos_boolean_enum_t = u32;
-pub type PFNGLBLENDFUNCSEPARATEPROC = ::std::option::Option<
+pub type PFNGLBLENDFUNCSEPARATEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         sfactorRGB: GLenum,
         dfactorRGB: GLenum,
@@ -7884,7 +7884,7 @@ pub type PFNGLBLENDFUNCSEPARATEPROC = ::std::option::Option<
         dfactorAlpha: GLenum,
     ),
 >;
-pub type PFNGLMULTIDRAWARRAYSPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWARRAYSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         first: *const GLint,
@@ -7892,182 +7892,182 @@ pub type PFNGLMULTIDRAWARRAYSPROC = ::std::option::Option<
         drawcount: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: *const GLsizei,
         type_: GLenum,
-        indices: *const *const ::std::os::raw::c_void,
+        indices: *const *const libc::c_void,
         drawcount: GLsizei,
     ),
 >;
 pub type PFNGLPOINTPARAMETERFPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPOINTPARAMETERFVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLPOINTPARAMETERIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLPOINTPARAMETERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
-pub type PFNGLFOGCOORDFPROC = ::std::option::Option<unsafe extern "C" fn(coord: GLfloat)>;
-pub type PFNGLFOGCOORDFVPROC = ::std::option::Option<unsafe extern "C" fn(coord: *const GLfloat)>;
-pub type PFNGLFOGCOORDDPROC = ::std::option::Option<unsafe extern "C" fn(coord: GLdouble)>;
-pub type PFNGLFOGCOORDDVPROC = ::std::option::Option<unsafe extern "C" fn(coord: *const GLdouble)>;
-pub type PFNGLFOGCOORDPOINTERPROC = ::std::option::Option<
-    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+pub type PFNGLFOGCOORDFPROC = ::core::option::Option<unsafe extern "C" fn(coord: GLfloat)>;
+pub type PFNGLFOGCOORDFVPROC = ::core::option::Option<unsafe extern "C" fn(coord: *const GLfloat)>;
+pub type PFNGLFOGCOORDDPROC = ::core::option::Option<unsafe extern "C" fn(coord: GLdouble)>;
+pub type PFNGLFOGCOORDDVPROC = ::core::option::Option<unsafe extern "C" fn(coord: *const GLdouble)>;
+pub type PFNGLFOGCOORDPOINTERPROC = ::core::option::Option<
+    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const libc::c_void),
 >;
 pub type PFNGLSECONDARYCOLOR3BPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLbyte, green: GLbyte, blue: GLbyte)>;
-pub type PFNGLSECONDARYCOLOR3BVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLbyte, green: GLbyte, blue: GLbyte)>;
+pub type PFNGLSECONDARYCOLOR3BVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
 pub type PFNGLSECONDARYCOLOR3DPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLdouble, green: GLdouble, blue: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLdouble, green: GLdouble, blue: GLdouble)>;
 pub type PFNGLSECONDARYCOLOR3DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLSECONDARYCOLOR3FPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat)>;
 pub type PFNGLSECONDARYCOLOR3FVPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLSECONDARYCOLOR3IPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLint, green: GLint, blue: GLint)>;
-pub type PFNGLSECONDARYCOLOR3IVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLint, green: GLint, blue: GLint)>;
+pub type PFNGLSECONDARYCOLOR3IVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLSECONDARYCOLOR3SPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLshort, green: GLshort, blue: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLshort, green: GLshort, blue: GLshort)>;
 pub type PFNGLSECONDARYCOLOR3SVPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLSECONDARYCOLOR3UBPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLubyte, green: GLubyte, blue: GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLubyte, green: GLubyte, blue: GLubyte)>;
 pub type PFNGLSECONDARYCOLOR3UBVPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLubyte)>;
 pub type PFNGLSECONDARYCOLOR3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLuint, green: GLuint, blue: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLuint, green: GLuint, blue: GLuint)>;
 pub type PFNGLSECONDARYCOLOR3UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLuint)>;
 pub type PFNGLSECONDARYCOLOR3USPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLushort, green: GLushort, blue: GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLushort, green: GLushort, blue: GLushort)>;
 pub type PFNGLSECONDARYCOLOR3USVPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLushort)>;
-pub type PFNGLSECONDARYCOLORPOINTERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLushort)>;
+pub type PFNGLSECONDARYCOLORPOINTERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLWINDOWPOS2DPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
-pub type PFNGLWINDOWPOS2DVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
-pub type PFNGLWINDOWPOS2FPROC = ::std::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat)>;
-pub type PFNGLWINDOWPOS2FVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
-pub type PFNGLWINDOWPOS2IPROC = ::std::option::Option<unsafe extern "C" fn(x: GLint, y: GLint)>;
-pub type PFNGLWINDOWPOS2IVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
-pub type PFNGLWINDOWPOS2SPROC = ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort)>;
-pub type PFNGLWINDOWPOS2SVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
+pub type PFNGLWINDOWPOS2DVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+pub type PFNGLWINDOWPOS2FPROC = ::core::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat)>;
+pub type PFNGLWINDOWPOS2FVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+pub type PFNGLWINDOWPOS2IPROC = ::core::option::Option<unsafe extern "C" fn(x: GLint, y: GLint)>;
+pub type PFNGLWINDOWPOS2IVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+pub type PFNGLWINDOWPOS2SPROC = ::core::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort)>;
+pub type PFNGLWINDOWPOS2SVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLWINDOWPOS3DPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble)>;
-pub type PFNGLWINDOWPOS3DVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble)>;
+pub type PFNGLWINDOWPOS3DVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLWINDOWPOS3FPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat)>;
-pub type PFNGLWINDOWPOS3FVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat)>;
+pub type PFNGLWINDOWPOS3FVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLWINDOWPOS3IPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint)>;
-pub type PFNGLWINDOWPOS3IVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint)>;
+pub type PFNGLWINDOWPOS3IVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLWINDOWPOS3SPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort)>;
-pub type PFNGLWINDOWPOS3SVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
-pub type PFNGLBLENDCOLORPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort)>;
+pub type PFNGLWINDOWPOS3SVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+pub type PFNGLBLENDCOLORPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat),
 >;
-pub type PFNGLBLENDEQUATIONPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLBLENDEQUATIONPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
 pub type GLsizeiptr = khronos_ssize_t;
 pub type GLintptr = khronos_intptr_t;
 pub type PFNGLGENQUERIESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLDELETEQUERIESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
-pub type PFNGLISQUERYPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
+pub type PFNGLISQUERYPROC = ::core::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
 pub type PFNGLBEGINQUERYPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
-pub type PFNGLENDQUERYPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
+pub type PFNGLENDQUERYPROC = ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
 pub type PFNGLGETQUERYIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETQUERYOBJECTIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETQUERYOBJECTUIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
 pub type PFNGLBINDBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, buffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, buffer: GLuint)>;
 pub type PFNGLDELETEBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *const GLuint)>;
 pub type PFNGLGENBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *mut GLuint)>;
 pub type PFNGLISBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
-pub type PFNGLBUFFERDATAPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
+pub type PFNGLBUFFERDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
         usage: GLenum,
     ),
 >;
-pub type PFNGLBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLGETBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
-pub type PFNGLMAPBUFFERPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, access: GLenum) -> *mut ::std::os::raw::c_void,
+pub type PFNGLMAPBUFFERPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, access: GLenum) -> *mut libc::c_void,
 >;
 pub type PFNGLUNMAPBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum) -> GLboolean>;
 pub type PFNGLGETBUFFERPARAMETERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETBUFFERPOINTERVPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETBUFFERPOINTERVPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut libc::c_void),
 >;
-pub type GLchar = ::std::os::raw::c_char;
+pub type GLchar = libc::c_char;
 pub type PFNGLBLENDEQUATIONSEPARATEPROC =
-    ::std::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeAlpha: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeAlpha: GLenum)>;
 pub type PFNGLDRAWBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
-pub type PFNGLSTENCILOPSEPARATEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
+pub type PFNGLSTENCILOPSEPARATEPROC = ::core::option::Option<
     unsafe extern "C" fn(face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum),
 >;
-pub type PFNGLSTENCILFUNCSEPARATEPROC = ::std::option::Option<
+pub type PFNGLSTENCILFUNCSEPARATEPROC = ::core::option::Option<
     unsafe extern "C" fn(face: GLenum, func: GLenum, ref_: GLint, mask: GLuint),
 >;
 pub type PFNGLSTENCILMASKSEPARATEPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, mask: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, mask: GLuint)>;
 pub type PFNGLATTACHSHADERPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, shader: GLuint)>;
-pub type PFNGLBINDATTRIBLOCATIONPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, shader: GLuint)>;
+pub type PFNGLBINDATTRIBLOCATIONPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, index: GLuint, name: *const GLchar),
 >;
-pub type PFNGLCOMPILESHADERPROC = ::std::option::Option<unsafe extern "C" fn(shader: GLuint)>;
-pub type PFNGLCREATEPROGRAMPROC = ::std::option::Option<unsafe extern "C" fn() -> GLuint>;
+pub type PFNGLCOMPILESHADERPROC = ::core::option::Option<unsafe extern "C" fn(shader: GLuint)>;
+pub type PFNGLCREATEPROGRAMPROC = ::core::option::Option<unsafe extern "C" fn() -> GLuint>;
 pub type PFNGLCREATESHADERPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum) -> GLuint>;
-pub type PFNGLDELETEPROGRAMPROC = ::std::option::Option<unsafe extern "C" fn(program: GLuint)>;
-pub type PFNGLDELETESHADERPROC = ::std::option::Option<unsafe extern "C" fn(shader: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum) -> GLuint>;
+pub type PFNGLDELETEPROGRAMPROC = ::core::option::Option<unsafe extern "C" fn(program: GLuint)>;
+pub type PFNGLDELETESHADERPROC = ::core::option::Option<unsafe extern "C" fn(shader: GLuint)>;
 pub type PFNGLDETACHSHADERPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, shader: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, shader: GLuint)>;
 pub type PFNGLDISABLEVERTEXATTRIBARRAYPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint)>;
 pub type PFNGLENABLEVERTEXATTRIBARRAYPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint)>;
-pub type PFNGLGETACTIVEATTRIBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint)>;
+pub type PFNGLGETACTIVEATTRIBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         index: GLuint,
@@ -8078,7 +8078,7 @@ pub type PFNGLGETACTIVEATTRIBPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
-pub type PFNGLGETACTIVEUNIFORMPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEUNIFORMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         index: GLuint,
@@ -8089,7 +8089,7 @@ pub type PFNGLGETACTIVEUNIFORMPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
-pub type PFNGLGETATTACHEDSHADERSPROC = ::std::option::Option<
+pub type PFNGLGETATTACHEDSHADERSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         maxCount: GLsizei,
@@ -8098,10 +8098,10 @@ pub type PFNGLGETATTACHEDSHADERSPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETATTRIBLOCATIONPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
 pub type PFNGLGETPROGRAMIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETPROGRAMINFOLOGPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETPROGRAMINFOLOGPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         bufSize: GLsizei,
@@ -8110,8 +8110,8 @@ pub type PFNGLGETPROGRAMINFOLOGPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETSHADERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(shader: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETSHADERINFOLOGPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(shader: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETSHADERINFOLOGPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
         bufSize: GLsizei,
@@ -8119,7 +8119,7 @@ pub type PFNGLGETSHADERINFOLOGPROC = ::std::option::Option<
         infoLog: *mut GLchar,
     ),
 >;
-pub type PFNGLGETSHADERSOURCEPROC = ::std::option::Option<
+pub type PFNGLGETSHADERSOURCEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
         bufSize: GLsizei,
@@ -8128,29 +8128,29 @@ pub type PFNGLGETSHADERSOURCEPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETUNIFORMLOCATIONPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
-pub type PFNGLGETUNIFORMFVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
+pub type PFNGLGETUNIFORMFVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLfloat),
 >;
-pub type PFNGLGETUNIFORMIVPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLint),
 >;
-pub type PFNGLGETVERTEXATTRIBDVPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXATTRIBDVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLdouble),
 >;
 pub type PFNGLGETVERTEXATTRIBFVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETVERTEXATTRIBIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETVERTEXATTRIBPOINTERVPROC = ::std::option::Option<
-    unsafe extern "C" fn(index: GLuint, pname: GLenum, pointer: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETVERTEXATTRIBPOINTERVPROC = ::core::option::Option<
+    unsafe extern "C" fn(index: GLuint, pname: GLenum, pointer: *mut *mut libc::c_void),
 >;
 pub type PFNGLISPROGRAMPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint) -> GLboolean>;
 pub type PFNGLISSHADERPROC =
-    ::std::option::Option<unsafe extern "C" fn(shader: GLuint) -> GLboolean>;
-pub type PFNGLLINKPROGRAMPROC = ::std::option::Option<unsafe extern "C" fn(program: GLuint)>;
-pub type PFNGLSHADERSOURCEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(shader: GLuint) -> GLboolean>;
+pub type PFNGLLINKPROGRAMPROC = ::core::option::Option<unsafe extern "C" fn(program: GLuint)>;
+pub type PFNGLSHADERSOURCEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
         count: GLsizei,
@@ -8158,51 +8158,51 @@ pub type PFNGLSHADERSOURCEPROC = ::std::option::Option<
         length: *const GLint,
     ),
 >;
-pub type PFNGLUSEPROGRAMPROC = ::std::option::Option<unsafe extern "C" fn(program: GLuint)>;
+pub type PFNGLUSEPROGRAMPROC = ::core::option::Option<unsafe extern "C" fn(program: GLuint)>;
 pub type PFNGLUNIFORM1FPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat)>;
 pub type PFNGLUNIFORM2FPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat)>;
-pub type PFNGLUNIFORM3FPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat)>;
+pub type PFNGLUNIFORM3FPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat),
 >;
-pub type PFNGLUNIFORM4FPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4FPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat),
 >;
 pub type PFNGLUNIFORM1IPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint)>;
 pub type PFNGLUNIFORM2IPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint)>;
 pub type PFNGLUNIFORM3IPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint, v2: GLint)>;
-pub type PFNGLUNIFORM4IPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint, v2: GLint)>;
+pub type PFNGLUNIFORM4IPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint),
 >;
-pub type PFNGLUNIFORM1FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1FVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM2FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM3FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM4FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM1IVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1IVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORM2IVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2IVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORM3IVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3IVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORM4IVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4IVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORMMATRIX2FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8210,7 +8210,7 @@ pub type PFNGLUNIFORMMATRIX2FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX3FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8218,7 +8218,7 @@ pub type PFNGLUNIFORMMATRIX3FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX4FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8226,95 +8226,95 @@ pub type PFNGLUNIFORMMATRIX4FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLVALIDATEPROGRAMPROC = ::std::option::Option<unsafe extern "C" fn(program: GLuint)>;
+pub type PFNGLVALIDATEPROGRAMPROC = ::core::option::Option<unsafe extern "C" fn(program: GLuint)>;
 pub type PFNGLVERTEXATTRIB1DPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
 pub type PFNGLVERTEXATTRIB1DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB1FPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat)>;
 pub type PFNGLVERTEXATTRIB1FVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB1SPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort)>;
 pub type PFNGLVERTEXATTRIB1SVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIB2DPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
 pub type PFNGLVERTEXATTRIB2DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB2FPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat)>;
 pub type PFNGLVERTEXATTRIB2FVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB2SPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort)>;
 pub type PFNGLVERTEXATTRIB2SVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
-pub type PFNGLVERTEXATTRIB3DPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+pub type PFNGLVERTEXATTRIB3DPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIB3DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB3FPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
 pub type PFNGLVERTEXATTRIB3FVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB3SPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort)>;
 pub type PFNGLVERTEXATTRIB3SVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIB4NBVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
 pub type PFNGLVERTEXATTRIB4NIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIB4NSVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
-pub type PFNGLVERTEXATTRIB4NUBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+pub type PFNGLVERTEXATTRIB4NUBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLubyte, y: GLubyte, z: GLubyte, w: GLubyte),
 >;
 pub type PFNGLVERTEXATTRIB4NUBVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIB4NUIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIB4NUSVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
 pub type PFNGLVERTEXATTRIB4BVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
-pub type PFNGLVERTEXATTRIB4DPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
+pub type PFNGLVERTEXATTRIB4DPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIB4DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
-pub type PFNGLVERTEXATTRIB4FPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+pub type PFNGLVERTEXATTRIB4FPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat),
 >;
 pub type PFNGLVERTEXATTRIB4FVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB4IVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
-pub type PFNGLVERTEXATTRIB4SPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+pub type PFNGLVERTEXATTRIB4SPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort, w: GLshort),
 >;
 pub type PFNGLVERTEXATTRIB4SVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIB4UBVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIB4UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIB4USVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
-pub type PFNGLVERTEXATTRIBPOINTERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
+pub type PFNGLVERTEXATTRIBPOINTERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
         type_: GLenum,
         normalized: GLboolean,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX2X3FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX2X3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8322,7 +8322,7 @@ pub type PFNGLUNIFORMMATRIX2X3FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX3X2FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX3X2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8330,7 +8330,7 @@ pub type PFNGLUNIFORMMATRIX3X2FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX2X4FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX2X4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8338,7 +8338,7 @@ pub type PFNGLUNIFORMMATRIX2X4FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX4X2FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX4X2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8346,7 +8346,7 @@ pub type PFNGLUNIFORMMATRIX4X2FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX3X4FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX3X4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8354,7 +8354,7 @@ pub type PFNGLUNIFORMMATRIX3X4FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX4X3FVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX4X3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -8363,24 +8363,24 @@ pub type PFNGLUNIFORMMATRIX4X3FVPROC = ::std::option::Option<
     ),
 >;
 pub type GLhalf = khronos_uint16_t;
-pub type PFNGLCOLORMASKIPROC = ::std::option::Option<
+pub type PFNGLCOLORMASKIPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean),
 >;
-pub type PFNGLGETBOOLEANI_VPROC = ::std::option::Option<
+pub type PFNGLGETBOOLEANI_VPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLboolean),
 >;
 pub type PFNGLGETINTEGERI_VPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLint)>;
 pub type PFNGLENABLEIPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
 pub type PFNGLDISABLEIPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
 pub type PFNGLISENABLEDIPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint) -> GLboolean>;
 pub type PFNGLBEGINTRANSFORMFEEDBACKPROC =
-    ::std::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
-pub type PFNGLENDTRANSFORMFEEDBACKPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLBINDBUFFERRANGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
+pub type PFNGLENDTRANSFORMFEEDBACKPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLBINDBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -8390,8 +8390,8 @@ pub type PFNGLBINDBUFFERRANGEPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLBINDBUFFERBASEPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint)>;
-pub type PFNGLTRANSFORMFEEDBACKVARYINGSPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint)>;
+pub type PFNGLTRANSFORMFEEDBACKVARYINGSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         count: GLsizei,
@@ -8399,7 +8399,7 @@ pub type PFNGLTRANSFORMFEEDBACKVARYINGSPROC = ::std::option::Option<
         bufferMode: GLenum,
     ),
 >;
-pub type PFNGLGETTRANSFORMFEEDBACKVARYINGPROC = ::std::option::Option<
+pub type PFNGLGETTRANSFORMFEEDBACKVARYINGPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         index: GLuint,
@@ -8411,143 +8411,143 @@ pub type PFNGLGETTRANSFORMFEEDBACKVARYINGPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCLAMPCOLORPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, clamp: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, clamp: GLenum)>;
 pub type PFNGLBEGINCONDITIONALRENDERPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, mode: GLenum)>;
-pub type PFNGLENDCONDITIONALRENDERPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLVERTEXATTRIBIPOINTERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, mode: GLenum)>;
+pub type PFNGLENDCONDITIONALRENDERPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLVERTEXATTRIBIPOINTERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLGETVERTEXATTRIBIIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETVERTEXATTRIBIUIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint)>;
 pub type PFNGLVERTEXATTRIBI1IPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint)>;
 pub type PFNGLVERTEXATTRIBI2IPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint)>;
 pub type PFNGLVERTEXATTRIBI3IPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint, z: GLint)>;
-pub type PFNGLVERTEXATTRIBI4IPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint, z: GLint)>;
+pub type PFNGLVERTEXATTRIBI4IPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint),
 >;
 pub type PFNGLVERTEXATTRIBI1UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint)>;
 pub type PFNGLVERTEXATTRIBI2UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint)>;
 pub type PFNGLVERTEXATTRIBI3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint, z: GLuint)>;
-pub type PFNGLVERTEXATTRIBI4UIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint, z: GLuint)>;
+pub type PFNGLVERTEXATTRIBI4UIPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint),
 >;
 pub type PFNGLVERTEXATTRIBI1IVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI2IVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI3IVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI4IVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI1UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI2UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI3UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI4UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI4BVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
 pub type PFNGLVERTEXATTRIBI4SVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIBI4UBVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIBI4USVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
-pub type PFNGLGETUNIFORMUIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
+pub type PFNGLGETUNIFORMUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLuint),
 >;
-pub type PFNGLBINDFRAGDATALOCATIONPROC = ::std::option::Option<
+pub type PFNGLBINDFRAGDATALOCATIONPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, color: GLuint, name: *const GLchar),
 >;
 pub type PFNGLGETFRAGDATALOCATIONPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
 pub type PFNGLUNIFORM1UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint)>;
 pub type PFNGLUNIFORM2UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint)>;
-pub type PFNGLUNIFORM3UIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint)>;
+pub type PFNGLUNIFORM3UIPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint),
 >;
-pub type PFNGLUNIFORM4UIPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UIPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint),
 >;
-pub type PFNGLUNIFORM1UIVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLUNIFORM2UIVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLUNIFORM3UIVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLUNIFORM4UIVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLTEXPARAMETERIIVPROC = ::std::option::Option<
+pub type PFNGLTEXPARAMETERIIVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLTEXPARAMETERIUIVPROC = ::std::option::Option<
+pub type PFNGLTEXPARAMETERIUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLuint),
 >;
 pub type PFNGLGETTEXPARAMETERIIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETTEXPARAMETERIUIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLuint)>;
-pub type PFNGLCLEARBUFFERIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLuint)>;
+pub type PFNGLCLEARBUFFERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLenum, drawbuffer: GLint, value: *const GLint),
 >;
-pub type PFNGLCLEARBUFFERUIVPROC = ::std::option::Option<
+pub type PFNGLCLEARBUFFERUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLenum, drawbuffer: GLint, value: *const GLuint),
 >;
-pub type PFNGLCLEARBUFFERFVPROC = ::std::option::Option<
+pub type PFNGLCLEARBUFFERFVPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLenum, drawbuffer: GLint, value: *const GLfloat),
 >;
-pub type PFNGLCLEARBUFFERFIPROC = ::std::option::Option<
+pub type PFNGLCLEARBUFFERFIPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLenum, drawbuffer: GLint, depth: GLfloat, stencil: GLint),
 >;
 pub type PFNGLGETSTRINGIPROC =
-    ::std::option::Option<unsafe extern "C" fn(name: GLenum, index: GLuint) -> *const GLubyte>;
+    ::core::option::Option<unsafe extern "C" fn(name: GLenum, index: GLuint) -> *const GLubyte>;
 pub type PFNGLISRENDERBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(renderbuffer: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(renderbuffer: GLuint) -> GLboolean>;
 pub type PFNGLBINDRENDERBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, renderbuffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, renderbuffer: GLuint)>;
 pub type PFNGLDELETERENDERBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *const GLuint)>;
 pub type PFNGLGENRENDERBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *mut GLuint)>;
-pub type PFNGLRENDERBUFFERSTORAGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *mut GLuint)>;
+pub type PFNGLRENDERBUFFERSTORAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, width: GLsizei, height: GLsizei),
 >;
 pub type PFNGLGETRENDERBUFFERPARAMETERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLISFRAMEBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint) -> GLboolean>;
 pub type PFNGLBINDFRAMEBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, framebuffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, framebuffer: GLuint)>;
 pub type PFNGLDELETEFRAMEBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *const GLuint)>;
 pub type PFNGLGENFRAMEBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *mut GLuint)>;
 pub type PFNGLCHECKFRAMEBUFFERSTATUSPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum) -> GLenum>;
-pub type PFNGLFRAMEBUFFERTEXTURE1DPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum) -> GLenum>;
+pub type PFNGLFRAMEBUFFERTEXTURE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -8556,7 +8556,7 @@ pub type PFNGLFRAMEBUFFERTEXTURE1DPROC = ::std::option::Option<
         level: GLint,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTURE2DPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTURE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -8565,7 +8565,7 @@ pub type PFNGLFRAMEBUFFERTEXTURE2DPROC = ::std::option::Option<
         level: GLint,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTURE3DPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTURE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -8575,7 +8575,7 @@ pub type PFNGLFRAMEBUFFERTEXTURE3DPROC = ::std::option::Option<
         zoffset: GLint,
     ),
 >;
-pub type PFNGLFRAMEBUFFERRENDERBUFFERPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERRENDERBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -8583,11 +8583,11 @@ pub type PFNGLFRAMEBUFFERRENDERBUFFERPROC = ::std::option::Option<
         renderbuffer: GLuint,
     ),
 >;
-pub type PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC = ::std::option::Option<
+pub type PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, attachment: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGENERATEMIPMAPPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
-pub type PFNGLBLITFRAMEBUFFERPROC = ::std::option::Option<
+pub type PFNGLGENERATEMIPMAPPROC = ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
+pub type PFNGLBLITFRAMEBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         srcX0: GLint,
         srcY0: GLint,
@@ -8601,7 +8601,7 @@ pub type PFNGLBLITFRAMEBUFFERPROC = ::std::option::Option<
         filter: GLenum,
     ),
 >;
-pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -8610,7 +8610,7 @@ pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTURELAYERPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTURELAYERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -8619,42 +8619,42 @@ pub type PFNGLFRAMEBUFFERTEXTURELAYERPROC = ::std::option::Option<
         layer: GLint,
     ),
 >;
-pub type PFNGLMAPBUFFERRANGEPROC = ::std::option::Option<
+pub type PFNGLMAPBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         offset: GLintptr,
         length: GLsizeiptr,
         access: GLbitfield,
-    ) -> *mut ::std::os::raw::c_void,
+    ) -> *mut libc::c_void,
 >;
-pub type PFNGLFLUSHMAPPEDBUFFERRANGEPROC = ::std::option::Option<
+pub type PFNGLFLUSHMAPPEDBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, offset: GLintptr, length: GLsizeiptr),
 >;
-pub type PFNGLBINDVERTEXARRAYPROC = ::std::option::Option<unsafe extern "C" fn(array: GLuint)>;
+pub type PFNGLBINDVERTEXARRAYPROC = ::core::option::Option<unsafe extern "C" fn(array: GLuint)>;
 pub type PFNGLDELETEVERTEXARRAYSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *const GLuint)>;
 pub type PFNGLGENVERTEXARRAYSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
 pub type PFNGLISVERTEXARRAYPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLuint) -> GLboolean>;
-pub type PFNGLDRAWARRAYSINSTANCEDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(array: GLuint) -> GLboolean>;
+pub type PFNGLDRAWARRAYSINSTANCEDPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei, instancecount: GLsizei),
 >;
-pub type PFNGLDRAWELEMENTSINSTANCEDPROC = ::std::option::Option<
+pub type PFNGLDRAWELEMENTSINSTANCEDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         instancecount: GLsizei,
     ),
 >;
-pub type PFNGLTEXBUFFERPROC = ::std::option::Option<
+pub type PFNGLTEXBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, buffer: GLuint),
 >;
 pub type PFNGLPRIMITIVERESTARTINDEXPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint)>;
-pub type PFNGLCOPYBUFFERSUBDATAPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint)>;
+pub type PFNGLCOPYBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         readTarget: GLenum,
         writeTarget: GLenum,
@@ -8663,7 +8663,7 @@ pub type PFNGLCOPYBUFFERSUBDATAPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLGETUNIFORMINDICESPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMINDICESPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         uniformCount: GLsizei,
@@ -8671,7 +8671,7 @@ pub type PFNGLGETUNIFORMINDICESPROC = ::std::option::Option<
         uniformIndices: *mut GLuint,
     ),
 >;
-pub type PFNGLGETACTIVEUNIFORMSIVPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEUNIFORMSIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         uniformCount: GLsizei,
@@ -8680,7 +8680,7 @@ pub type PFNGLGETACTIVEUNIFORMSIVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETACTIVEUNIFORMNAMEPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEUNIFORMNAMEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         uniformIndex: GLuint,
@@ -8689,10 +8689,10 @@ pub type PFNGLGETACTIVEUNIFORMNAMEPROC = ::std::option::Option<
         uniformName: *mut GLchar,
     ),
 >;
-pub type PFNGLGETUNIFORMBLOCKINDEXPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMBLOCKINDEXPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, uniformBlockName: *const GLchar) -> GLuint,
 >;
-pub type PFNGLGETACTIVEUNIFORMBLOCKIVPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEUNIFORMBLOCKIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         uniformBlockIndex: GLuint,
@@ -8700,7 +8700,7 @@ pub type PFNGLGETACTIVEUNIFORMBLOCKIVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         uniformBlockIndex: GLuint,
@@ -8709,7 +8709,7 @@ pub type PFNGLGETACTIVEUNIFORMBLOCKNAMEPROC = ::std::option::Option<
         uniformBlockName: *mut GLchar,
     ),
 >;
-pub type PFNGLUNIFORMBLOCKBINDINGPROC = ::std::option::Option<
+pub type PFNGLUNIFORMBLOCKBINDINGPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, uniformBlockIndex: GLuint, uniformBlockBinding: GLuint),
 >;
 #[repr(C)]
@@ -8720,59 +8720,59 @@ pub struct __GLsync {
 pub type GLsync = *mut __GLsync;
 pub type GLuint64 = khronos_uint64_t;
 pub type GLint64 = khronos_int64_t;
-pub type PFNGLDRAWELEMENTSBASEVERTEXPROC = ::std::option::Option<
+pub type PFNGLDRAWELEMENTSBASEVERTEXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         basevertex: GLint,
     ),
 >;
-pub type PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC = ::std::option::Option<
+pub type PFNGLDRAWRANGEELEMENTSBASEVERTEXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         start: GLuint,
         end: GLuint,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         basevertex: GLint,
     ),
 >;
-pub type PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC = ::std::option::Option<
+pub type PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         instancecount: GLsizei,
         basevertex: GLint,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSBASEVERTEXPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSBASEVERTEXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: *const GLsizei,
         type_: GLenum,
-        indices: *const *const ::std::os::raw::c_void,
+        indices: *const *const libc::c_void,
         drawcount: GLsizei,
         basevertex: *const GLint,
     ),
 >;
-pub type PFNGLPROVOKINGVERTEXPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLPROVOKINGVERTEXPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
 pub type PFNGLFENCESYNCPROC =
-    ::std::option::Option<unsafe extern "C" fn(condition: GLenum, flags: GLbitfield) -> GLsync>;
-pub type PFNGLISSYNCPROC = ::std::option::Option<unsafe extern "C" fn(sync: GLsync) -> GLboolean>;
-pub type PFNGLDELETESYNCPROC = ::std::option::Option<unsafe extern "C" fn(sync: GLsync)>;
-pub type PFNGLCLIENTWAITSYNCPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(condition: GLenum, flags: GLbitfield) -> GLsync>;
+pub type PFNGLISSYNCPROC = ::core::option::Option<unsafe extern "C" fn(sync: GLsync) -> GLboolean>;
+pub type PFNGLDELETESYNCPROC = ::core::option::Option<unsafe extern "C" fn(sync: GLsync)>;
+pub type PFNGLCLIENTWAITSYNCPROC = ::core::option::Option<
     unsafe extern "C" fn(sync: GLsync, flags: GLbitfield, timeout: GLuint64) -> GLenum,
 >;
 pub type PFNGLWAITSYNCPROC =
-    ::std::option::Option<unsafe extern "C" fn(sync: GLsync, flags: GLbitfield, timeout: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(sync: GLsync, flags: GLbitfield, timeout: GLuint64)>;
 pub type PFNGLGETINTEGER64VPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, data: *mut GLint64)>;
-pub type PFNGLGETSYNCIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, data: *mut GLint64)>;
+pub type PFNGLGETSYNCIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         sync: GLsync,
         pname: GLenum,
@@ -8782,14 +8782,14 @@ pub type PFNGLGETSYNCIVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETINTEGER64I_VPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLint64)>;
-pub type PFNGLGETBUFFERPARAMETERI64VPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLint64)>;
+pub type PFNGLGETBUFFERPARAMETERI64VPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint64),
 >;
-pub type PFNGLFRAMEBUFFERTEXTUREPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTUREPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, attachment: GLenum, texture: GLuint, level: GLint),
 >;
-pub type PFNGLTEXIMAGE2DMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLTEXIMAGE2DMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -8799,7 +8799,7 @@ pub type PFNGLTEXIMAGE2DMULTISAMPLEPROC = ::std::option::Option<
         fixedsamplelocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXIMAGE3DMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLTEXIMAGE3DMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -8811,152 +8811,152 @@ pub type PFNGLTEXIMAGE3DMULTISAMPLEPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETMULTISAMPLEFVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *mut GLfloat)>;
 pub type PFNGLSAMPLEMASKIPROC =
-    ::std::option::Option<unsafe extern "C" fn(maskNumber: GLuint, mask: GLbitfield)>;
-pub type PFNGLBINDFRAGDATALOCATIONINDEXEDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(maskNumber: GLuint, mask: GLbitfield)>;
+pub type PFNGLBINDFRAGDATALOCATIONINDEXEDPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, colorNumber: GLuint, index: GLuint, name: *const GLchar),
 >;
 pub type PFNGLGETFRAGDATAINDEXPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
 pub type PFNGLGENSAMPLERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(count: GLsizei, samplers: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(count: GLsizei, samplers: *mut GLuint)>;
 pub type PFNGLDELETESAMPLERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(count: GLsizei, samplers: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(count: GLsizei, samplers: *const GLuint)>;
 pub type PFNGLISSAMPLERPROC =
-    ::std::option::Option<unsafe extern "C" fn(sampler: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(sampler: GLuint) -> GLboolean>;
 pub type PFNGLBINDSAMPLERPROC =
-    ::std::option::Option<unsafe extern "C" fn(unit: GLuint, sampler: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(unit: GLuint, sampler: GLuint)>;
 pub type PFNGLSAMPLERPARAMETERIPROC =
-    ::std::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: GLint)>;
-pub type PFNGLSAMPLERPARAMETERIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: GLint)>;
+pub type PFNGLSAMPLERPARAMETERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: *const GLint),
 >;
 pub type PFNGLSAMPLERPARAMETERFPROC =
-    ::std::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: GLfloat)>;
-pub type PFNGLSAMPLERPARAMETERFVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: GLfloat)>;
+pub type PFNGLSAMPLERPARAMETERFVPROC = ::core::option::Option<
     unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: *const GLfloat),
 >;
-pub type PFNGLSAMPLERPARAMETERIIVPROC = ::std::option::Option<
+pub type PFNGLSAMPLERPARAMETERIIVPROC = ::core::option::Option<
     unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: *const GLint),
 >;
-pub type PFNGLSAMPLERPARAMETERIUIVPROC = ::std::option::Option<
+pub type PFNGLSAMPLERPARAMETERIUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(sampler: GLuint, pname: GLenum, param: *const GLuint),
 >;
 pub type PFNGLGETSAMPLERPARAMETERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETSAMPLERPARAMETERIIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETSAMPLERPARAMETERFVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(sampler: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETSAMPLERPARAMETERFVPROC = ::core::option::Option<
     unsafe extern "C" fn(sampler: GLuint, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETSAMPLERPARAMETERIUIVPROC = ::std::option::Option<
+pub type PFNGLGETSAMPLERPARAMETERIUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(sampler: GLuint, pname: GLenum, params: *mut GLuint),
 >;
 pub type PFNGLQUERYCOUNTERPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, target: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, target: GLenum)>;
 pub type PFNGLGETQUERYOBJECTI64VPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint64)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint64)>;
 pub type PFNGLGETQUERYOBJECTUI64VPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint64)>;
 pub type PFNGLVERTEXATTRIBDIVISORPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, divisor: GLuint)>;
-pub type PFNGLVERTEXATTRIBP1UIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, divisor: GLuint)>;
+pub type PFNGLVERTEXATTRIBP1UIPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint),
 >;
-pub type PFNGLVERTEXATTRIBP1UIVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBP1UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint),
 >;
-pub type PFNGLVERTEXATTRIBP2UIPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBP2UIPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint),
 >;
-pub type PFNGLVERTEXATTRIBP2UIVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBP2UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint),
 >;
-pub type PFNGLVERTEXATTRIBP3UIPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBP3UIPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint),
 >;
-pub type PFNGLVERTEXATTRIBP3UIVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBP3UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint),
 >;
-pub type PFNGLVERTEXATTRIBP4UIPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBP4UIPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: GLuint),
 >;
-pub type PFNGLVERTEXATTRIBP4UIVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBP4UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, type_: GLenum, normalized: GLboolean, value: *const GLuint),
 >;
 pub type PFNGLVERTEXP2UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, value: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, value: GLuint)>;
 pub type PFNGLVERTEXP2UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, value: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, value: *const GLuint)>;
 pub type PFNGLVERTEXP3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, value: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, value: GLuint)>;
 pub type PFNGLVERTEXP3UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, value: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, value: *const GLuint)>;
 pub type PFNGLVERTEXP4UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, value: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, value: GLuint)>;
 pub type PFNGLVERTEXP4UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, value: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, value: *const GLuint)>;
 pub type PFNGLTEXCOORDP1UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
 pub type PFNGLTEXCOORDP1UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
 pub type PFNGLTEXCOORDP2UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
 pub type PFNGLTEXCOORDP2UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
 pub type PFNGLTEXCOORDP3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
 pub type PFNGLTEXCOORDP3UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
 pub type PFNGLTEXCOORDP4UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
 pub type PFNGLTEXCOORDP4UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
 pub type PFNGLMULTITEXCOORDP1UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
-pub type PFNGLMULTITEXCOORDP1UIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
+pub type PFNGLMULTITEXCOORDP1UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: *const GLuint),
 >;
 pub type PFNGLMULTITEXCOORDP2UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
-pub type PFNGLMULTITEXCOORDP2UIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
+pub type PFNGLMULTITEXCOORDP2UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: *const GLuint),
 >;
 pub type PFNGLMULTITEXCOORDP3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
-pub type PFNGLMULTITEXCOORDP3UIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
+pub type PFNGLMULTITEXCOORDP3UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: *const GLuint),
 >;
 pub type PFNGLMULTITEXCOORDP4UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
-pub type PFNGLMULTITEXCOORDP4UIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: GLuint)>;
+pub type PFNGLMULTITEXCOORDP4UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLenum, type_: GLenum, coords: *const GLuint),
 >;
 pub type PFNGLNORMALP3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: GLuint)>;
 pub type PFNGLNORMALP3UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, coords: *const GLuint)>;
 pub type PFNGLCOLORP3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, color: GLuint)>;
 pub type PFNGLCOLORP3UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, color: *const GLuint)>;
 pub type PFNGLCOLORP4UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, color: GLuint)>;
 pub type PFNGLCOLORP4UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, color: *const GLuint)>;
 pub type PFNGLSECONDARYCOLORP3UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, color: GLuint)>;
 pub type PFNGLSECONDARYCOLORP3UIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, color: *const GLuint)>;
-pub type PFNGLMINSAMPLESHADINGPROC = ::std::option::Option<unsafe extern "C" fn(value: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, color: *const GLuint)>;
+pub type PFNGLMINSAMPLESHADINGPROC = ::core::option::Option<unsafe extern "C" fn(value: GLfloat)>;
 pub type PFNGLBLENDEQUATIONIPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
 pub type PFNGLBLENDEQUATIONSEPARATEIPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum)>;
 pub type PFNGLBLENDFUNCIPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, src: GLenum, dst: GLenum)>;
-pub type PFNGLBLENDFUNCSEPARATEIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, src: GLenum, dst: GLenum)>;
+pub type PFNGLBLENDFUNCSEPARATEIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buf: GLuint,
         srcRGB: GLenum,
@@ -8965,35 +8965,35 @@ pub type PFNGLBLENDFUNCSEPARATEIPROC = ::std::option::Option<
         dstAlpha: GLenum,
     ),
 >;
-pub type PFNGLDRAWARRAYSINDIRECTPROC = ::std::option::Option<
-    unsafe extern "C" fn(mode: GLenum, indirect: *const ::std::os::raw::c_void),
+pub type PFNGLDRAWARRAYSINDIRECTPROC = ::core::option::Option<
+    unsafe extern "C" fn(mode: GLenum, indirect: *const libc::c_void),
 >;
-pub type PFNGLDRAWELEMENTSINDIRECTPROC = ::std::option::Option<
-    unsafe extern "C" fn(mode: GLenum, type_: GLenum, indirect: *const ::std::os::raw::c_void),
+pub type PFNGLDRAWELEMENTSINDIRECTPROC = ::core::option::Option<
+    unsafe extern "C" fn(mode: GLenum, type_: GLenum, indirect: *const libc::c_void),
 >;
 pub type PFNGLUNIFORM1DPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLdouble)>;
 pub type PFNGLUNIFORM2DPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLdouble, y: GLdouble)>;
-pub type PFNGLUNIFORM3DPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLdouble, y: GLdouble)>;
+pub type PFNGLUNIFORM3DPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
-pub type PFNGLUNIFORM4DPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4DPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble),
 >;
-pub type PFNGLUNIFORM1DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1DVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLUNIFORM2DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLUNIFORM3DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLUNIFORM4DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLUNIFORMMATRIX2DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9001,7 +9001,7 @@ pub type PFNGLUNIFORMMATRIX2DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX3DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9009,7 +9009,7 @@ pub type PFNGLUNIFORMMATRIX3DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX4DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9017,7 +9017,7 @@ pub type PFNGLUNIFORMMATRIX4DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX2X3DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX2X3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9025,7 +9025,7 @@ pub type PFNGLUNIFORMMATRIX2X3DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX2X4DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX2X4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9033,7 +9033,7 @@ pub type PFNGLUNIFORMMATRIX2X4DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX3X2DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX3X2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9041,7 +9041,7 @@ pub type PFNGLUNIFORMMATRIX3X2DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX3X4DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX3X4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9049,7 +9049,7 @@ pub type PFNGLUNIFORMMATRIX3X4DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX4X2DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX4X2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9057,7 +9057,7 @@ pub type PFNGLUNIFORMMATRIX4X2DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX4X3DVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX4X3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -9065,16 +9065,16 @@ pub type PFNGLUNIFORMMATRIX4X3DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLGETUNIFORMDVPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMDVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLdouble),
 >;
-pub type PFNGLGETSUBROUTINEUNIFORMLOCATIONPROC = ::std::option::Option<
+pub type PFNGLGETSUBROUTINEUNIFORMLOCATIONPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, shadertype: GLenum, name: *const GLchar) -> GLint,
 >;
-pub type PFNGLGETSUBROUTINEINDEXPROC = ::std::option::Option<
+pub type PFNGLGETSUBROUTINEINDEXPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, shadertype: GLenum, name: *const GLchar) -> GLuint,
 >;
-pub type PFNGLGETACTIVESUBROUTINEUNIFORMIVPROC = ::std::option::Option<
+pub type PFNGLGETACTIVESUBROUTINEUNIFORMIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         shadertype: GLenum,
@@ -9083,7 +9083,7 @@ pub type PFNGLGETACTIVESUBROUTINEUNIFORMIVPROC = ::std::option::Option<
         values: *mut GLint,
     ),
 >;
-pub type PFNGLGETACTIVESUBROUTINEUNIFORMNAMEPROC = ::std::option::Option<
+pub type PFNGLGETACTIVESUBROUTINEUNIFORMNAMEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         shadertype: GLenum,
@@ -9093,7 +9093,7 @@ pub type PFNGLGETACTIVESUBROUTINEUNIFORMNAMEPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
-pub type PFNGLGETACTIVESUBROUTINENAMEPROC = ::std::option::Option<
+pub type PFNGLGETACTIVESUBROUTINENAMEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         shadertype: GLenum,
@@ -9103,51 +9103,51 @@ pub type PFNGLGETACTIVESUBROUTINENAMEPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
-pub type PFNGLUNIFORMSUBROUTINESUIVPROC = ::std::option::Option<
+pub type PFNGLUNIFORMSUBROUTINESUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(shadertype: GLenum, count: GLsizei, indices: *const GLuint),
 >;
-pub type PFNGLGETUNIFORMSUBROUTINEUIVPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMSUBROUTINEUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(shadertype: GLenum, location: GLint, params: *mut GLuint),
 >;
-pub type PFNGLGETPROGRAMSTAGEIVPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMSTAGEIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, shadertype: GLenum, pname: GLenum, values: *mut GLint),
 >;
 pub type PFNGLPATCHPARAMETERIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLint)>;
 pub type PFNGLPATCHPARAMETERFVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, values: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, values: *const GLfloat)>;
 pub type PFNGLBINDTRANSFORMFEEDBACKPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
 pub type PFNGLDELETETRANSFORMFEEDBACKSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
 pub type PFNGLGENTRANSFORMFEEDBACKSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLISTRANSFORMFEEDBACKPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
-pub type PFNGLPAUSETRANSFORMFEEDBACKPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLRESUMETRANSFORMFEEDBACKPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
+pub type PFNGLPAUSETRANSFORMFEEDBACKPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLRESUMETRANSFORMFEEDBACKPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLDRAWTRANSFORMFEEDBACKPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint)>;
 pub type PFNGLDRAWTRANSFORMFEEDBACKSTREAMPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint, stream: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint, stream: GLuint)>;
 pub type PFNGLBEGINQUERYINDEXEDPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, id: GLuint)>;
 pub type PFNGLENDQUERYINDEXEDPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
-pub type PFNGLGETQUERYINDEXEDIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
+pub type PFNGLGETQUERYINDEXEDIVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLRELEASESHADERCOMPILERPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLSHADERBINARYPROC = ::std::option::Option<
+pub type PFNGLRELEASESHADERCOMPILERPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLSHADERBINARYPROC = ::core::option::Option<
     unsafe extern "C" fn(
         count: GLsizei,
         shaders: *const GLuint,
         binaryformat: GLenum,
-        binary: *const ::std::os::raw::c_void,
+        binary: *const libc::c_void,
         length: GLsizei,
     ),
 >;
-pub type PFNGLGETSHADERPRECISIONFORMATPROC = ::std::option::Option<
+pub type PFNGLGETSHADERPRECISIONFORMATPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shadertype: GLenum,
         precisiontype: GLenum,
@@ -9155,103 +9155,103 @@ pub type PFNGLGETSHADERPRECISIONFORMATPROC = ::std::option::Option<
         precision: *mut GLint,
     ),
 >;
-pub type PFNGLDEPTHRANGEFPROC = ::std::option::Option<unsafe extern "C" fn(n: GLfloat, f: GLfloat)>;
-pub type PFNGLCLEARDEPTHFPROC = ::std::option::Option<unsafe extern "C" fn(d: GLfloat)>;
-pub type PFNGLGETPROGRAMBINARYPROC = ::std::option::Option<
+pub type PFNGLDEPTHRANGEFPROC = ::core::option::Option<unsafe extern "C" fn(n: GLfloat, f: GLfloat)>;
+pub type PFNGLCLEARDEPTHFPROC = ::core::option::Option<unsafe extern "C" fn(d: GLfloat)>;
+pub type PFNGLGETPROGRAMBINARYPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         bufSize: GLsizei,
         length: *mut GLsizei,
         binaryFormat: *mut GLenum,
-        binary: *mut ::std::os::raw::c_void,
+        binary: *mut libc::c_void,
     ),
 >;
-pub type PFNGLPROGRAMBINARYPROC = ::std::option::Option<
+pub type PFNGLPROGRAMBINARYPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         binaryFormat: GLenum,
-        binary: *const ::std::os::raw::c_void,
+        binary: *const libc::c_void,
         length: GLsizei,
     ),
 >;
 pub type PFNGLPROGRAMPARAMETERIPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
-pub type PFNGLUSEPROGRAMSTAGESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
+pub type PFNGLUSEPROGRAMSTAGESPROC = ::core::option::Option<
     unsafe extern "C" fn(pipeline: GLuint, stages: GLbitfield, program: GLuint),
 >;
 pub type PFNGLACTIVESHADERPROGRAMPROC =
-    ::std::option::Option<unsafe extern "C" fn(pipeline: GLuint, program: GLuint)>;
-pub type PFNGLCREATESHADERPROGRAMVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pipeline: GLuint, program: GLuint)>;
+pub type PFNGLCREATESHADERPROGRAMVPROC = ::core::option::Option<
     unsafe extern "C" fn(type_: GLenum, count: GLsizei, strings: *const *const GLchar) -> GLuint,
 >;
 pub type PFNGLBINDPROGRAMPIPELINEPROC =
-    ::std::option::Option<unsafe extern "C" fn(pipeline: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(pipeline: GLuint)>;
 pub type PFNGLDELETEPROGRAMPIPELINESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, pipelines: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, pipelines: *const GLuint)>;
 pub type PFNGLGENPROGRAMPIPELINESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, pipelines: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, pipelines: *mut GLuint)>;
 pub type PFNGLISPROGRAMPIPELINEPROC =
-    ::std::option::Option<unsafe extern "C" fn(pipeline: GLuint) -> GLboolean>;
-pub type PFNGLGETPROGRAMPIPELINEIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pipeline: GLuint) -> GLboolean>;
+pub type PFNGLGETPROGRAMPIPELINEIVPROC = ::core::option::Option<
     unsafe extern "C" fn(pipeline: GLuint, pname: GLenum, params: *mut GLint),
 >;
 pub type PFNGLPROGRAMUNIFORM1IPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint)>;
-pub type PFNGLPROGRAMUNIFORM1IVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint)>;
+pub type PFNGLPROGRAMUNIFORM1IVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
 pub type PFNGLPROGRAMUNIFORM1FPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat)>;
-pub type PFNGLPROGRAMUNIFORM1FVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat)>;
+pub type PFNGLPROGRAMUNIFORM1FVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
 pub type PFNGLPROGRAMUNIFORM1DPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLdouble)>;
-pub type PFNGLPROGRAMUNIFORM1DVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLdouble)>;
+pub type PFNGLPROGRAMUNIFORM1DVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
 pub type PFNGLPROGRAMUNIFORM1UIPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint)>;
-pub type PFNGLPROGRAMUNIFORM1UIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint)>;
+pub type PFNGLPROGRAMUNIFORM1UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM2IPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2IPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint, v1: GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM2IVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2IVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM2FPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2FPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM2FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM2DPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2DPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLdouble, v1: GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM2DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM2UIPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2UIPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint, v1: GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM2UIVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM3IPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3IPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM3IVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3IVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM3FPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3FPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM3FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM3DPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9260,16 +9260,16 @@ pub type PFNGLPROGRAMUNIFORM3DPROC = ::std::option::Option<
         v2: GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM3DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM3UIPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UIPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM3UIVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM4IPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4IPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9279,10 +9279,10 @@ pub type PFNGLPROGRAMUNIFORM4IPROC = ::std::option::Option<
         v3: GLint,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4IVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4IVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM4FPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4FPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9292,10 +9292,10 @@ pub type PFNGLPROGRAMUNIFORM4FPROC = ::std::option::Option<
         v3: GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM4DPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9305,10 +9305,10 @@ pub type PFNGLPROGRAMUNIFORM4DPROC = ::std::option::Option<
         v3: GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM4UIPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9318,10 +9318,10 @@ pub type PFNGLPROGRAMUNIFORM4UIPROC = ::std::option::Option<
         v3: GLuint,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4UIVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9330,7 +9330,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9339,7 +9339,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9348,7 +9348,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9357,7 +9357,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9366,7 +9366,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9375,7 +9375,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9384,7 +9384,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X3FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9393,7 +9393,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X2FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9402,7 +9402,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X4FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9411,7 +9411,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X2FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9420,7 +9420,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X4FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9429,7 +9429,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X3FVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X3DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9438,7 +9438,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X3DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X2DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9447,7 +9447,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X2DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X4DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9456,7 +9456,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X4DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X2DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X2DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9465,7 +9465,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X2DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X4DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X4DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9474,7 +9474,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X4DVPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X3DVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X3DVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -9484,8 +9484,8 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X3DVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLVALIDATEPROGRAMPIPELINEPROC =
-    ::std::option::Option<unsafe extern "C" fn(pipeline: GLuint)>;
-pub type PFNGLGETPROGRAMPIPELINEINFOLOGPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pipeline: GLuint)>;
+pub type PFNGLGETPROGRAMPIPELINEINFOLOGPROC = ::core::option::Option<
     unsafe extern "C" fn(
         pipeline: GLuint,
         bufSize: GLsizei,
@@ -9494,45 +9494,45 @@ pub type PFNGLGETPROGRAMPIPELINEINFOLOGPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLVERTEXATTRIBL1DPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
 pub type PFNGLVERTEXATTRIBL2DPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
-pub type PFNGLVERTEXATTRIBL3DPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
+pub type PFNGLVERTEXATTRIBL3DPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
-pub type PFNGLVERTEXATTRIBL4DPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBL4DPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIBL1DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBL2DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBL3DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBL4DVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
-pub type PFNGLVERTEXATTRIBLPOINTERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+pub type PFNGLVERTEXATTRIBLPOINTERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETVERTEXATTRIBLDVPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXATTRIBLDVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLdouble),
 >;
 pub type PFNGLVIEWPORTARRAYVPROC =
-    ::std::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLfloat)>;
-pub type PFNGLVIEWPORTINDEXEDFPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLfloat)>;
+pub type PFNGLVIEWPORTINDEXEDFPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, w: GLfloat, h: GLfloat),
 >;
 pub type PFNGLVIEWPORTINDEXEDFVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLSCISSORARRAYVPROC =
-    ::std::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLint)>;
-pub type PFNGLSCISSORINDEXEDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLint)>;
+pub type PFNGLSCISSORINDEXEDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         left: GLint,
@@ -9542,16 +9542,16 @@ pub type PFNGLSCISSORINDEXEDPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLSCISSORINDEXEDVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLDEPTHRANGEARRAYVPROC =
-    ::std::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLdouble)>;
 pub type PFNGLDEPTHRANGEINDEXEDPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, n: GLdouble, f: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, n: GLdouble, f: GLdouble)>;
 pub type PFNGLGETFLOATI_VPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLfloat)>;
 pub type PFNGLGETDOUBLEI_VPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLdouble)>;
-pub type PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLdouble)>;
+pub type PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         first: GLint,
@@ -9560,28 +9560,28 @@ pub type PFNGLDRAWARRAYSINSTANCEDBASEINSTANCEPROC = ::std::option::Option<
         baseinstance: GLuint,
     ),
 >;
-pub type PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEPROC = ::std::option::Option<
+pub type PFNGLDRAWELEMENTSINSTANCEDBASEINSTANCEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         instancecount: GLsizei,
         baseinstance: GLuint,
     ),
 >;
-pub type PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEPROC = ::std::option::Option<
+pub type PFNGLDRAWELEMENTSINSTANCEDBASEVERTEXBASEINSTANCEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         instancecount: GLsizei,
         basevertex: GLint,
         baseinstance: GLuint,
     ),
 >;
-pub type PFNGLGETINTERNALFORMATIVPROC = ::std::option::Option<
+pub type PFNGLGETINTERNALFORMATIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -9590,10 +9590,10 @@ pub type PFNGLGETINTERNALFORMATIVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETACTIVEATOMICCOUNTERBUFFERIVPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEATOMICCOUNTERBUFFERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, bufferIndex: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLBINDIMAGETEXTUREPROC = ::std::option::Option<
+pub type PFNGLBINDIMAGETEXTUREPROC = ::core::option::Option<
     unsafe extern "C" fn(
         unit: GLuint,
         texture: GLuint,
@@ -9604,11 +9604,11 @@ pub type PFNGLBINDIMAGETEXTUREPROC = ::std::option::Option<
         format: GLenum,
     ),
 >;
-pub type PFNGLMEMORYBARRIERPROC = ::std::option::Option<unsafe extern "C" fn(barriers: GLbitfield)>;
-pub type PFNGLTEXSTORAGE1DPROC = ::std::option::Option<
+pub type PFNGLMEMORYBARRIERPROC = ::core::option::Option<unsafe extern "C" fn(barriers: GLbitfield)>;
+pub type PFNGLTEXSTORAGE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, levels: GLsizei, internalformat: GLenum, width: GLsizei),
 >;
-pub type PFNGLTEXSTORAGE2DPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         levels: GLsizei,
@@ -9617,7 +9617,7 @@ pub type PFNGLTEXSTORAGE2DPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLTEXSTORAGE3DPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         levels: GLsizei,
@@ -9628,11 +9628,11 @@ pub type PFNGLTEXSTORAGE3DPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLDRAWTRANSFORMFEEDBACKINSTANCEDPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint, instancecount: GLsizei)>;
-pub type PFNGLDRAWTRANSFORMFEEDBACKSTREAMINSTANCEDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint, instancecount: GLsizei)>;
+pub type PFNGLDRAWTRANSFORMFEEDBACKSTREAMINSTANCEDPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, id: GLuint, stream: GLuint, instancecount: GLsizei),
 >;
-pub type GLDEBUGPROC = ::std::option::Option<
+pub type GLDEBUGPROC = ::core::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
         type_: GLenum,
@@ -9640,19 +9640,19 @@ pub type GLDEBUGPROC = ::std::option::Option<
         severity: GLenum,
         length: GLsizei,
         message: *const GLchar,
-        userParam: *const ::std::os::raw::c_void,
+        userParam: *const libc::c_void,
     ),
 >;
-pub type PFNGLCLEARBUFFERDATAPROC = ::std::option::Option<
+pub type PFNGLCLEARBUFFERDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCLEARBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLCLEARBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -9660,15 +9660,15 @@ pub type PFNGLCLEARBUFFERSUBDATAPROC = ::std::option::Option<
         size: GLsizeiptr,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLDISPATCHCOMPUTEPROC = ::std::option::Option<
+pub type PFNGLDISPATCHCOMPUTEPROC = ::core::option::Option<
     unsafe extern "C" fn(num_groups_x: GLuint, num_groups_y: GLuint, num_groups_z: GLuint),
 >;
 pub type PFNGLDISPATCHCOMPUTEINDIRECTPROC =
-    ::std::option::Option<unsafe extern "C" fn(indirect: GLintptr)>;
-pub type PFNGLCOPYIMAGESUBDATAPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(indirect: GLintptr)>;
+pub type PFNGLCOPYIMAGESUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         srcName: GLuint,
         srcTarget: GLenum,
@@ -9688,10 +9688,10 @@ pub type PFNGLCOPYIMAGESUBDATAPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLFRAMEBUFFERPARAMETERIPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLGETFRAMEBUFFERPARAMETERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETINTERNALFORMATI64VPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETINTERNALFORMATI64VPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -9700,7 +9700,7 @@ pub type PFNGLGETINTERNALFORMATI64VPROC = ::std::option::Option<
         params: *mut GLint64,
     ),
 >;
-pub type PFNGLINVALIDATETEXSUBIMAGEPROC = ::std::option::Option<
+pub type PFNGLINVALIDATETEXSUBIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -9713,16 +9713,16 @@ pub type PFNGLINVALIDATETEXSUBIMAGEPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLINVALIDATETEXIMAGEPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, level: GLint)>;
-pub type PFNGLINVALIDATEBUFFERSUBDATAPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, level: GLint)>;
+pub type PFNGLINVALIDATEBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, offset: GLintptr, length: GLsizeiptr),
 >;
 pub type PFNGLINVALIDATEBUFFERDATAPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
-pub type PFNGLINVALIDATEFRAMEBUFFERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
+pub type PFNGLINVALIDATEFRAMEBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, numAttachments: GLsizei, attachments: *const GLenum),
 >;
-pub type PFNGLINVALIDATESUBFRAMEBUFFERPROC = ::std::option::Option<
+pub type PFNGLINVALIDATESUBFRAMEBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         numAttachments: GLsizei,
@@ -9733,24 +9733,24 @@ pub type PFNGLINVALIDATESUBFRAMEBUFFERPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWARRAYSINDIRECTPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWARRAYSINDIRECTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawcount: GLsizei,
         stride: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSINDIRECTPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSINDIRECTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         type_: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawcount: GLsizei,
         stride: GLsizei,
     ),
 >;
-pub type PFNGLGETPROGRAMINTERFACEIVPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMINTERFACEIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         programInterface: GLenum,
@@ -9758,10 +9758,10 @@ pub type PFNGLGETPROGRAMINTERFACEIVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETPROGRAMRESOURCEINDEXPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMRESOURCEINDEXPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, programInterface: GLenum, name: *const GLchar) -> GLuint,
 >;
-pub type PFNGLGETPROGRAMRESOURCENAMEPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMRESOURCENAMEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         programInterface: GLenum,
@@ -9771,7 +9771,7 @@ pub type PFNGLGETPROGRAMRESOURCENAMEPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
-pub type PFNGLGETPROGRAMRESOURCEIVPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMRESOURCEIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         programInterface: GLenum,
@@ -9783,16 +9783,16 @@ pub type PFNGLGETPROGRAMRESOURCEIVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETPROGRAMRESOURCELOCATIONPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMRESOURCELOCATIONPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, programInterface: GLenum, name: *const GLchar) -> GLint,
 >;
-pub type PFNGLGETPROGRAMRESOURCELOCATIONINDEXPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMRESOURCELOCATIONINDEXPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, programInterface: GLenum, name: *const GLchar) -> GLint,
 >;
-pub type PFNGLSHADERSTORAGEBLOCKBINDINGPROC = ::std::option::Option<
+pub type PFNGLSHADERSTORAGEBLOCKBINDINGPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, storageBlockIndex: GLuint, storageBlockBinding: GLuint),
 >;
-pub type PFNGLTEXBUFFERRANGEPROC = ::std::option::Option<
+pub type PFNGLTEXBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -9801,7 +9801,7 @@ pub type PFNGLTEXBUFFERRANGEPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLTEXSTORAGE2DMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGE2DMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -9811,7 +9811,7 @@ pub type PFNGLTEXSTORAGE2DMULTISAMPLEPROC = ::std::option::Option<
         fixedsamplelocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXSTORAGE3DMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGE3DMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -9822,7 +9822,7 @@ pub type PFNGLTEXSTORAGE3DMULTISAMPLEPROC = ::std::option::Option<
         fixedsamplelocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTUREVIEWPROC = ::std::option::Option<
+pub type PFNGLTEXTUREVIEWPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -9834,10 +9834,10 @@ pub type PFNGLTEXTUREVIEWPROC = ::std::option::Option<
         numlayers: GLuint,
     ),
 >;
-pub type PFNGLBINDVERTEXBUFFERPROC = ::std::option::Option<
+pub type PFNGLBINDVERTEXBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(bindingindex: GLuint, buffer: GLuint, offset: GLintptr, stride: GLsizei),
 >;
-pub type PFNGLVERTEXATTRIBFORMATPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBFORMATPROC = ::core::option::Option<
     unsafe extern "C" fn(
         attribindex: GLuint,
         size: GLint,
@@ -9846,17 +9846,17 @@ pub type PFNGLVERTEXATTRIBFORMATPROC = ::std::option::Option<
         relativeoffset: GLuint,
     ),
 >;
-pub type PFNGLVERTEXATTRIBIFORMATPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBIFORMATPROC = ::core::option::Option<
     unsafe extern "C" fn(attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint),
 >;
-pub type PFNGLVERTEXATTRIBLFORMATPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBLFORMATPROC = ::core::option::Option<
     unsafe extern "C" fn(attribindex: GLuint, size: GLint, type_: GLenum, relativeoffset: GLuint),
 >;
 pub type PFNGLVERTEXATTRIBBINDINGPROC =
-    ::std::option::Option<unsafe extern "C" fn(attribindex: GLuint, bindingindex: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(attribindex: GLuint, bindingindex: GLuint)>;
 pub type PFNGLVERTEXBINDINGDIVISORPROC =
-    ::std::option::Option<unsafe extern "C" fn(bindingindex: GLuint, divisor: GLuint)>;
-pub type PFNGLDEBUGMESSAGECONTROLPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(bindingindex: GLuint, divisor: GLuint)>;
+pub type PFNGLDEBUGMESSAGECONTROLPROC = ::core::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
         type_: GLenum,
@@ -9866,7 +9866,7 @@ pub type PFNGLDEBUGMESSAGECONTROLPROC = ::std::option::Option<
         enabled: GLboolean,
     ),
 >;
-pub type PFNGLDEBUGMESSAGEINSERTPROC = ::std::option::Option<
+pub type PFNGLDEBUGMESSAGEINSERTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
         type_: GLenum,
@@ -9876,10 +9876,10 @@ pub type PFNGLDEBUGMESSAGEINSERTPROC = ::std::option::Option<
         buf: *const GLchar,
     ),
 >;
-pub type PFNGLDEBUGMESSAGECALLBACKPROC = ::std::option::Option<
-    unsafe extern "C" fn(callback: GLDEBUGPROC, userParam: *const ::std::os::raw::c_void),
+pub type PFNGLDEBUGMESSAGECALLBACKPROC = ::core::option::Option<
+    unsafe extern "C" fn(callback: GLDEBUGPROC, userParam: *const libc::c_void),
 >;
-pub type PFNGLGETDEBUGMESSAGELOGPROC = ::std::option::Option<
+pub type PFNGLGETDEBUGMESSAGELOGPROC = ::core::option::Option<
     unsafe extern "C" fn(
         count: GLuint,
         bufSize: GLsizei,
@@ -9891,14 +9891,14 @@ pub type PFNGLGETDEBUGMESSAGELOGPROC = ::std::option::Option<
         messageLog: *mut GLchar,
     ) -> GLuint,
 >;
-pub type PFNGLPUSHDEBUGGROUPPROC = ::std::option::Option<
+pub type PFNGLPUSHDEBUGGROUPPROC = ::core::option::Option<
     unsafe extern "C" fn(source: GLenum, id: GLuint, length: GLsizei, message: *const GLchar),
 >;
-pub type PFNGLPOPDEBUGGROUPPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLOBJECTLABELPROC = ::std::option::Option<
+pub type PFNGLPOPDEBUGGROUPPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLOBJECTLABELPROC = ::core::option::Option<
     unsafe extern "C" fn(identifier: GLenum, name: GLuint, length: GLsizei, label: *const GLchar),
 >;
-pub type PFNGLGETOBJECTLABELPROC = ::std::option::Option<
+pub type PFNGLGETOBJECTLABELPROC = ::core::option::Option<
     unsafe extern "C" fn(
         identifier: GLenum,
         name: GLuint,
@@ -9907,35 +9907,35 @@ pub type PFNGLGETOBJECTLABELPROC = ::std::option::Option<
         label: *mut GLchar,
     ),
 >;
-pub type PFNGLOBJECTPTRLABELPROC = ::std::option::Option<
-    unsafe extern "C" fn(ptr: *const ::std::os::raw::c_void, length: GLsizei, label: *const GLchar),
+pub type PFNGLOBJECTPTRLABELPROC = ::core::option::Option<
+    unsafe extern "C" fn(ptr: *const libc::c_void, length: GLsizei, label: *const GLchar),
 >;
-pub type PFNGLGETOBJECTPTRLABELPROC = ::std::option::Option<
+pub type PFNGLGETOBJECTPTRLABELPROC = ::core::option::Option<
     unsafe extern "C" fn(
-        ptr: *const ::std::os::raw::c_void,
+        ptr: *const libc::c_void,
         bufSize: GLsizei,
         length: *mut GLsizei,
         label: *mut GLchar,
     ),
 >;
-pub type PFNGLBUFFERSTORAGEPROC = ::std::option::Option<
+pub type PFNGLBUFFERSTORAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
         flags: GLbitfield,
     ),
 >;
-pub type PFNGLCLEARTEXIMAGEPROC = ::std::option::Option<
+pub type PFNGLCLEARTEXIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCLEARTEXSUBIMAGEPROC = ::std::option::Option<
+pub type PFNGLCLEARTEXSUBIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -9947,13 +9947,13 @@ pub type PFNGLCLEARTEXSUBIMAGEPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLBINDBUFFERSBASEPROC = ::std::option::Option<
+pub type PFNGLBINDBUFFERSBASEPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, first: GLuint, count: GLsizei, buffers: *const GLuint),
 >;
-pub type PFNGLBINDBUFFERSRANGEPROC = ::std::option::Option<
+pub type PFNGLBINDBUFFERSRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         first: GLuint,
@@ -9963,16 +9963,16 @@ pub type PFNGLBINDBUFFERSRANGEPROC = ::std::option::Option<
         sizes: *const GLsizeiptr,
     ),
 >;
-pub type PFNGLBINDTEXTURESPROC = ::std::option::Option<
+pub type PFNGLBINDTEXTURESPROC = ::core::option::Option<
     unsafe extern "C" fn(first: GLuint, count: GLsizei, textures: *const GLuint),
 >;
-pub type PFNGLBINDSAMPLERSPROC = ::std::option::Option<
+pub type PFNGLBINDSAMPLERSPROC = ::core::option::Option<
     unsafe extern "C" fn(first: GLuint, count: GLsizei, samplers: *const GLuint),
 >;
-pub type PFNGLBINDIMAGETEXTURESPROC = ::std::option::Option<
+pub type PFNGLBINDIMAGETEXTURESPROC = ::core::option::Option<
     unsafe extern "C" fn(first: GLuint, count: GLsizei, textures: *const GLuint),
 >;
-pub type PFNGLBINDVERTEXBUFFERSPROC = ::std::option::Option<
+pub type PFNGLBINDVERTEXBUFFERSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         first: GLuint,
         count: GLsizei,
@@ -9982,12 +9982,12 @@ pub type PFNGLBINDVERTEXBUFFERSPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCLIPCONTROLPROC =
-    ::std::option::Option<unsafe extern "C" fn(origin: GLenum, depth: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(origin: GLenum, depth: GLenum)>;
 pub type PFNGLCREATETRANSFORMFEEDBACKSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLTRANSFORMFEEDBACKBUFFERBASEPROC =
-    ::std::option::Option<unsafe extern "C" fn(xfb: GLuint, index: GLuint, buffer: GLuint)>;
-pub type PFNGLTRANSFORMFEEDBACKBUFFERRANGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(xfb: GLuint, index: GLuint, buffer: GLuint)>;
+pub type PFNGLTRANSFORMFEEDBACKBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         xfb: GLuint,
         index: GLuint,
@@ -9997,40 +9997,40 @@ pub type PFNGLTRANSFORMFEEDBACKBUFFERRANGEPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETTRANSFORMFEEDBACKIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(xfb: GLuint, pname: GLenum, param: *mut GLint)>;
-pub type PFNGLGETTRANSFORMFEEDBACKI_VPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(xfb: GLuint, pname: GLenum, param: *mut GLint)>;
+pub type PFNGLGETTRANSFORMFEEDBACKI_VPROC = ::core::option::Option<
     unsafe extern "C" fn(xfb: GLuint, pname: GLenum, index: GLuint, param: *mut GLint),
 >;
-pub type PFNGLGETTRANSFORMFEEDBACKI64_VPROC = ::std::option::Option<
+pub type PFNGLGETTRANSFORMFEEDBACKI64_VPROC = ::core::option::Option<
     unsafe extern "C" fn(xfb: GLuint, pname: GLenum, index: GLuint, param: *mut GLint64),
 >;
 pub type PFNGLCREATEBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *mut GLuint)>;
-pub type PFNGLNAMEDBUFFERSTORAGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *mut GLuint)>;
+pub type PFNGLNAMEDBUFFERSTORAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
         flags: GLbitfield,
     ),
 >;
-pub type PFNGLNAMEDBUFFERDATAPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
         usage: GLenum,
     ),
 >;
-pub type PFNGLNAMEDBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOPYNAMEDBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLCOPYNAMEDBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         readBuffer: GLuint,
         writeBuffer: GLuint,
@@ -10039,16 +10039,16 @@ pub type PFNGLCOPYNAMEDBUFFERSUBDATAPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLCLEARNAMEDBUFFERDATAPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDBUFFERDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         internalformat: GLenum,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCLEARNAMEDBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         internalformat: GLenum,
@@ -10056,44 +10056,44 @@ pub type PFNGLCLEARNAMEDBUFFERSUBDATAPROC = ::std::option::Option<
         size: GLsizeiptr,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLMAPNAMEDBUFFERPROC = ::std::option::Option<
-    unsafe extern "C" fn(buffer: GLuint, access: GLenum) -> *mut ::std::os::raw::c_void,
+pub type PFNGLMAPNAMEDBUFFERPROC = ::core::option::Option<
+    unsafe extern "C" fn(buffer: GLuint, access: GLenum) -> *mut libc::c_void,
 >;
-pub type PFNGLMAPNAMEDBUFFERRANGEPROC = ::std::option::Option<
+pub type PFNGLMAPNAMEDBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLintptr,
         length: GLsizeiptr,
         access: GLbitfield,
-    ) -> *mut ::std::os::raw::c_void,
+    ) -> *mut libc::c_void,
 >;
 pub type PFNGLUNMAPNAMEDBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
-pub type PFNGLFLUSHMAPPEDNAMEDBUFFERRANGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
+pub type PFNGLFLUSHMAPPEDNAMEDBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, offset: GLintptr, length: GLsizeiptr),
 >;
 pub type PFNGLGETNAMEDBUFFERPARAMETERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETNAMEDBUFFERPARAMETERI64VPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETNAMEDBUFFERPARAMETERI64VPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLint64),
 >;
-pub type PFNGLGETNAMEDBUFFERPOINTERVPROC = ::std::option::Option<
-    unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
+pub type PFNGLGETNAMEDBUFFERPOINTERVPROC = ::core::option::Option<
+    unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut *mut libc::c_void),
 >;
-pub type PFNGLGETNAMEDBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
 pub type PFNGLCREATEFRAMEBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *mut GLuint)>;
-pub type PFNGLNAMEDFRAMEBUFFERRENDERBUFFERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *mut GLuint)>;
+pub type PFNGLNAMEDFRAMEBUFFERRENDERBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -10102,11 +10102,11 @@ pub type PFNGLNAMEDFRAMEBUFFERRENDERBUFFERPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLNAMEDFRAMEBUFFERPARAMETERIPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, pname: GLenum, param: GLint)>;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTUREPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, pname: GLenum, param: GLint)>;
+pub type PFNGLNAMEDFRAMEBUFFERTEXTUREPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, attachment: GLenum, texture: GLuint, level: GLint),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTURELAYERPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERTEXTURELAYERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -10116,16 +10116,16 @@ pub type PFNGLNAMEDFRAMEBUFFERTEXTURELAYERPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLNAMEDFRAMEBUFFERDRAWBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, buf: GLenum)>;
-pub type PFNGLNAMEDFRAMEBUFFERDRAWBUFFERSPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, buf: GLenum)>;
+pub type PFNGLNAMEDFRAMEBUFFERDRAWBUFFERSPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, n: GLsizei, bufs: *const GLenum),
 >;
 pub type PFNGLNAMEDFRAMEBUFFERREADBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, src: GLenum)>;
-pub type PFNGLINVALIDATENAMEDFRAMEBUFFERDATAPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, src: GLenum)>;
+pub type PFNGLINVALIDATENAMEDFRAMEBUFFERDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, numAttachments: GLsizei, attachments: *const GLenum),
 >;
-pub type PFNGLINVALIDATENAMEDFRAMEBUFFERSUBDATAPROC = ::std::option::Option<
+pub type PFNGLINVALIDATENAMEDFRAMEBUFFERSUBDATAPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         numAttachments: GLsizei,
@@ -10136,7 +10136,7 @@ pub type PFNGLINVALIDATENAMEDFRAMEBUFFERSUBDATAPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLCLEARNAMEDFRAMEBUFFERIVPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDFRAMEBUFFERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         buffer: GLenum,
@@ -10144,7 +10144,7 @@ pub type PFNGLCLEARNAMEDFRAMEBUFFERIVPROC = ::std::option::Option<
         value: *const GLint,
     ),
 >;
-pub type PFNGLCLEARNAMEDFRAMEBUFFERUIVPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDFRAMEBUFFERUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         buffer: GLenum,
@@ -10152,7 +10152,7 @@ pub type PFNGLCLEARNAMEDFRAMEBUFFERUIVPROC = ::std::option::Option<
         value: *const GLuint,
     ),
 >;
-pub type PFNGLCLEARNAMEDFRAMEBUFFERFVPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDFRAMEBUFFERFVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         buffer: GLenum,
@@ -10160,7 +10160,7 @@ pub type PFNGLCLEARNAMEDFRAMEBUFFERFVPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLCLEARNAMEDFRAMEBUFFERFIPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDFRAMEBUFFERFIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         buffer: GLenum,
@@ -10169,7 +10169,7 @@ pub type PFNGLCLEARNAMEDFRAMEBUFFERFIPROC = ::std::option::Option<
         stencil: GLint,
     ),
 >;
-pub type PFNGLBLITNAMEDFRAMEBUFFERPROC = ::std::option::Option<
+pub type PFNGLBLITNAMEDFRAMEBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         readFramebuffer: GLuint,
         drawFramebuffer: GLuint,
@@ -10186,11 +10186,11 @@ pub type PFNGLBLITNAMEDFRAMEBUFFERPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCHECKNAMEDFRAMEBUFFERSTATUSPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, target: GLenum) -> GLenum>;
-pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, target: GLenum) -> GLenum>;
+pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, pname: GLenum, param: *mut GLint),
 >;
-pub type PFNGLGETNAMEDFRAMEBUFFERATTACHMENTPARAMETERIVPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDFRAMEBUFFERATTACHMENTPARAMETERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -10199,8 +10199,8 @@ pub type PFNGLGETNAMEDFRAMEBUFFERATTACHMENTPARAMETERIVPROC = ::std::option::Opti
     ),
 >;
 pub type PFNGLCREATERENDERBUFFERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *mut GLuint)>;
-pub type PFNGLNAMEDRENDERBUFFERSTORAGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *mut GLuint)>;
+pub type PFNGLNAMEDRENDERBUFFERSTORAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         renderbuffer: GLuint,
         internalformat: GLenum,
@@ -10208,7 +10208,7 @@ pub type PFNGLNAMEDRENDERBUFFERSTORAGEPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         renderbuffer: GLuint,
         samples: GLsizei,
@@ -10217,15 +10217,15 @@ pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLGETNAMEDRENDERBUFFERPARAMETERIVPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDRENDERBUFFERPARAMETERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(renderbuffer: GLuint, pname: GLenum, params: *mut GLint),
 >;
 pub type PFNGLCREATETEXTURESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, textures: *mut GLuint)>;
-pub type PFNGLTEXTUREBUFFERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, textures: *mut GLuint)>;
+pub type PFNGLTEXTUREBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, internalformat: GLenum, buffer: GLuint),
 >;
-pub type PFNGLTEXTUREBUFFERRANGEPROC = ::std::option::Option<
+pub type PFNGLTEXTUREBUFFERRANGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         internalformat: GLenum,
@@ -10234,10 +10234,10 @@ pub type PFNGLTEXTUREBUFFERRANGEPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE1DPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, levels: GLsizei, internalformat: GLenum, width: GLsizei),
 >;
-pub type PFNGLTEXTURESTORAGE2DPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         levels: GLsizei,
@@ -10246,7 +10246,7 @@ pub type PFNGLTEXTURESTORAGE2DPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE3DPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         levels: GLsizei,
@@ -10256,7 +10256,7 @@ pub type PFNGLTEXTURESTORAGE3DPROC = ::std::option::Option<
         depth: GLsizei,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE2DMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE2DMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         samples: GLsizei,
@@ -10266,7 +10266,7 @@ pub type PFNGLTEXTURESTORAGE2DMULTISAMPLEPROC = ::std::option::Option<
         fixedsamplelocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE3DMULTISAMPLEPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE3DMULTISAMPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         samples: GLsizei,
@@ -10277,7 +10277,7 @@ pub type PFNGLTEXTURESTORAGE3DMULTISAMPLEPROC = ::std::option::Option<
         fixedsamplelocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTURESUBIMAGE1DPROC = ::std::option::Option<
+pub type PFNGLTEXTURESUBIMAGE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10285,10 +10285,10 @@ pub type PFNGLTEXTURESUBIMAGE1DPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXTURESUBIMAGE2DPROC = ::std::option::Option<
+pub type PFNGLTEXTURESUBIMAGE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10298,10 +10298,10 @@ pub type PFNGLTEXTURESUBIMAGE2DPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXTURESUBIMAGE3DPROC = ::std::option::Option<
+pub type PFNGLTEXTURESUBIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10313,10 +10313,10 @@ pub type PFNGLTEXTURESUBIMAGE3DPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE1DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10324,10 +10324,10 @@ pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE1DPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE2DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10337,10 +10337,10 @@ pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE2DPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE3DPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10352,10 +10352,10 @@ pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE3DPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOPYTEXTURESUBIMAGE1DPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTURESUBIMAGE1DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10365,7 +10365,7 @@ pub type PFNGLCOPYTEXTURESUBIMAGE1DPROC = ::std::option::Option<
         width: GLsizei,
     ),
 >;
-pub type PFNGLCOPYTEXTURESUBIMAGE2DPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTURESUBIMAGE2DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10377,7 +10377,7 @@ pub type PFNGLCOPYTEXTURESUBIMAGE2DPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLCOPYTEXTURESUBIMAGE3DPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTURESUBIMAGE3DPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10391,68 +10391,68 @@ pub type PFNGLCOPYTEXTURESUBIMAGE3DPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLTEXTUREPARAMETERFPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, param: GLfloat)>;
-pub type PFNGLTEXTUREPARAMETERFVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, param: GLfloat)>;
+pub type PFNGLTEXTUREPARAMETERFVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, pname: GLenum, param: *const GLfloat),
 >;
 pub type PFNGLTEXTUREPARAMETERIPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, param: GLint)>;
-pub type PFNGLTEXTUREPARAMETERIIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, param: GLint)>;
+pub type PFNGLTEXTUREPARAMETERIIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLTEXTUREPARAMETERIUIVPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPARAMETERIUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *const GLuint),
 >;
-pub type PFNGLTEXTUREPARAMETERIVPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPARAMETERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, pname: GLenum, param: *const GLint),
 >;
 pub type PFNGLGENERATETEXTUREMIPMAPPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint)>;
 pub type PFNGLBINDTEXTUREUNITPROC =
-    ::std::option::Option<unsafe extern "C" fn(unit: GLuint, texture: GLuint)>;
-pub type PFNGLGETTEXTUREIMAGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(unit: GLuint, texture: GLuint)>;
+pub type PFNGLGETTEXTUREIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETCOMPRESSEDTEXTUREIMAGEPROC = ::std::option::Option<
+pub type PFNGLGETCOMPRESSEDTEXTUREIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
         bufSize: GLsizei,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETTEXTURELEVELPARAMETERFVPROC = ::std::option::Option<
+pub type PFNGLGETTEXTURELEVELPARAMETERFVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, level: GLint, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETTEXTURELEVELPARAMETERIVPROC = ::std::option::Option<
+pub type PFNGLGETTEXTURELEVELPARAMETERIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, level: GLint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETTEXTUREPARAMETERFVPROC = ::std::option::Option<
+pub type PFNGLGETTEXTUREPARAMETERFVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLGETTEXTUREPARAMETERIIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETTEXTUREPARAMETERIUIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETTEXTUREPARAMETERIUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *mut GLuint),
 >;
 pub type PFNGLGETTEXTUREPARAMETERIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLCREATEVERTEXARRAYSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
 pub type PFNGLDISABLEVERTEXARRAYATTRIBPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
 pub type PFNGLENABLEVERTEXARRAYATTRIBPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
 pub type PFNGLVERTEXARRAYELEMENTBUFFERPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, buffer: GLuint)>;
-pub type PFNGLVERTEXARRAYVERTEXBUFFERPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, buffer: GLuint)>;
+pub type PFNGLVERTEXARRAYVERTEXBUFFERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         bindingindex: GLuint,
@@ -10461,7 +10461,7 @@ pub type PFNGLVERTEXARRAYVERTEXBUFFERPROC = ::std::option::Option<
         stride: GLsizei,
     ),
 >;
-pub type PFNGLVERTEXARRAYVERTEXBUFFERSPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXBUFFERSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         first: GLuint,
@@ -10471,10 +10471,10 @@ pub type PFNGLVERTEXARRAYVERTEXBUFFERSPROC = ::std::option::Option<
         strides: *const GLsizei,
     ),
 >;
-pub type PFNGLVERTEXARRAYATTRIBBINDINGPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYATTRIBBINDINGPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, attribindex: GLuint, bindingindex: GLuint),
 >;
-pub type PFNGLVERTEXARRAYATTRIBFORMATPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYATTRIBFORMATPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         attribindex: GLuint,
@@ -10484,7 +10484,7 @@ pub type PFNGLVERTEXARRAYATTRIBFORMATPROC = ::std::option::Option<
         relativeoffset: GLuint,
     ),
 >;
-pub type PFNGLVERTEXARRAYATTRIBIFORMATPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYATTRIBIFORMATPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         attribindex: GLuint,
@@ -10493,7 +10493,7 @@ pub type PFNGLVERTEXARRAYATTRIBIFORMATPROC = ::std::option::Option<
         relativeoffset: GLuint,
     ),
 >;
-pub type PFNGLVERTEXARRAYATTRIBLFORMATPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYATTRIBLFORMATPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         attribindex: GLuint,
@@ -10502,38 +10502,38 @@ pub type PFNGLVERTEXARRAYATTRIBLFORMATPROC = ::std::option::Option<
         relativeoffset: GLuint,
     ),
 >;
-pub type PFNGLVERTEXARRAYBINDINGDIVISORPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYBINDINGDIVISORPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, bindingindex: GLuint, divisor: GLuint),
 >;
 pub type PFNGLGETVERTEXARRAYIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, pname: GLenum, param: *mut GLint)>;
-pub type PFNGLGETVERTEXARRAYINDEXEDIVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, pname: GLenum, param: *mut GLint)>;
+pub type PFNGLGETVERTEXARRAYINDEXEDIVPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, index: GLuint, pname: GLenum, param: *mut GLint),
 >;
-pub type PFNGLGETVERTEXARRAYINDEXED64IVPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXARRAYINDEXED64IVPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, index: GLuint, pname: GLenum, param: *mut GLint64),
 >;
 pub type PFNGLCREATESAMPLERSPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, samplers: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, samplers: *mut GLuint)>;
 pub type PFNGLCREATEPROGRAMPIPELINESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, pipelines: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, pipelines: *mut GLuint)>;
 pub type PFNGLCREATEQUERIESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, ids: *mut GLuint)>;
-pub type PFNGLGETQUERYBUFFEROBJECTI64VPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, ids: *mut GLuint)>;
+pub type PFNGLGETQUERYBUFFEROBJECTI64VPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr),
 >;
-pub type PFNGLGETQUERYBUFFEROBJECTIVPROC = ::std::option::Option<
+pub type PFNGLGETQUERYBUFFEROBJECTIVPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr),
 >;
-pub type PFNGLGETQUERYBUFFEROBJECTUI64VPROC = ::std::option::Option<
+pub type PFNGLGETQUERYBUFFEROBJECTUI64VPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr),
 >;
-pub type PFNGLGETQUERYBUFFEROBJECTUIVPROC = ::std::option::Option<
+pub type PFNGLGETQUERYBUFFEROBJECTUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, buffer: GLuint, pname: GLenum, offset: GLintptr),
 >;
 pub type PFNGLMEMORYBARRIERBYREGIONPROC =
-    ::std::option::Option<unsafe extern "C" fn(barriers: GLbitfield)>;
-pub type PFNGLGETTEXTURESUBIMAGEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(barriers: GLbitfield)>;
+pub type PFNGLGETTEXTURESUBIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10546,10 +10546,10 @@ pub type PFNGLGETTEXTURESUBIMAGEPROC = ::std::option::Option<
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETCOMPRESSEDTEXTURESUBIMAGEPROC = ::std::option::Option<
+pub type PFNGLGETCOMPRESSEDTEXTURESUBIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10560,41 +10560,41 @@ pub type PFNGLGETCOMPRESSEDTEXTURESUBIMAGEPROC = ::std::option::Option<
         height: GLsizei,
         depth: GLsizei,
         bufSize: GLsizei,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETGRAPHICSRESETSTATUSPROC = ::std::option::Option<unsafe extern "C" fn() -> GLenum>;
-pub type PFNGLGETNCOMPRESSEDTEXIMAGEPROC = ::std::option::Option<
+pub type PFNGLGETGRAPHICSRESETSTATUSPROC = ::core::option::Option<unsafe extern "C" fn() -> GLenum>;
+pub type PFNGLGETNCOMPRESSEDTEXIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         lod: GLint,
         bufSize: GLsizei,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNTEXIMAGEPROC = ::std::option::Option<
+pub type PFNGLGETNTEXIMAGEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNUNIFORMDVPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMDVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLdouble),
 >;
-pub type PFNGLGETNUNIFORMFVPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMFVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLfloat),
 >;
-pub type PFNGLGETNUNIFORMIVPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint),
 >;
-pub type PFNGLGETNUNIFORMUIVPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMUIVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLuint),
 >;
-pub type PFNGLREADNPIXELSPROC = ::std::option::Option<
+pub type PFNGLREADNPIXELSPROC = ::core::option::Option<
     unsafe extern "C" fn(
         x: GLint,
         y: GLint,
@@ -10603,80 +10603,80 @@ pub type PFNGLREADNPIXELSPROC = ::std::option::Option<
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNMAPDVPROC = ::std::option::Option<
+pub type PFNGLGETNMAPDVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLdouble),
 >;
-pub type PFNGLGETNMAPFVPROC = ::std::option::Option<
+pub type PFNGLGETNMAPFVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLfloat),
 >;
-pub type PFNGLGETNMAPIVPROC = ::std::option::Option<
+pub type PFNGLGETNMAPIVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLint),
 >;
-pub type PFNGLGETNPIXELMAPFVPROC = ::std::option::Option<
+pub type PFNGLGETNPIXELMAPFVPROC = ::core::option::Option<
     unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLfloat),
 >;
 pub type PFNGLGETNPIXELMAPUIVPROC =
-    ::std::option::Option<unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLuint)>;
-pub type PFNGLGETNPIXELMAPUSVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLuint)>;
+pub type PFNGLGETNPIXELMAPUSVPROC = ::core::option::Option<
     unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLushort),
 >;
 pub type PFNGLGETNPOLYGONSTIPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(bufSize: GLsizei, pattern: *mut GLubyte)>;
-pub type PFNGLGETNCOLORTABLEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(bufSize: GLsizei, pattern: *mut GLubyte)>;
+pub type PFNGLGETNCOLORTABLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        table: *mut ::std::os::raw::c_void,
+        table: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNCONVOLUTIONFILTERPROC = ::std::option::Option<
+pub type PFNGLGETNCONVOLUTIONFILTERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        image: *mut ::std::os::raw::c_void,
+        image: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNSEPARABLEFILTERPROC = ::std::option::Option<
+pub type PFNGLGETNSEPARABLEFILTERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
         rowBufSize: GLsizei,
-        row: *mut ::std::os::raw::c_void,
+        row: *mut libc::c_void,
         columnBufSize: GLsizei,
-        column: *mut ::std::os::raw::c_void,
-        span: *mut ::std::os::raw::c_void,
+        column: *mut libc::c_void,
+        span: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNHISTOGRAMPROC = ::std::option::Option<
+pub type PFNGLGETNHISTOGRAMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         reset: GLboolean,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        values: *mut ::std::os::raw::c_void,
+        values: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNMINMAXPROC = ::std::option::Option<
+pub type PFNGLGETNMINMAXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         reset: GLboolean,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        values: *mut ::std::os::raw::c_void,
+        values: *mut libc::c_void,
     ),
 >;
-pub type PFNGLTEXTUREBARRIERPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLSPECIALIZESHADERPROC = ::std::option::Option<
+pub type PFNGLTEXTUREBARRIERPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLSPECIALIZESHADERPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
         pEntryPoint: *const GLchar,
@@ -10685,28 +10685,28 @@ pub type PFNGLSPECIALIZESHADERPROC = ::std::option::Option<
         pConstantValue: *const GLuint,
     ),
 >;
-pub type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawcount: GLintptr,
         maxdrawcount: GLsizei,
         stride: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         type_: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawcount: GLintptr,
         maxdrawcount: GLsizei,
         stride: GLsizei,
     ),
 >;
 pub type PFNGLPOLYGONOFFSETCLAMPPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat, clamp: GLfloat)>;
-pub type PFNGLPRIMITIVEBOUNDINGBOXARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat, clamp: GLfloat)>;
+pub type PFNGLPRIMITIVEBOUNDINGBOXARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         minX: GLfloat,
         minY: GLfloat,
@@ -10720,14 +10720,14 @@ pub type PFNGLPRIMITIVEBOUNDINGBOXARBPROC = ::std::option::Option<
 >;
 pub type GLuint64EXT = khronos_uint64_t;
 pub type PFNGLGETTEXTUREHANDLEARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLuint64>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLuint64>;
 pub type PFNGLGETTEXTURESAMPLERHANDLEARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, sampler: GLuint) -> GLuint64>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, sampler: GLuint) -> GLuint64>;
 pub type PFNGLMAKETEXTUREHANDLERESIDENTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
 pub type PFNGLMAKETEXTUREHANDLENONRESIDENTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
-pub type PFNGLGETIMAGEHANDLEARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
+pub type PFNGLGETIMAGEHANDLEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -10737,28 +10737,28 @@ pub type PFNGLGETIMAGEHANDLEARBPROC = ::std::option::Option<
     ) -> GLuint64,
 >;
 pub type PFNGLMAKEIMAGEHANDLERESIDENTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64, access: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64, access: GLenum)>;
 pub type PFNGLMAKEIMAGEHANDLENONRESIDENTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
 pub type PFNGLUNIFORMHANDLEUI64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, value: GLuint64)>;
-pub type PFNGLUNIFORMHANDLEUI64VARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, value: GLuint64)>;
+pub type PFNGLUNIFORMHANDLEUI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64),
 >;
 pub type PFNGLPROGRAMUNIFORMHANDLEUI64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, value: GLuint64)>;
-pub type PFNGLPROGRAMUNIFORMHANDLEUI64VARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, value: GLuint64)>;
+pub type PFNGLPROGRAMUNIFORMHANDLEUI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, values: *const GLuint64),
 >;
 pub type PFNGLISTEXTUREHANDLERESIDENTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
 pub type PFNGLISIMAGEHANDLERESIDENTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
 pub type PFNGLVERTEXATTRIBL1UI64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint64EXT)>;
 pub type PFNGLVERTEXATTRIBL1UI64VARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
-pub type PFNGLGETVERTEXATTRIBLUI64VARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
+pub type PFNGLGETVERTEXATTRIBLUI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint64EXT),
 >;
 #[repr(C)]
@@ -10771,7 +10771,7 @@ pub struct _cl_context {
 pub struct _cl_event {
     _unused: [u8; 0],
 }
-pub type PFNGLCREATESYNCFROMCLEVENTARBPROC = ::std::option::Option<
+pub type PFNGLCREATESYNCFROMCLEVENTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         context: *mut _cl_context,
         event: *mut _cl_event,
@@ -10779,8 +10779,8 @@ pub type PFNGLCREATESYNCFROMCLEVENTARBPROC = ::std::option::Option<
     ) -> GLsync,
 >;
 pub type PFNGLCLAMPCOLORARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, clamp: GLenum)>;
-pub type PFNGLDISPATCHCOMPUTEGROUPSIZEARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, clamp: GLenum)>;
+pub type PFNGLDISPATCHCOMPUTEGROUPSIZEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         num_groups_x: GLuint,
         num_groups_y: GLuint,
@@ -10790,7 +10790,7 @@ pub type PFNGLDISPATCHCOMPUTEGROUPSIZEARBPROC = ::std::option::Option<
         group_size_z: GLuint,
     ),
 >;
-pub type GLDEBUGPROCARB = ::std::option::Option<
+pub type GLDEBUGPROCARB = ::core::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
         type_: GLenum,
@@ -10798,10 +10798,10 @@ pub type GLDEBUGPROCARB = ::std::option::Option<
         severity: GLenum,
         length: GLsizei,
         message: *const GLchar,
-        userParam: *const ::std::os::raw::c_void,
+        userParam: *const libc::c_void,
     ),
 >;
-pub type PFNGLDEBUGMESSAGECONTROLARBPROC = ::std::option::Option<
+pub type PFNGLDEBUGMESSAGECONTROLARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
         type_: GLenum,
@@ -10811,7 +10811,7 @@ pub type PFNGLDEBUGMESSAGECONTROLARBPROC = ::std::option::Option<
         enabled: GLboolean,
     ),
 >;
-pub type PFNGLDEBUGMESSAGEINSERTARBPROC = ::std::option::Option<
+pub type PFNGLDEBUGMESSAGEINSERTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         source: GLenum,
         type_: GLenum,
@@ -10821,10 +10821,10 @@ pub type PFNGLDEBUGMESSAGEINSERTARBPROC = ::std::option::Option<
         buf: *const GLchar,
     ),
 >;
-pub type PFNGLDEBUGMESSAGECALLBACKARBPROC = ::std::option::Option<
-    unsafe extern "C" fn(callback: GLDEBUGPROCARB, userParam: *const ::std::os::raw::c_void),
+pub type PFNGLDEBUGMESSAGECALLBACKARBPROC = ::core::option::Option<
+    unsafe extern "C" fn(callback: GLDEBUGPROCARB, userParam: *const libc::c_void),
 >;
-pub type PFNGLGETDEBUGMESSAGELOGARBPROC = ::std::option::Option<
+pub type PFNGLGETDEBUGMESSAGELOGARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         count: GLuint,
         bufSize: GLsizei,
@@ -10837,14 +10837,14 @@ pub type PFNGLGETDEBUGMESSAGELOGARBPROC = ::std::option::Option<
     ) -> GLuint,
 >;
 pub type PFNGLDRAWBUFFERSARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
 pub type PFNGLBLENDEQUATIONIARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
 pub type PFNGLBLENDEQUATIONSEPARATEIARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum)>;
 pub type PFNGLBLENDFUNCIARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, src: GLenum, dst: GLenum)>;
-pub type PFNGLBLENDFUNCSEPARATEIARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, src: GLenum, dst: GLenum)>;
+pub type PFNGLBLENDFUNCSEPARATEIARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buf: GLuint,
         srcRGB: GLenum,
@@ -10853,33 +10853,33 @@ pub type PFNGLBLENDFUNCSEPARATEIARBPROC = ::std::option::Option<
         dstAlpha: GLenum,
     ),
 >;
-pub type PFNGLDRAWARRAYSINSTANCEDARBPROC = ::std::option::Option<
+pub type PFNGLDRAWARRAYSINSTANCEDARBPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei, primcount: GLsizei),
 >;
-pub type PFNGLDRAWELEMENTSINSTANCEDARBPROC = ::std::option::Option<
+pub type PFNGLDRAWELEMENTSINSTANCEDARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         primcount: GLsizei,
     ),
 >;
-pub type PFNGLPROGRAMSTRINGARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMSTRINGARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         len: GLsizei,
-        string: *const ::std::os::raw::c_void,
+        string: *const libc::c_void,
     ),
 >;
 pub type PFNGLBINDPROGRAMARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, program: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, program: GLuint)>;
 pub type PFNGLDELETEPROGRAMSARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *const GLuint)>;
 pub type PFNGLGENPROGRAMSARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *mut GLuint)>;
-pub type PFNGLPROGRAMENVPARAMETER4DARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *mut GLuint)>;
+pub type PFNGLPROGRAMENVPARAMETER4DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -10889,10 +10889,10 @@ pub type PFNGLPROGRAMENVPARAMETER4DARBPROC = ::std::option::Option<
         w: GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMENVPARAMETER4DVARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETER4DVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLdouble),
 >;
-pub type PFNGLPROGRAMENVPARAMETER4FARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETER4FARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -10902,10 +10902,10 @@ pub type PFNGLPROGRAMENVPARAMETER4FARBPROC = ::std::option::Option<
         w: GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMENVPARAMETER4FVARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETER4FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLfloat),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETER4DARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETER4DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -10915,10 +10915,10 @@ pub type PFNGLPROGRAMLOCALPARAMETER4DARBPROC = ::std::option::Option<
         w: GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETER4DVARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETER4DVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLdouble),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETER4FARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETER4FARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -10928,34 +10928,34 @@ pub type PFNGLPROGRAMLOCALPARAMETER4FARBPROC = ::std::option::Option<
         w: GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETER4FVARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETER4FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLfloat),
 >;
-pub type PFNGLGETPROGRAMENVPARAMETERDVARBPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMENVPARAMETERDVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLdouble),
 >;
-pub type PFNGLGETPROGRAMENVPARAMETERFVARBPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMENVPARAMETERFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLfloat),
 >;
-pub type PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMLOCALPARAMETERDVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLdouble),
 >;
-pub type PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMLOCALPARAMETERFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLfloat),
 >;
 pub type PFNGLGETPROGRAMIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETPROGRAMSTRINGARBPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, pname: GLenum, string: *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETPROGRAMSTRINGARBPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, pname: GLenum, string: *mut libc::c_void),
 >;
 pub type PFNGLISPROGRAMARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint) -> GLboolean>;
 pub type PFNGLPROGRAMPARAMETERIARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
-pub type PFNGLFRAMEBUFFERTEXTUREARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
+pub type PFNGLFRAMEBUFFERTEXTUREARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, attachment: GLenum, texture: GLuint, level: GLint),
 >;
-pub type PFNGLFRAMEBUFFERTEXTURELAYERARBPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTURELAYERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -10964,7 +10964,7 @@ pub type PFNGLFRAMEBUFFERTEXTURELAYERARBPROC = ::std::option::Option<
         layer: GLint,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTUREFACEARBPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTUREFACEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -10973,7 +10973,7 @@ pub type PFNGLFRAMEBUFFERTEXTUREFACEARBPROC = ::std::option::Option<
         face: GLenum,
     ),
 >;
-pub type PFNGLSPECIALIZESHADERARBPROC = ::std::option::Option<
+pub type PFNGLSPECIALIZESHADERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
         pEntryPoint: *const GLchar,
@@ -10983,70 +10983,70 @@ pub type PFNGLSPECIALIZESHADERARBPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLUNIFORM1I64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64)>;
 pub type PFNGLUNIFORM2I64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64, y: GLint64)>;
-pub type PFNGLUNIFORM3I64ARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64, y: GLint64)>;
+pub type PFNGLUNIFORM3I64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLint64, y: GLint64, z: GLint64),
 >;
-pub type PFNGLUNIFORM4I64ARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4I64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLint64, y: GLint64, z: GLint64, w: GLint64),
 >;
-pub type PFNGLUNIFORM1I64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64),
 >;
-pub type PFNGLUNIFORM2I64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64),
 >;
-pub type PFNGLUNIFORM3I64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64),
 >;
-pub type PFNGLUNIFORM4I64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64),
 >;
 pub type PFNGLUNIFORM1UI64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64)>;
 pub type PFNGLUNIFORM2UI64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64, y: GLuint64)>;
-pub type PFNGLUNIFORM3UI64ARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64, y: GLuint64)>;
+pub type PFNGLUNIFORM3UI64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLuint64, y: GLuint64, z: GLuint64),
 >;
-pub type PFNGLUNIFORM4UI64ARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UI64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLuint64, y: GLuint64, z: GLuint64, w: GLuint64),
 >;
-pub type PFNGLUNIFORM1UI64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64),
 >;
-pub type PFNGLUNIFORM2UI64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64),
 >;
-pub type PFNGLUNIFORM3UI64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64),
 >;
-pub type PFNGLUNIFORM4UI64VARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64),
 >;
-pub type PFNGLGETUNIFORMI64VARBPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLint64),
 >;
-pub type PFNGLGETUNIFORMUI64VARBPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMUI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLuint64),
 >;
-pub type PFNGLGETNUNIFORMI64VARBPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint64),
 >;
-pub type PFNGLGETNUNIFORMUI64VARBPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMUI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLuint64),
 >;
 pub type PFNGLPROGRAMUNIFORM1I64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLint64)>;
-pub type PFNGLPROGRAMUNIFORM2I64ARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLint64)>;
+pub type PFNGLPROGRAMUNIFORM2I64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLint64, y: GLint64),
 >;
-pub type PFNGLPROGRAMUNIFORM3I64ARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3I64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLint64, y: GLint64, z: GLint64),
 >;
-pub type PFNGLPROGRAMUNIFORM4I64ARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4I64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -11056,27 +11056,27 @@ pub type PFNGLPROGRAMUNIFORM4I64ARBPROC = ::std::option::Option<
         w: GLint64,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM1I64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint64),
 >;
-pub type PFNGLPROGRAMUNIFORM2I64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint64),
 >;
-pub type PFNGLPROGRAMUNIFORM3I64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint64),
 >;
-pub type PFNGLPROGRAMUNIFORM4I64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4I64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint64),
 >;
 pub type PFNGLPROGRAMUNIFORM1UI64ARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLuint64)>;
-pub type PFNGLPROGRAMUNIFORM2UI64ARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLuint64)>;
+pub type PFNGLPROGRAMUNIFORM2UI64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLuint64, y: GLuint64),
 >;
-pub type PFNGLPROGRAMUNIFORM3UI64ARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UI64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLuint64, y: GLuint64, z: GLuint64),
 >;
-pub type PFNGLPROGRAMUNIFORM4UI64ARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UI64ARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -11086,91 +11086,91 @@ pub type PFNGLPROGRAMUNIFORM4UI64ARBPROC = ::std::option::Option<
         w: GLuint64,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM1UI64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint64),
 >;
-pub type PFNGLPROGRAMUNIFORM2UI64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint64),
 >;
-pub type PFNGLPROGRAMUNIFORM3UI64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint64),
 >;
-pub type PFNGLPROGRAMUNIFORM4UI64VARBPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UI64VARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint64),
 >;
 pub type GLhalfARB = khronos_uint16_t;
-pub type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTARBPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWARRAYSINDIRECTCOUNTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawcount: GLintptr,
         maxdrawcount: GLsizei,
         stride: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTARBPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSINDIRECTCOUNTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         type_: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawcount: GLintptr,
         maxdrawcount: GLsizei,
         stride: GLsizei,
     ),
 >;
 pub type PFNGLVERTEXATTRIBDIVISORARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, divisor: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, divisor: GLuint)>;
 pub type PFNGLCURRENTPALETTEMATRIXARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLint)>;
 pub type PFNGLMATRIXINDEXUBVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, indices: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, indices: *const GLubyte)>;
 pub type PFNGLMATRIXINDEXUSVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, indices: *const GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, indices: *const GLushort)>;
 pub type PFNGLMATRIXINDEXUIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, indices: *const GLuint)>;
-pub type PFNGLMATRIXINDEXPOINTERARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, indices: *const GLuint)>;
+pub type PFNGLMATRIXINDEXPOINTERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLSAMPLECOVERAGEARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(value: GLfloat, invert: GLboolean)>;
+    ::core::option::Option<unsafe extern "C" fn(value: GLfloat, invert: GLboolean)>;
 pub type PFNGLGENQUERIESARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLDELETEQUERIESARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
-pub type PFNGLISQUERYARBPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
+pub type PFNGLISQUERYARBPROC = ::core::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
 pub type PFNGLBEGINQUERYARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
-pub type PFNGLENDQUERYARBPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
+pub type PFNGLENDQUERYARBPROC = ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
 pub type PFNGLGETQUERYIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETQUERYOBJECTIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETQUERYOBJECTUIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
 pub type PFNGLMAXSHADERCOMPILERTHREADSARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(count: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(count: GLuint)>;
 pub type PFNGLPOINTPARAMETERFARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPOINTPARAMETERFVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLGETGRAPHICSRESETSTATUSARBPROC =
-    ::std::option::Option<unsafe extern "C" fn() -> GLenum>;
-pub type PFNGLGETNTEXIMAGEARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn() -> GLenum>;
+pub type PFNGLGETNTEXIMAGEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        img: *mut ::std::os::raw::c_void,
+        img: *mut libc::c_void,
     ),
 >;
-pub type PFNGLREADNPIXELSARBPROC = ::std::option::Option<
+pub type PFNGLREADNPIXELSARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         x: GLint,
         y: GLint,
@@ -11179,117 +11179,117 @@ pub type PFNGLREADNPIXELSARBPROC = ::std::option::Option<
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNCOMPRESSEDTEXIMAGEARBPROC = ::std::option::Option<
+pub type PFNGLGETNCOMPRESSEDTEXIMAGEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         lod: GLint,
         bufSize: GLsizei,
-        img: *mut ::std::os::raw::c_void,
+        img: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNUNIFORMFVARBPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLfloat),
 >;
-pub type PFNGLGETNUNIFORMIVARBPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMIVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLint),
 >;
-pub type PFNGLGETNUNIFORMUIVARBPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMUIVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLuint),
 >;
-pub type PFNGLGETNUNIFORMDVARBPROC = ::std::option::Option<
+pub type PFNGLGETNUNIFORMDVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, bufSize: GLsizei, params: *mut GLdouble),
 >;
-pub type PFNGLGETNMAPDVARBPROC = ::std::option::Option<
+pub type PFNGLGETNMAPDVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLdouble),
 >;
-pub type PFNGLGETNMAPFVARBPROC = ::std::option::Option<
+pub type PFNGLGETNMAPFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLfloat),
 >;
-pub type PFNGLGETNMAPIVARBPROC = ::std::option::Option<
+pub type PFNGLGETNMAPIVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, query: GLenum, bufSize: GLsizei, v: *mut GLint),
 >;
-pub type PFNGLGETNPIXELMAPFVARBPROC = ::std::option::Option<
+pub type PFNGLGETNPIXELMAPFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLfloat),
 >;
 pub type PFNGLGETNPIXELMAPUIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLuint)>;
-pub type PFNGLGETNPIXELMAPUSVARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLuint)>;
+pub type PFNGLGETNPIXELMAPUSVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(map: GLenum, bufSize: GLsizei, values: *mut GLushort),
 >;
 pub type PFNGLGETNPOLYGONSTIPPLEARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(bufSize: GLsizei, pattern: *mut GLubyte)>;
-pub type PFNGLGETNCOLORTABLEARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(bufSize: GLsizei, pattern: *mut GLubyte)>;
+pub type PFNGLGETNCOLORTABLEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        table: *mut ::std::os::raw::c_void,
+        table: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNCONVOLUTIONFILTERARBPROC = ::std::option::Option<
+pub type PFNGLGETNCONVOLUTIONFILTERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        image: *mut ::std::os::raw::c_void,
+        image: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNSEPARABLEFILTERARBPROC = ::std::option::Option<
+pub type PFNGLGETNSEPARABLEFILTERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
         rowBufSize: GLsizei,
-        row: *mut ::std::os::raw::c_void,
+        row: *mut libc::c_void,
         columnBufSize: GLsizei,
-        column: *mut ::std::os::raw::c_void,
-        span: *mut ::std::os::raw::c_void,
+        column: *mut libc::c_void,
+        span: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNHISTOGRAMARBPROC = ::std::option::Option<
+pub type PFNGLGETNHISTOGRAMARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         reset: GLboolean,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        values: *mut ::std::os::raw::c_void,
+        values: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETNMINMAXARBPROC = ::std::option::Option<
+pub type PFNGLGETNMINMAXARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         reset: GLboolean,
         format: GLenum,
         type_: GLenum,
         bufSize: GLsizei,
-        values: *mut ::std::os::raw::c_void,
+        values: *mut libc::c_void,
     ),
 >;
-pub type PFNGLFRAMEBUFFERSAMPLELOCATIONSFVARBPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERSAMPLELOCATIONSFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERSAMPLELOCATIONSFVARBPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERSAMPLELOCATIONSFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
-pub type PFNGLEVALUATEDEPTHVALUESARBPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLMINSAMPLESHADINGARBPROC = ::std::option::Option<unsafe extern "C" fn(value: GLfloat)>;
-pub type GLhandleARB = ::std::os::raw::c_uint;
-pub type GLcharARB = ::std::os::raw::c_char;
-pub type PFNGLDELETEOBJECTARBPROC = ::std::option::Option<unsafe extern "C" fn(obj: GLhandleARB)>;
+pub type PFNGLEVALUATEDEPTHVALUESARBPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLMINSAMPLESHADINGARBPROC = ::core::option::Option<unsafe extern "C" fn(value: GLfloat)>;
+pub type GLhandleARB = libc::c_uint;
+pub type GLcharARB = libc::c_char;
+pub type PFNGLDELETEOBJECTARBPROC = ::core::option::Option<unsafe extern "C" fn(obj: GLhandleARB)>;
 pub type PFNGLGETHANDLEARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum) -> GLhandleARB>;
-pub type PFNGLDETACHOBJECTARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum) -> GLhandleARB>;
+pub type PFNGLDETACHOBJECTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(containerObj: GLhandleARB, attachedObj: GLhandleARB),
 >;
 pub type PFNGLCREATESHADEROBJECTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(shaderType: GLenum) -> GLhandleARB>;
-pub type PFNGLSHADERSOURCEARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(shaderType: GLenum) -> GLhandleARB>;
+pub type PFNGLSHADERSOURCEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shaderObj: GLhandleARB,
         count: GLsizei,
@@ -11298,61 +11298,61 @@ pub type PFNGLSHADERSOURCEARBPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCOMPILESHADERARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(shaderObj: GLhandleARB)>;
+    ::core::option::Option<unsafe extern "C" fn(shaderObj: GLhandleARB)>;
 pub type PFNGLCREATEPROGRAMOBJECTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn() -> GLhandleARB>;
+    ::core::option::Option<unsafe extern "C" fn() -> GLhandleARB>;
 pub type PFNGLATTACHOBJECTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(containerObj: GLhandleARB, obj: GLhandleARB)>;
+    ::core::option::Option<unsafe extern "C" fn(containerObj: GLhandleARB, obj: GLhandleARB)>;
 pub type PFNGLLINKPROGRAMARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(programObj: GLhandleARB)>;
+    ::core::option::Option<unsafe extern "C" fn(programObj: GLhandleARB)>;
 pub type PFNGLUSEPROGRAMOBJECTARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(programObj: GLhandleARB)>;
+    ::core::option::Option<unsafe extern "C" fn(programObj: GLhandleARB)>;
 pub type PFNGLVALIDATEPROGRAMARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(programObj: GLhandleARB)>;
+    ::core::option::Option<unsafe extern "C" fn(programObj: GLhandleARB)>;
 pub type PFNGLUNIFORM1FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat)>;
 pub type PFNGLUNIFORM2FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat)>;
-pub type PFNGLUNIFORM3FARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat)>;
+pub type PFNGLUNIFORM3FARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat),
 >;
-pub type PFNGLUNIFORM4FARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4FARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat, v3: GLfloat),
 >;
 pub type PFNGLUNIFORM1IARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint)>;
 pub type PFNGLUNIFORM2IARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint)>;
 pub type PFNGLUNIFORM3IARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint, v2: GLint)>;
-pub type PFNGLUNIFORM4IARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint, v2: GLint)>;
+pub type PFNGLUNIFORM4IARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLint, v1: GLint, v2: GLint, v3: GLint),
 >;
-pub type PFNGLUNIFORM1FVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM2FVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM3FVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM4FVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLUNIFORM1IVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1IVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORM2IVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2IVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORM3IVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3IVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORM4IVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4IVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLUNIFORMMATRIX2FVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX2FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -11360,7 +11360,7 @@ pub type PFNGLUNIFORMMATRIX2FVARBPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX3FVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX3FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -11368,7 +11368,7 @@ pub type PFNGLUNIFORMMATRIX3FVARBPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLUNIFORMMATRIX4FVARBPROC = ::std::option::Option<
+pub type PFNGLUNIFORMMATRIX4FVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         count: GLsizei,
@@ -11376,13 +11376,13 @@ pub type PFNGLUNIFORMMATRIX4FVARBPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLGETOBJECTPARAMETERFVARBPROC = ::std::option::Option<
+pub type PFNGLGETOBJECTPARAMETERFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(obj: GLhandleARB, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETOBJECTPARAMETERIVARBPROC = ::std::option::Option<
+pub type PFNGLGETOBJECTPARAMETERIVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(obj: GLhandleARB, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETINFOLOGARBPROC = ::std::option::Option<
+pub type PFNGLGETINFOLOGARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         obj: GLhandleARB,
         maxLength: GLsizei,
@@ -11390,7 +11390,7 @@ pub type PFNGLGETINFOLOGARBPROC = ::std::option::Option<
         infoLog: *mut GLcharARB,
     ),
 >;
-pub type PFNGLGETATTACHEDOBJECTSARBPROC = ::std::option::Option<
+pub type PFNGLGETATTACHEDOBJECTSARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         containerObj: GLhandleARB,
         maxCount: GLsizei,
@@ -11398,10 +11398,10 @@ pub type PFNGLGETATTACHEDOBJECTSARBPROC = ::std::option::Option<
         obj: *mut GLhandleARB,
     ),
 >;
-pub type PFNGLGETUNIFORMLOCATIONARBPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMLOCATIONARBPROC = ::core::option::Option<
     unsafe extern "C" fn(programObj: GLhandleARB, name: *const GLcharARB) -> GLint,
 >;
-pub type PFNGLGETACTIVEUNIFORMARBPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEUNIFORMARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         programObj: GLhandleARB,
         index: GLuint,
@@ -11412,13 +11412,13 @@ pub type PFNGLGETACTIVEUNIFORMARBPROC = ::std::option::Option<
         name: *mut GLcharARB,
     ),
 >;
-pub type PFNGLGETUNIFORMFVARBPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMFVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(programObj: GLhandleARB, location: GLint, params: *mut GLfloat),
 >;
-pub type PFNGLGETUNIFORMIVARBPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMIVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(programObj: GLhandleARB, location: GLint, params: *mut GLint),
 >;
-pub type PFNGLGETSHADERSOURCEARBPROC = ::std::option::Option<
+pub type PFNGLGETSHADERSOURCEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         obj: GLhandleARB,
         maxLength: GLsizei,
@@ -11426,7 +11426,7 @@ pub type PFNGLGETSHADERSOURCEARBPROC = ::std::option::Option<
         source: *mut GLcharARB,
     ),
 >;
-pub type PFNGLNAMEDSTRINGARBPROC = ::std::option::Option<
+pub type PFNGLNAMEDSTRINGARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         namelen: GLint,
@@ -11436,8 +11436,8 @@ pub type PFNGLNAMEDSTRINGARBPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLDELETENAMEDSTRINGARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(namelen: GLint, name: *const GLchar)>;
-pub type PFNGLCOMPILESHADERINCLUDEARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(namelen: GLint, name: *const GLchar)>;
+pub type PFNGLCOMPILESHADERINCLUDEARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         shader: GLuint,
         count: GLsizei,
@@ -11446,8 +11446,8 @@ pub type PFNGLCOMPILESHADERINCLUDEARBPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLISNAMEDSTRINGARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(namelen: GLint, name: *const GLchar) -> GLboolean>;
-pub type PFNGLGETNAMEDSTRINGARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(namelen: GLint, name: *const GLchar) -> GLboolean>;
+pub type PFNGLGETNAMEDSTRINGARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         namelen: GLint,
         name: *const GLchar,
@@ -11456,19 +11456,19 @@ pub type PFNGLGETNAMEDSTRINGARBPROC = ::std::option::Option<
         string: *mut GLchar,
     ),
 >;
-pub type PFNGLGETNAMEDSTRINGIVARBPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDSTRINGIVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(namelen: GLint, name: *const GLchar, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLBUFFERPAGECOMMITMENTARBPROC = ::std::option::Option<
+pub type PFNGLBUFFERPAGECOMMITMENTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, offset: GLintptr, size: GLsizeiptr, commit: GLboolean),
 >;
-pub type PFNGLNAMEDBUFFERPAGECOMMITMENTEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERPAGECOMMITMENTEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, offset: GLintptr, size: GLsizeiptr, commit: GLboolean),
 >;
-pub type PFNGLNAMEDBUFFERPAGECOMMITMENTARBPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERPAGECOMMITMENTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, offset: GLintptr, size: GLsizeiptr, commit: GLboolean),
 >;
-pub type PFNGLTEXPAGECOMMITMENTARBPROC = ::std::option::Option<
+pub type PFNGLTEXPAGECOMMITMENTARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -11481,10 +11481,10 @@ pub type PFNGLTEXPAGECOMMITMENTARBPROC = ::std::option::Option<
         commit: GLboolean,
     ),
 >;
-pub type PFNGLTEXBUFFERARBPROC = ::std::option::Option<
+pub type PFNGLTEXBUFFERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, buffer: GLuint),
 >;
-pub type PFNGLCOMPRESSEDTEXIMAGE3DARBPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXIMAGE3DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -11494,10 +11494,10 @@ pub type PFNGLCOMPRESSEDTEXIMAGE3DARBPROC = ::std::option::Option<
         depth: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXIMAGE2DARBPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXIMAGE2DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -11506,10 +11506,10 @@ pub type PFNGLCOMPRESSEDTEXIMAGE2DARBPROC = ::std::option::Option<
         height: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXIMAGE1DARBPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXIMAGE1DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -11517,10 +11517,10 @@ pub type PFNGLCOMPRESSEDTEXIMAGE1DARBPROC = ::std::option::Option<
         width: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXSUBIMAGE3DARBPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXSUBIMAGE3DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -11532,10 +11532,10 @@ pub type PFNGLCOMPRESSEDTEXSUBIMAGE3DARBPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXSUBIMAGE2DARBPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXSUBIMAGE2DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -11545,10 +11545,10 @@ pub type PFNGLCOMPRESSEDTEXSUBIMAGE2DARBPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXSUBIMAGE1DARBPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXSUBIMAGE1DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -11556,194 +11556,194 @@ pub type PFNGLCOMPRESSEDTEXSUBIMAGE1DARBPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETCOMPRESSEDTEXIMAGEARBPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, level: GLint, img: *mut ::std::os::raw::c_void),
+pub type PFNGLGETCOMPRESSEDTEXIMAGEARBPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, level: GLint, img: *mut libc::c_void),
 >;
 pub type PFNGLLOADTRANSPOSEMATRIXFARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(m: *const GLfloat)>;
 pub type PFNGLLOADTRANSPOSEMATRIXDARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(m: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(m: *const GLdouble)>;
 pub type PFNGLMULTTRANSPOSEMATRIXFARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(m: *const GLfloat)>;
 pub type PFNGLMULTTRANSPOSEMATRIXDARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(m: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(m: *const GLdouble)>;
 pub type PFNGLWEIGHTBVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLbyte)>;
 pub type PFNGLWEIGHTSVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLshort)>;
 pub type PFNGLWEIGHTIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLint)>;
 pub type PFNGLWEIGHTFVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLfloat)>;
 pub type PFNGLWEIGHTDVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLdouble)>;
 pub type PFNGLWEIGHTUBVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLubyte)>;
 pub type PFNGLWEIGHTUSVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLushort)>;
 pub type PFNGLWEIGHTUIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLuint)>;
-pub type PFNGLWEIGHTPOINTERARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, weights: *const GLuint)>;
+pub type PFNGLWEIGHTPOINTERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLVERTEXBLENDARBPROC = ::std::option::Option<unsafe extern "C" fn(count: GLint)>;
+pub type PFNGLVERTEXBLENDARBPROC = ::core::option::Option<unsafe extern "C" fn(count: GLint)>;
 pub type GLsizeiptrARB = khronos_ssize_t;
 pub type GLintptrARB = khronos_intptr_t;
 pub type PFNGLBINDBUFFERARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, buffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, buffer: GLuint)>;
 pub type PFNGLDELETEBUFFERSARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *const GLuint)>;
 pub type PFNGLGENBUFFERSARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, buffers: *mut GLuint)>;
 pub type PFNGLISBUFFERARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
-pub type PFNGLBUFFERDATAARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
+pub type PFNGLBUFFERDATAARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         size: GLsizeiptrARB,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
         usage: GLenum,
     ),
 >;
-pub type PFNGLBUFFERSUBDATAARBPROC = ::std::option::Option<
+pub type PFNGLBUFFERSUBDATAARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         offset: GLintptrARB,
         size: GLsizeiptrARB,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETBUFFERSUBDATAARBPROC = ::std::option::Option<
+pub type PFNGLGETBUFFERSUBDATAARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         offset: GLintptrARB,
         size: GLsizeiptrARB,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
-pub type PFNGLMAPBUFFERARBPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, access: GLenum) -> *mut ::std::os::raw::c_void,
+pub type PFNGLMAPBUFFERARBPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, access: GLenum) -> *mut libc::c_void,
 >;
 pub type PFNGLUNMAPBUFFERARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum) -> GLboolean>;
 pub type PFNGLGETBUFFERPARAMETERIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETBUFFERPOINTERVARBPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETBUFFERPOINTERVARBPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut libc::c_void),
 >;
 pub type PFNGLVERTEXATTRIB1DARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
 pub type PFNGLVERTEXATTRIB1DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB1FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat)>;
 pub type PFNGLVERTEXATTRIB1FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB1SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort)>;
 pub type PFNGLVERTEXATTRIB1SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIB2DARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
 pub type PFNGLVERTEXATTRIB2DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB2FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat)>;
 pub type PFNGLVERTEXATTRIB2FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB2SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort)>;
 pub type PFNGLVERTEXATTRIB2SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
-pub type PFNGLVERTEXATTRIB3DARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+pub type PFNGLVERTEXATTRIB3DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIB3DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB3FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
 pub type PFNGLVERTEXATTRIB3FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB3SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort)>;
 pub type PFNGLVERTEXATTRIB3SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIB4NBVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
 pub type PFNGLVERTEXATTRIB4NIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIB4NSVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
-pub type PFNGLVERTEXATTRIB4NUBARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+pub type PFNGLVERTEXATTRIB4NUBARBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLubyte, y: GLubyte, z: GLubyte, w: GLubyte),
 >;
 pub type PFNGLVERTEXATTRIB4NUBVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIB4NUIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIB4NUSVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
 pub type PFNGLVERTEXATTRIB4BVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
-pub type PFNGLVERTEXATTRIB4DARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
+pub type PFNGLVERTEXATTRIB4DARBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIB4DVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
-pub type PFNGLVERTEXATTRIB4FARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+pub type PFNGLVERTEXATTRIB4FARBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat),
 >;
 pub type PFNGLVERTEXATTRIB4FVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB4IVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
-pub type PFNGLVERTEXATTRIB4SARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+pub type PFNGLVERTEXATTRIB4SARBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort, w: GLshort),
 >;
 pub type PFNGLVERTEXATTRIB4SVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIB4UBVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIB4UIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIB4USVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
-pub type PFNGLVERTEXATTRIBPOINTERARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
+pub type PFNGLVERTEXATTRIBPOINTERARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
         type_: GLenum,
         normalized: GLboolean,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLENABLEVERTEXATTRIBARRAYARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint)>;
 pub type PFNGLDISABLEVERTEXATTRIBARRAYARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint)>;
-pub type PFNGLGETVERTEXATTRIBDVARBPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint)>;
+pub type PFNGLGETVERTEXATTRIBDVARBPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLdouble),
 >;
 pub type PFNGLGETVERTEXATTRIBFVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETVERTEXATTRIBIVARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETVERTEXATTRIBPOINTERVARBPROC = ::std::option::Option<
-    unsafe extern "C" fn(index: GLuint, pname: GLenum, pointer: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETVERTEXATTRIBPOINTERVARBPROC = ::core::option::Option<
+    unsafe extern "C" fn(index: GLuint, pname: GLenum, pointer: *mut *mut libc::c_void),
 >;
-pub type PFNGLBINDATTRIBLOCATIONARBPROC = ::std::option::Option<
+pub type PFNGLBINDATTRIBLOCATIONARBPROC = ::core::option::Option<
     unsafe extern "C" fn(programObj: GLhandleARB, index: GLuint, name: *const GLcharARB),
 >;
-pub type PFNGLGETACTIVEATTRIBARBPROC = ::std::option::Option<
+pub type PFNGLGETACTIVEATTRIBARBPROC = ::core::option::Option<
     unsafe extern "C" fn(
         programObj: GLhandleARB,
         index: GLuint,
@@ -11754,153 +11754,153 @@ pub type PFNGLGETACTIVEATTRIBARBPROC = ::std::option::Option<
         name: *mut GLcharARB,
     ),
 >;
-pub type PFNGLGETATTRIBLOCATIONARBPROC = ::std::option::Option<
+pub type PFNGLGETATTRIBLOCATIONARBPROC = ::core::option::Option<
     unsafe extern "C" fn(programObj: GLhandleARB, name: *const GLcharARB) -> GLint,
 >;
 pub type PFNGLWINDOWPOS2DARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
-pub type PFNGLWINDOWPOS2DVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
+pub type PFNGLWINDOWPOS2DVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLWINDOWPOS2FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat)>;
-pub type PFNGLWINDOWPOS2FVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
-pub type PFNGLWINDOWPOS2IARBPROC = ::std::option::Option<unsafe extern "C" fn(x: GLint, y: GLint)>;
-pub type PFNGLWINDOWPOS2IVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat)>;
+pub type PFNGLWINDOWPOS2FVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+pub type PFNGLWINDOWPOS2IARBPROC = ::core::option::Option<unsafe extern "C" fn(x: GLint, y: GLint)>;
+pub type PFNGLWINDOWPOS2IVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLWINDOWPOS2SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort)>;
-pub type PFNGLWINDOWPOS2SVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort)>;
+pub type PFNGLWINDOWPOS2SVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLWINDOWPOS3DARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble)>;
-pub type PFNGLWINDOWPOS3DVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble)>;
+pub type PFNGLWINDOWPOS3DVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLWINDOWPOS3FARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat)>;
-pub type PFNGLWINDOWPOS3FVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat)>;
+pub type PFNGLWINDOWPOS3FVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLWINDOWPOS3IARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint)>;
-pub type PFNGLWINDOWPOS3IVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint)>;
+pub type PFNGLWINDOWPOS3IVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLWINDOWPOS3SARBPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort)>;
-pub type PFNGLWINDOWPOS3SVARBPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
-pub type PFNGLBLENDBARRIERKHRPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort)>;
+pub type PFNGLWINDOWPOS3SVARBPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+pub type PFNGLBLENDBARRIERKHRPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLMAXSHADERCOMPILERTHREADSKHRPROC =
-    ::std::option::Option<unsafe extern "C" fn(count: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(count: GLuint)>;
 pub type PFNGLMULTITEXCOORD1BOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLbyte)>;
 pub type PFNGLMULTITEXCOORD1BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
 pub type PFNGLMULTITEXCOORD2BOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLbyte, t: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLbyte, t: GLbyte)>;
 pub type PFNGLMULTITEXCOORD2BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
 pub type PFNGLMULTITEXCOORD3BOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLbyte, t: GLbyte, r: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLbyte, t: GLbyte, r: GLbyte)>;
 pub type PFNGLMULTITEXCOORD3BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
-pub type PFNGLMULTITEXCOORD4BOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
+pub type PFNGLMULTITEXCOORD4BOESPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLenum, s: GLbyte, t: GLbyte, r: GLbyte, q: GLbyte),
 >;
 pub type PFNGLMULTITEXCOORD4BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
-pub type PFNGLTEXCOORD1BOESPROC = ::std::option::Option<unsafe extern "C" fn(s: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLbyte)>;
+pub type PFNGLTEXCOORD1BOESPROC = ::core::option::Option<unsafe extern "C" fn(s: GLbyte)>;
 pub type PFNGLTEXCOORD1BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
-pub type PFNGLTEXCOORD2BOESPROC = ::std::option::Option<unsafe extern "C" fn(s: GLbyte, t: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+pub type PFNGLTEXCOORD2BOESPROC = ::core::option::Option<unsafe extern "C" fn(s: GLbyte, t: GLbyte)>;
 pub type PFNGLTEXCOORD2BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
 pub type PFNGLTEXCOORD3BOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLbyte, t: GLbyte, r: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLbyte, t: GLbyte, r: GLbyte)>;
 pub type PFNGLTEXCOORD3BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
 pub type PFNGLTEXCOORD4BOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLbyte, t: GLbyte, r: GLbyte, q: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLbyte, t: GLbyte, r: GLbyte, q: GLbyte)>;
 pub type PFNGLTEXCOORD4BVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
-pub type PFNGLVERTEX2BOESPROC = ::std::option::Option<unsafe extern "C" fn(x: GLbyte, y: GLbyte)>;
-pub type PFNGLVERTEX2BVOESPROC = ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+pub type PFNGLVERTEX2BOESPROC = ::core::option::Option<unsafe extern "C" fn(x: GLbyte, y: GLbyte)>;
+pub type PFNGLVERTEX2BVOESPROC = ::core::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
 pub type PFNGLVERTEX3BOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLbyte, y: GLbyte, z: GLbyte)>;
-pub type PFNGLVERTEX3BVOESPROC = ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLbyte, y: GLbyte, z: GLbyte)>;
+pub type PFNGLVERTEX3BVOESPROC = ::core::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
 pub type PFNGLVERTEX4BOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLbyte, y: GLbyte, z: GLbyte, w: GLbyte)>;
-pub type PFNGLVERTEX4BVOESPROC = ::std::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLbyte, y: GLbyte, z: GLbyte, w: GLbyte)>;
+pub type PFNGLVERTEX4BVOESPROC = ::core::option::Option<unsafe extern "C" fn(coords: *const GLbyte)>;
 pub type GLfixed = khronos_int32_t;
 pub type PFNGLALPHAFUNCXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLfixed)>;
-pub type PFNGLCLEARCOLORXOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLfixed)>;
+pub type PFNGLCLEARCOLORXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed),
 >;
-pub type PFNGLCLEARDEPTHXOESPROC = ::std::option::Option<unsafe extern "C" fn(depth: GLfixed)>;
+pub type PFNGLCLEARDEPTHXOESPROC = ::core::option::Option<unsafe extern "C" fn(depth: GLfixed)>;
 pub type PFNGLCLIPPLANEXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *const GLfixed)>;
-pub type PFNGLCOLOR4XOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *const GLfixed)>;
+pub type PFNGLCOLOR4XOESPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed),
 >;
 pub type PFNGLDEPTHRANGEXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLfixed, f: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLfixed, f: GLfixed)>;
 pub type PFNGLFOGXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
 pub type PFNGLFOGXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLfixed)>;
-pub type PFNGLFRUSTUMXOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLfixed)>;
+pub type PFNGLFRUSTUMXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(l: GLfixed, r: GLfixed, b: GLfixed, t: GLfixed, n: GLfixed, f: GLfixed),
 >;
 pub type PFNGLGETCLIPPLANEXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *mut GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *mut GLfixed)>;
 pub type PFNGLGETFIXEDVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfixed)>;
-pub type PFNGLGETTEXENVXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfixed)>;
+pub type PFNGLGETTEXENVXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfixed),
 >;
-pub type PFNGLGETTEXPARAMETERXVOESPROC = ::std::option::Option<
+pub type PFNGLGETTEXPARAMETERXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfixed),
 >;
 pub type PFNGLLIGHTMODELXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
 pub type PFNGLLIGHTMODELXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLfixed)>;
 pub type PFNGLLIGHTXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, param: GLfixed)>;
-pub type PFNGLLIGHTXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, param: GLfixed)>;
+pub type PFNGLLIGHTXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *const GLfixed),
 >;
-pub type PFNGLLINEWIDTHXOESPROC = ::std::option::Option<unsafe extern "C" fn(width: GLfixed)>;
-pub type PFNGLLOADMATRIXXOESPROC = ::std::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
+pub type PFNGLLINEWIDTHXOESPROC = ::core::option::Option<unsafe extern "C" fn(width: GLfixed)>;
+pub type PFNGLLOADMATRIXXOESPROC = ::core::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
 pub type PFNGLMATERIALXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLfixed)>;
 pub type PFNGLMATERIALXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: *const GLfixed)>;
-pub type PFNGLMULTMATRIXXOESPROC = ::std::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
-pub type PFNGLMULTITEXCOORD4XOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: *const GLfixed)>;
+pub type PFNGLMULTMATRIXXOESPROC = ::core::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
+pub type PFNGLMULTITEXCOORD4XOESPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLenum, s: GLfixed, t: GLfixed, r: GLfixed, q: GLfixed),
 >;
 pub type PFNGLNORMAL3XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(nx: GLfixed, ny: GLfixed, nz: GLfixed)>;
-pub type PFNGLORTHOXOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(nx: GLfixed, ny: GLfixed, nz: GLfixed)>;
+pub type PFNGLORTHOXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(l: GLfixed, r: GLfixed, b: GLfixed, t: GLfixed, n: GLfixed, f: GLfixed),
 >;
 pub type PFNGLPOINTPARAMETERXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfixed)>;
-pub type PFNGLPOINTSIZEXOESPROC = ::std::option::Option<unsafe extern "C" fn(size: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfixed)>;
+pub type PFNGLPOINTSIZEXOESPROC = ::core::option::Option<unsafe extern "C" fn(size: GLfixed)>;
 pub type PFNGLPOLYGONOFFSETXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLfixed, units: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLfixed, units: GLfixed)>;
 pub type PFNGLROTATEXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(angle: GLfixed, x: GLfixed, y: GLfixed, z: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(angle: GLfixed, x: GLfixed, y: GLfixed, z: GLfixed)>;
 pub type PFNGLSCALEXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
 pub type PFNGLTEXENVXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfixed)>;
-pub type PFNGLTEXENVXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfixed)>;
+pub type PFNGLTEXENVXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfixed),
 >;
 pub type PFNGLTEXPARAMETERXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfixed)>;
-pub type PFNGLTEXPARAMETERXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfixed)>;
+pub type PFNGLTEXPARAMETERXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfixed),
 >;
 pub type PFNGLTRANSLATEXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
 pub type PFNGLACCUMXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(op: GLenum, value: GLfixed)>;
-pub type PFNGLBITMAPXOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(op: GLenum, value: GLfixed)>;
+pub type PFNGLBITMAPXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(
         width: GLsizei,
         height: GLsizei,
@@ -11911,57 +11911,57 @@ pub type PFNGLBITMAPXOESPROC = ::std::option::Option<
         bitmap: *const GLubyte,
     ),
 >;
-pub type PFNGLBLENDCOLORXOESPROC = ::std::option::Option<
+pub type PFNGLBLENDCOLORXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed),
 >;
-pub type PFNGLCLEARACCUMXOESPROC = ::std::option::Option<
+pub type PFNGLCLEARACCUMXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLfixed, green: GLfixed, blue: GLfixed, alpha: GLfixed),
 >;
 pub type PFNGLCOLOR3XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLfixed, green: GLfixed, blue: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLfixed, green: GLfixed, blue: GLfixed)>;
 pub type PFNGLCOLOR3XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(components: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(components: *const GLfixed)>;
 pub type PFNGLCOLOR4XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(components: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(components: *const GLfixed)>;
 pub type PFNGLCONVOLUTIONPARAMETERXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfixed)>;
-pub type PFNGLCONVOLUTIONPARAMETERXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfixed)>;
+pub type PFNGLCONVOLUTIONPARAMETERXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfixed),
 >;
-pub type PFNGLEVALCOORD1XOESPROC = ::std::option::Option<unsafe extern "C" fn(u: GLfixed)>;
+pub type PFNGLEVALCOORD1XOESPROC = ::core::option::Option<unsafe extern "C" fn(u: GLfixed)>;
 pub type PFNGLEVALCOORD1XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLEVALCOORD2XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(u: GLfixed, v: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(u: GLfixed, v: GLfixed)>;
 pub type PFNGLEVALCOORD2XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLFEEDBACKBUFFERXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, type_: GLenum, buffer: *const GLfixed)>;
-pub type PFNGLGETCONVOLUTIONPARAMETERXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, type_: GLenum, buffer: *const GLfixed)>;
+pub type PFNGLGETCONVOLUTIONPARAMETERXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfixed),
 >;
-pub type PFNGLGETHISTOGRAMPARAMETERXVOESPROC = ::std::option::Option<
+pub type PFNGLGETHISTOGRAMPARAMETERXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfixed),
 >;
 pub type PFNGLGETLIGHTXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *mut GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *mut GLfixed)>;
 pub type PFNGLGETMAPXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, query: GLenum, v: *mut GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, query: GLenum, v: *mut GLfixed)>;
 pub type PFNGLGETMATERIALXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLfixed)>;
 pub type PFNGLGETPIXELMAPXVPROC =
-    ::std::option::Option<unsafe extern "C" fn(map: GLenum, size: GLint, values: *mut GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(map: GLenum, size: GLint, values: *mut GLfixed)>;
 pub type PFNGLGETTEXGENXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coord: GLenum, pname: GLenum, params: *mut GLfixed)>;
-pub type PFNGLGETTEXLEVELPARAMETERXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(coord: GLenum, pname: GLenum, params: *mut GLfixed)>;
+pub type PFNGLGETTEXLEVELPARAMETERXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, level: GLint, pname: GLenum, params: *mut GLfixed),
 >;
-pub type PFNGLINDEXXOESPROC = ::std::option::Option<unsafe extern "C" fn(component: GLfixed)>;
+pub type PFNGLINDEXXOESPROC = ::core::option::Option<unsafe extern "C" fn(component: GLfixed)>;
 pub type PFNGLINDEXXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(component: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(component: *const GLfixed)>;
 pub type PFNGLLOADTRANSPOSEMATRIXXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
-pub type PFNGLMAP1XOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
+pub type PFNGLMAP1XOESPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         u1: GLfixed,
@@ -11971,7 +11971,7 @@ pub type PFNGLMAP1XOESPROC = ::std::option::Option<
         points: GLfixed,
     ),
 >;
-pub type PFNGLMAP2XOESPROC = ::std::option::Option<
+pub type PFNGLMAP2XOESPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         u1: GLfixed,
@@ -11986,115 +11986,115 @@ pub type PFNGLMAP2XOESPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLMAPGRID1XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLint, u1: GLfixed, u2: GLfixed)>;
-pub type PFNGLMAPGRID2XOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLint, u1: GLfixed, u2: GLfixed)>;
+pub type PFNGLMAPGRID2XOESPROC = ::core::option::Option<
     unsafe extern "C" fn(n: GLint, u1: GLfixed, u2: GLfixed, v1: GLfixed, v2: GLfixed),
 >;
 pub type PFNGLMULTTRANSPOSEMATRIXXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(m: *const GLfixed)>;
 pub type PFNGLMULTITEXCOORD1XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLfixed)>;
 pub type PFNGLMULTITEXCOORD1XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
 pub type PFNGLMULTITEXCOORD2XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLfixed, t: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, s: GLfixed, t: GLfixed)>;
 pub type PFNGLMULTITEXCOORD2XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
-pub type PFNGLMULTITEXCOORD3XOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
+pub type PFNGLMULTITEXCOORD3XOESPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLenum, s: GLfixed, t: GLfixed, r: GLfixed),
 >;
 pub type PFNGLMULTITEXCOORD3XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
 pub type PFNGLMULTITEXCOORD4XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLenum, coords: *const GLfixed)>;
 pub type PFNGLNORMAL3XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
-pub type PFNGLPASSTHROUGHXOESPROC = ::std::option::Option<unsafe extern "C" fn(token: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+pub type PFNGLPASSTHROUGHXOESPROC = ::core::option::Option<unsafe extern "C" fn(token: GLfixed)>;
 pub type PFNGLPIXELMAPXPROC =
-    ::std::option::Option<unsafe extern "C" fn(map: GLenum, size: GLint, values: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(map: GLenum, size: GLint, values: *const GLfixed)>;
 pub type PFNGLPIXELSTOREXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
 pub type PFNGLPIXELTRANSFERXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfixed)>;
 pub type PFNGLPIXELZOOMXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(xfactor: GLfixed, yfactor: GLfixed)>;
-pub type PFNGLPRIORITIZETEXTURESXOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(xfactor: GLfixed, yfactor: GLfixed)>;
+pub type PFNGLPRIORITIZETEXTURESXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(n: GLsizei, textures: *const GLuint, priorities: *const GLfixed),
 >;
 pub type PFNGLRASTERPOS2XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed)>;
 pub type PFNGLRASTERPOS2XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLRASTERPOS3XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
 pub type PFNGLRASTERPOS3XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLRASTERPOS4XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed, w: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed, w: GLfixed)>;
 pub type PFNGLRASTERPOS4XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLRECTXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x1: GLfixed, y1: GLfixed, x2: GLfixed, y2: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(x1: GLfixed, y1: GLfixed, x2: GLfixed, y2: GLfixed)>;
 pub type PFNGLRECTXVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(v1: *const GLfixed, v2: *const GLfixed)>;
-pub type PFNGLTEXCOORD1XOESPROC = ::std::option::Option<unsafe extern "C" fn(s: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(v1: *const GLfixed, v2: *const GLfixed)>;
+pub type PFNGLTEXCOORD1XOESPROC = ::core::option::Option<unsafe extern "C" fn(s: GLfixed)>;
 pub type PFNGLTEXCOORD1XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLTEXCOORD2XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLfixed, t: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLfixed, t: GLfixed)>;
 pub type PFNGLTEXCOORD2XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLTEXCOORD3XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLfixed, t: GLfixed, r: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLfixed, t: GLfixed, r: GLfixed)>;
 pub type PFNGLTEXCOORD3XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLTEXCOORD4XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLfixed, t: GLfixed, r: GLfixed, q: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLfixed, t: GLfixed, r: GLfixed, q: GLfixed)>;
 pub type PFNGLTEXCOORD4XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLTEXGENXOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coord: GLenum, pname: GLenum, param: GLfixed)>;
-pub type PFNGLTEXGENXVOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(coord: GLenum, pname: GLenum, param: GLfixed)>;
+pub type PFNGLTEXGENXVOESPROC = ::core::option::Option<
     unsafe extern "C" fn(coord: GLenum, pname: GLenum, params: *const GLfixed),
 >;
-pub type PFNGLVERTEX2XOESPROC = ::std::option::Option<unsafe extern "C" fn(x: GLfixed)>;
+pub type PFNGLVERTEX2XOESPROC = ::core::option::Option<unsafe extern "C" fn(x: GLfixed)>;
 pub type PFNGLVERTEX2XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
-pub type PFNGLVERTEX3XOESPROC = ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+pub type PFNGLVERTEX3XOESPROC = ::core::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed)>;
 pub type PFNGLVERTEX3XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
 pub type PFNGLVERTEX4XOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfixed, y: GLfixed, z: GLfixed)>;
 pub type PFNGLVERTEX4XVOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
-pub type PFNGLQUERYMATRIXXOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(coords: *const GLfixed)>;
+pub type PFNGLQUERYMATRIXXOESPROC = ::core::option::Option<
     unsafe extern "C" fn(mantissa: *mut GLfixed, exponent: *mut GLint) -> GLbitfield,
 >;
-pub type PFNGLCLEARDEPTHFOESPROC = ::std::option::Option<unsafe extern "C" fn(depth: GLclampf)>;
+pub type PFNGLCLEARDEPTHFOESPROC = ::core::option::Option<unsafe extern "C" fn(depth: GLclampf)>;
 pub type PFNGLCLIPPLANEFOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *const GLfloat)>;
 pub type PFNGLDEPTHRANGEFOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLclampf, f: GLclampf)>;
-pub type PFNGLFRUSTUMFOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLclampf, f: GLclampf)>;
+pub type PFNGLFRUSTUMFOESPROC = ::core::option::Option<
     unsafe extern "C" fn(l: GLfloat, r: GLfloat, b: GLfloat, t: GLfloat, n: GLfloat, f: GLfloat),
 >;
 pub type PFNGLGETCLIPPLANEFOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *mut GLfloat)>;
-pub type PFNGLORTHOFOESPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(plane: GLenum, equation: *mut GLfloat)>;
+pub type PFNGLORTHOFOESPROC = ::core::option::Option<
     unsafe extern "C" fn(l: GLfloat, r: GLfloat, b: GLfloat, t: GLfloat, n: GLfloat, f: GLfloat),
 >;
-pub type PFNGLTBUFFERMASK3DFXPROC = ::std::option::Option<unsafe extern "C" fn(mask: GLuint)>;
-pub type GLDEBUGPROCAMD = ::std::option::Option<
+pub type PFNGLTBUFFERMASK3DFXPROC = ::core::option::Option<unsafe extern "C" fn(mask: GLuint)>;
+pub type GLDEBUGPROCAMD = ::core::option::Option<
     unsafe extern "C" fn(
         id: GLuint,
         category: GLenum,
         severity: GLenum,
         length: GLsizei,
         message: *const GLchar,
-        userParam: *mut ::std::os::raw::c_void,
+        userParam: *mut libc::c_void,
     ),
 >;
-pub type PFNGLDEBUGMESSAGEENABLEAMDPROC = ::std::option::Option<
+pub type PFNGLDEBUGMESSAGEENABLEAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         category: GLenum,
         severity: GLenum,
@@ -12103,7 +12103,7 @@ pub type PFNGLDEBUGMESSAGEENABLEAMDPROC = ::std::option::Option<
         enabled: GLboolean,
     ),
 >;
-pub type PFNGLDEBUGMESSAGEINSERTAMDPROC = ::std::option::Option<
+pub type PFNGLDEBUGMESSAGEINSERTAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         category: GLenum,
         severity: GLenum,
@@ -12112,10 +12112,10 @@ pub type PFNGLDEBUGMESSAGEINSERTAMDPROC = ::std::option::Option<
         buf: *const GLchar,
     ),
 >;
-pub type PFNGLDEBUGMESSAGECALLBACKAMDPROC = ::std::option::Option<
-    unsafe extern "C" fn(callback: GLDEBUGPROCAMD, userParam: *mut ::std::os::raw::c_void),
+pub type PFNGLDEBUGMESSAGECALLBACKAMDPROC = ::core::option::Option<
+    unsafe extern "C" fn(callback: GLDEBUGPROCAMD, userParam: *mut libc::c_void),
 >;
-pub type PFNGLGETDEBUGMESSAGELOGAMDPROC = ::std::option::Option<
+pub type PFNGLGETDEBUGMESSAGELOGAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         count: GLuint,
         bufsize: GLsizei,
@@ -12127,8 +12127,8 @@ pub type PFNGLGETDEBUGMESSAGELOGAMDPROC = ::std::option::Option<
     ) -> GLuint,
 >;
 pub type PFNGLBLENDFUNCINDEXEDAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, src: GLenum, dst: GLenum)>;
-pub type PFNGLBLENDFUNCSEPARATEINDEXEDAMDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, src: GLenum, dst: GLenum)>;
+pub type PFNGLBLENDFUNCSEPARATEINDEXEDAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buf: GLuint,
         srcRGB: GLenum,
@@ -12138,10 +12138,10 @@ pub type PFNGLBLENDFUNCSEPARATEINDEXEDAMDPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLBLENDEQUATIONINDEXEDAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, mode: GLenum)>;
 pub type PFNGLBLENDEQUATIONSEPARATEINDEXEDAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum)>;
-pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buf: GLuint, modeRGB: GLenum, modeAlpha: GLenum)>;
+pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -12151,7 +12151,7 @@ pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::std::option::Opt
         height: GLsizei,
     ),
 >;
-pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::std::option::Option<
+pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         renderbuffer: GLuint,
         samples: GLsizei,
@@ -12161,7 +12161,7 @@ pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEADVANCEDAMDPROC = ::std::option
         height: GLsizei,
     ),
 >;
-pub type PFNGLFRAMEBUFFERSAMPLEPOSITIONSFVAMDPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERSAMPLEPOSITIONSFVAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         numsamples: GLuint,
@@ -12169,7 +12169,7 @@ pub type PFNGLFRAMEBUFFERSAMPLEPOSITIONSFVAMDPROC = ::std::option::Option<
         values: *const GLfloat,
     ),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERSAMPLEPOSITIONSFVAMDPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERSAMPLEPOSITIONSFVAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         numsamples: GLuint,
@@ -12177,7 +12177,7 @@ pub type PFNGLNAMEDFRAMEBUFFERSAMPLEPOSITIONSFVAMDPROC = ::std::option::Option<
         values: *const GLfloat,
     ),
 >;
-pub type PFNGLGETFRAMEBUFFERPARAMETERFVAMDPROC = ::std::option::Option<
+pub type PFNGLGETFRAMEBUFFERPARAMETERFVAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         pname: GLenum,
@@ -12187,7 +12187,7 @@ pub type PFNGLGETFRAMEBUFFERPARAMETERFVAMDPROC = ::std::option::Option<
         values: *mut GLfloat,
     ),
 >;
-pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERFVAMDPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERFVAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         pname: GLenum,
@@ -12199,13 +12199,13 @@ pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERFVAMDPROC = ::std::option::Option<
 >;
 pub type GLint64EXT = khronos_int64_t;
 pub type PFNGLUNIFORM1I64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64EXT)>;
 pub type PFNGLUNIFORM2I64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64EXT, y: GLint64EXT)>;
-pub type PFNGLUNIFORM3I64NVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLint64EXT, y: GLint64EXT)>;
+pub type PFNGLUNIFORM3I64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLint64EXT, y: GLint64EXT, z: GLint64EXT),
 >;
-pub type PFNGLUNIFORM4I64NVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4I64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         x: GLint64EXT,
@@ -12214,26 +12214,26 @@ pub type PFNGLUNIFORM4I64NVPROC = ::std::option::Option<
         w: GLint64EXT,
     ),
 >;
-pub type PFNGLUNIFORM1I64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64EXT),
 >;
-pub type PFNGLUNIFORM2I64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64EXT),
 >;
-pub type PFNGLUNIFORM3I64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64EXT),
 >;
-pub type PFNGLUNIFORM4I64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLint64EXT),
 >;
 pub type PFNGLUNIFORM1UI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64EXT)>;
 pub type PFNGLUNIFORM2UI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64EXT, y: GLuint64EXT)>;
-pub type PFNGLUNIFORM3UI64NVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, x: GLuint64EXT, y: GLuint64EXT)>;
+pub type PFNGLUNIFORM3UI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, x: GLuint64EXT, y: GLuint64EXT, z: GLuint64EXT),
 >;
-pub type PFNGLUNIFORM4UI64NVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         location: GLint,
         x: GLuint64EXT,
@@ -12242,30 +12242,30 @@ pub type PFNGLUNIFORM4UI64NVPROC = ::std::option::Option<
         w: GLuint64EXT,
     ),
 >;
-pub type PFNGLUNIFORM1UI64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64EXT),
 >;
-pub type PFNGLUNIFORM2UI64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64EXT),
 >;
-pub type PFNGLUNIFORM3UI64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64EXT),
 >;
-pub type PFNGLUNIFORM4UI64VNVPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64EXT),
 >;
-pub type PFNGLGETUNIFORMI64VNVPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLint64EXT),
 >;
-pub type PFNGLGETUNIFORMUI64VNVPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLuint64EXT),
 >;
 pub type PFNGLPROGRAMUNIFORM1I64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLint64EXT)>;
-pub type PFNGLPROGRAMUNIFORM2I64NVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLint64EXT)>;
+pub type PFNGLPROGRAMUNIFORM2I64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLint64EXT, y: GLint64EXT),
 >;
-pub type PFNGLPROGRAMUNIFORM3I64NVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3I64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12274,7 +12274,7 @@ pub type PFNGLPROGRAMUNIFORM3I64NVPROC = ::std::option::Option<
         z: GLint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4I64NVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4I64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12284,7 +12284,7 @@ pub type PFNGLPROGRAMUNIFORM4I64NVPROC = ::std::option::Option<
         w: GLint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM1I64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12292,7 +12292,7 @@ pub type PFNGLPROGRAMUNIFORM1I64VNVPROC = ::std::option::Option<
         value: *const GLint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM2I64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12300,7 +12300,7 @@ pub type PFNGLPROGRAMUNIFORM2I64VNVPROC = ::std::option::Option<
         value: *const GLint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM3I64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12308,7 +12308,7 @@ pub type PFNGLPROGRAMUNIFORM3I64VNVPROC = ::std::option::Option<
         value: *const GLint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4I64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4I64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12317,11 +12317,11 @@ pub type PFNGLPROGRAMUNIFORM4I64VNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLPROGRAMUNIFORM1UI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLuint64EXT)>;
-pub type PFNGLPROGRAMUNIFORM2UI64NVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLuint64EXT)>;
+pub type PFNGLPROGRAMUNIFORM2UI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLuint64EXT, y: GLuint64EXT),
 >;
-pub type PFNGLPROGRAMUNIFORM3UI64NVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12330,7 +12330,7 @@ pub type PFNGLPROGRAMUNIFORM3UI64NVPROC = ::std::option::Option<
         z: GLuint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4UI64NVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12340,7 +12340,7 @@ pub type PFNGLPROGRAMUNIFORM4UI64NVPROC = ::std::option::Option<
         w: GLuint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM1UI64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12348,7 +12348,7 @@ pub type PFNGLPROGRAMUNIFORM1UI64VNVPROC = ::std::option::Option<
         value: *const GLuint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM2UI64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12356,7 +12356,7 @@ pub type PFNGLPROGRAMUNIFORM2UI64VNVPROC = ::std::option::Option<
         value: *const GLuint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM3UI64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12364,7 +12364,7 @@ pub type PFNGLPROGRAMUNIFORM3UI64VNVPROC = ::std::option::Option<
         value: *const GLuint64EXT,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM4UI64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -12373,39 +12373,39 @@ pub type PFNGLPROGRAMUNIFORM4UI64VNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLVERTEXATTRIBPARAMETERIAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, param: GLint)>;
-pub type PFNGLMULTIDRAWARRAYSINDIRECTAMDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, param: GLint)>;
+pub type PFNGLMULTIDRAWARRAYSINDIRECTAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         primcount: GLsizei,
         stride: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSINDIRECTAMDPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSINDIRECTAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         type_: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         primcount: GLsizei,
         stride: GLsizei,
     ),
 >;
-pub type PFNGLGENNAMESAMDPROC = ::std::option::Option<
+pub type PFNGLGENNAMESAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(identifier: GLenum, num: GLuint, names: *mut GLuint),
 >;
-pub type PFNGLDELETENAMESAMDPROC = ::std::option::Option<
+pub type PFNGLDELETENAMESAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(identifier: GLenum, num: GLuint, names: *const GLuint),
 >;
 pub type PFNGLISNAMEAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(identifier: GLenum, name: GLuint) -> GLboolean>;
-pub type PFNGLQUERYOBJECTPARAMETERUIAMDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(identifier: GLenum, name: GLuint) -> GLboolean>;
+pub type PFNGLQUERYOBJECTPARAMETERUIAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, id: GLuint, pname: GLenum, param: GLuint),
 >;
-pub type PFNGLGETPERFMONITORGROUPSAMDPROC = ::std::option::Option<
+pub type PFNGLGETPERFMONITORGROUPSAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(numGroups: *mut GLint, groupsSize: GLsizei, groups: *mut GLuint),
 >;
-pub type PFNGLGETPERFMONITORCOUNTERSAMDPROC = ::std::option::Option<
+pub type PFNGLGETPERFMONITORCOUNTERSAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         group: GLuint,
         numCounters: *mut GLint,
@@ -12414,7 +12414,7 @@ pub type PFNGLGETPERFMONITORCOUNTERSAMDPROC = ::std::option::Option<
         counters: *mut GLuint,
     ),
 >;
-pub type PFNGLGETPERFMONITORGROUPSTRINGAMDPROC = ::std::option::Option<
+pub type PFNGLGETPERFMONITORGROUPSTRINGAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         group: GLuint,
         bufSize: GLsizei,
@@ -12422,7 +12422,7 @@ pub type PFNGLGETPERFMONITORGROUPSTRINGAMDPROC = ::std::option::Option<
         groupString: *mut GLchar,
     ),
 >;
-pub type PFNGLGETPERFMONITORCOUNTERSTRINGAMDPROC = ::std::option::Option<
+pub type PFNGLGETPERFMONITORCOUNTERSTRINGAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         group: GLuint,
         counter: GLuint,
@@ -12431,19 +12431,19 @@ pub type PFNGLGETPERFMONITORCOUNTERSTRINGAMDPROC = ::std::option::Option<
         counterString: *mut GLchar,
     ),
 >;
-pub type PFNGLGETPERFMONITORCOUNTERINFOAMDPROC = ::std::option::Option<
+pub type PFNGLGETPERFMONITORCOUNTERINFOAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         group: GLuint,
         counter: GLuint,
         pname: GLenum,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
 pub type PFNGLGENPERFMONITORSAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, monitors: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, monitors: *mut GLuint)>;
 pub type PFNGLDELETEPERFMONITORSAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, monitors: *mut GLuint)>;
-pub type PFNGLSELECTPERFMONITORCOUNTERSAMDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, monitors: *mut GLuint)>;
+pub type PFNGLSELECTPERFMONITORCOUNTERSAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         monitor: GLuint,
         enable: GLboolean,
@@ -12453,9 +12453,9 @@ pub type PFNGLSELECTPERFMONITORCOUNTERSAMDPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLBEGINPERFMONITORAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(monitor: GLuint)>;
-pub type PFNGLENDPERFMONITORAMDPROC = ::std::option::Option<unsafe extern "C" fn(monitor: GLuint)>;
-pub type PFNGLGETPERFMONITORCOUNTERDATAAMDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(monitor: GLuint)>;
+pub type PFNGLENDPERFMONITORAMDPROC = ::core::option::Option<unsafe extern "C" fn(monitor: GLuint)>;
+pub type PFNGLGETPERFMONITORCOUNTERDATAAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         monitor: GLuint,
         pname: GLenum,
@@ -12465,8 +12465,8 @@ pub type PFNGLGETPERFMONITORCOUNTERDATAAMDPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLSETMULTISAMPLEFVAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *const GLfloat)>;
-pub type PFNGLTEXSTORAGESPARSEAMDPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *const GLfloat)>;
+pub type PFNGLTEXSTORAGESPARSEAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalFormat: GLenum,
@@ -12477,7 +12477,7 @@ pub type PFNGLTEXSTORAGESPARSEAMDPROC = ::std::option::Option<
         flags: GLbitfield,
     ),
 >;
-pub type PFNGLTEXTURESTORAGESPARSEAMDPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGESPARSEAMDPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -12490,19 +12490,19 @@ pub type PFNGLTEXTURESTORAGESPARSEAMDPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLSTENCILOPVALUEAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, value: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, value: GLuint)>;
 pub type PFNGLTESSELLATIONFACTORAMDPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLfloat)>;
-pub type PFNGLTESSELLATIONMODEAMDPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
-pub type PFNGLELEMENTPOINTERAPPLEPROC = ::std::option::Option<
-    unsafe extern "C" fn(type_: GLenum, pointer: *const ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(factor: GLfloat)>;
+pub type PFNGLTESSELLATIONMODEAMDPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLELEMENTPOINTERAPPLEPROC = ::core::option::Option<
+    unsafe extern "C" fn(type_: GLenum, pointer: *const libc::c_void),
 >;
 pub type PFNGLDRAWELEMENTARRAYAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei)>;
-pub type PFNGLDRAWRANGEELEMENTARRAYAPPLEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei)>;
+pub type PFNGLDRAWRANGEELEMENTARRAYAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, start: GLuint, end: GLuint, first: GLint, count: GLsizei),
 >;
-pub type PFNGLMULTIDRAWELEMENTARRAYAPPLEPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTARRAYAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         first: *const GLint,
@@ -12510,7 +12510,7 @@ pub type PFNGLMULTIDRAWELEMENTARRAYAPPLEPROC = ::std::option::Option<
         primcount: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWRANGEELEMENTARRAYAPPLEPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWRANGEELEMENTARRAYAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         start: GLuint,
@@ -12521,60 +12521,60 @@ pub type PFNGLMULTIDRAWRANGEELEMENTARRAYAPPLEPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGENFENCESAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *mut GLuint)>;
 pub type PFNGLDELETEFENCESAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *const GLuint)>;
-pub type PFNGLSETFENCEAPPLEPROC = ::std::option::Option<unsafe extern "C" fn(fence: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *const GLuint)>;
+pub type PFNGLSETFENCEAPPLEPROC = ::core::option::Option<unsafe extern "C" fn(fence: GLuint)>;
 pub type PFNGLISFENCEAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
 pub type PFNGLTESTFENCEAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
-pub type PFNGLFINISHFENCEAPPLEPROC = ::std::option::Option<unsafe extern "C" fn(fence: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
+pub type PFNGLFINISHFENCEAPPLEPROC = ::core::option::Option<unsafe extern "C" fn(fence: GLuint)>;
 pub type PFNGLTESTOBJECTAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(object: GLenum, name: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(object: GLenum, name: GLuint) -> GLboolean>;
 pub type PFNGLFINISHOBJECTAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(object: GLenum, name: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(object: GLenum, name: GLint)>;
 pub type PFNGLBUFFERPARAMETERIAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLFLUSHMAPPEDBUFFERRANGEAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, offset: GLintptr, size: GLsizeiptr)>;
-pub type PFNGLOBJECTPURGEABLEAPPLEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, offset: GLintptr, size: GLsizeiptr)>;
+pub type PFNGLOBJECTPURGEABLEAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(objectType: GLenum, name: GLuint, option: GLenum) -> GLenum,
 >;
-pub type PFNGLOBJECTUNPURGEABLEAPPLEPROC = ::std::option::Option<
+pub type PFNGLOBJECTUNPURGEABLEAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(objectType: GLenum, name: GLuint, option: GLenum) -> GLenum,
 >;
-pub type PFNGLGETOBJECTPARAMETERIVAPPLEPROC = ::std::option::Option<
+pub type PFNGLGETOBJECTPARAMETERIVAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(objectType: GLenum, name: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLTEXTURERANGEAPPLEPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, length: GLsizei, pointer: *const ::std::os::raw::c_void),
+pub type PFNGLTEXTURERANGEAPPLEPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, length: GLsizei, pointer: *const libc::c_void),
 >;
-pub type PFNGLGETTEXPARAMETERPOINTERVAPPLEPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
+pub type PFNGLGETTEXPARAMETERPOINTERVAPPLEPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut *mut libc::c_void),
 >;
-pub type PFNGLBINDVERTEXARRAYAPPLEPROC = ::std::option::Option<unsafe extern "C" fn(array: GLuint)>;
+pub type PFNGLBINDVERTEXARRAYAPPLEPROC = ::core::option::Option<unsafe extern "C" fn(array: GLuint)>;
 pub type PFNGLDELETEVERTEXARRAYSAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *const GLuint)>;
 pub type PFNGLGENVERTEXARRAYSAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, arrays: *mut GLuint)>;
 pub type PFNGLISVERTEXARRAYAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLuint) -> GLboolean>;
-pub type PFNGLVERTEXARRAYRANGEAPPLEPROC = ::std::option::Option<
-    unsafe extern "C" fn(length: GLsizei, pointer: *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(array: GLuint) -> GLboolean>;
+pub type PFNGLVERTEXARRAYRANGEAPPLEPROC = ::core::option::Option<
+    unsafe extern "C" fn(length: GLsizei, pointer: *mut libc::c_void),
 >;
-pub type PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC = ::std::option::Option<
-    unsafe extern "C" fn(length: GLsizei, pointer: *mut ::std::os::raw::c_void),
+pub type PFNGLFLUSHVERTEXARRAYRANGEAPPLEPROC = ::core::option::Option<
+    unsafe extern "C" fn(length: GLsizei, pointer: *mut libc::c_void),
 >;
 pub type PFNGLVERTEXARRAYPARAMETERIAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLENABLEVERTEXATTRIBAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum)>;
 pub type PFNGLDISABLEVERTEXATTRIBAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum)>;
 pub type PFNGLISVERTEXATTRIBENABLEDAPPLEPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum) -> GLboolean>;
-pub type PFNGLMAPVERTEXATTRIB1DAPPLEPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum) -> GLboolean>;
+pub type PFNGLMAPVERTEXATTRIB1DAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLuint,
@@ -12585,7 +12585,7 @@ pub type PFNGLMAPVERTEXATTRIB1DAPPLEPROC = ::std::option::Option<
         points: *const GLdouble,
     ),
 >;
-pub type PFNGLMAPVERTEXATTRIB1FAPPLEPROC = ::std::option::Option<
+pub type PFNGLMAPVERTEXATTRIB1FAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLuint,
@@ -12596,7 +12596,7 @@ pub type PFNGLMAPVERTEXATTRIB1FAPPLEPROC = ::std::option::Option<
         points: *const GLfloat,
     ),
 >;
-pub type PFNGLMAPVERTEXATTRIB2DAPPLEPROC = ::std::option::Option<
+pub type PFNGLMAPVERTEXATTRIB2DAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLuint,
@@ -12611,7 +12611,7 @@ pub type PFNGLMAPVERTEXATTRIB2DAPPLEPROC = ::std::option::Option<
         points: *const GLdouble,
     ),
 >;
-pub type PFNGLMAPVERTEXATTRIB2FAPPLEPROC = ::std::option::Option<
+pub type PFNGLMAPVERTEXATTRIB2FAPPLEPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLuint,
@@ -12627,34 +12627,34 @@ pub type PFNGLMAPVERTEXATTRIB2FAPPLEPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLDRAWBUFFERSATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
-pub type PFNGLELEMENTPOINTERATIPROC = ::std::option::Option<
-    unsafe extern "C" fn(type_: GLenum, pointer: *const ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, bufs: *const GLenum)>;
+pub type PFNGLELEMENTPOINTERATIPROC = ::core::option::Option<
+    unsafe extern "C" fn(type_: GLenum, pointer: *const libc::c_void),
 >;
 pub type PFNGLDRAWELEMENTARRAYATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, count: GLsizei)>;
-pub type PFNGLDRAWRANGEELEMENTARRAYATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, count: GLsizei)>;
+pub type PFNGLDRAWRANGEELEMENTARRAYATIPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, start: GLuint, end: GLuint, count: GLsizei),
 >;
 pub type PFNGLTEXBUMPPARAMETERIVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLint)>;
 pub type PFNGLTEXBUMPPARAMETERFVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: *const GLfloat)>;
 pub type PFNGLGETTEXBUMPPARAMETERIVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: *mut GLint)>;
 pub type PFNGLGETTEXBUMPPARAMETERFVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: *mut GLfloat)>;
 pub type PFNGLGENFRAGMENTSHADERSATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(range: GLuint) -> GLuint>;
-pub type PFNGLBINDFRAGMENTSHADERATIPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
-pub type PFNGLDELETEFRAGMENTSHADERATIPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
-pub type PFNGLBEGINFRAGMENTSHADERATIPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLENDFRAGMENTSHADERATIPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(range: GLuint) -> GLuint>;
+pub type PFNGLBINDFRAGMENTSHADERATIPROC = ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
+pub type PFNGLDELETEFRAGMENTSHADERATIPROC = ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
+pub type PFNGLBEGINFRAGMENTSHADERATIPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLENDFRAGMENTSHADERATIPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLPASSTEXCOORDATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(dst: GLuint, coord: GLuint, swizzle: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(dst: GLuint, coord: GLuint, swizzle: GLenum)>;
 pub type PFNGLSAMPLEMAPATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(dst: GLuint, interp: GLuint, swizzle: GLenum)>;
-pub type PFNGLCOLORFRAGMENTOP1ATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(dst: GLuint, interp: GLuint, swizzle: GLenum)>;
+pub type PFNGLCOLORFRAGMENTOP1ATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         op: GLenum,
         dst: GLuint,
@@ -12665,7 +12665,7 @@ pub type PFNGLCOLORFRAGMENTOP1ATIPROC = ::std::option::Option<
         arg1Mod: GLuint,
     ),
 >;
-pub type PFNGLCOLORFRAGMENTOP2ATIPROC = ::std::option::Option<
+pub type PFNGLCOLORFRAGMENTOP2ATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         op: GLenum,
         dst: GLuint,
@@ -12679,7 +12679,7 @@ pub type PFNGLCOLORFRAGMENTOP2ATIPROC = ::std::option::Option<
         arg2Mod: GLuint,
     ),
 >;
-pub type PFNGLCOLORFRAGMENTOP3ATIPROC = ::std::option::Option<
+pub type PFNGLCOLORFRAGMENTOP3ATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         op: GLenum,
         dst: GLuint,
@@ -12696,7 +12696,7 @@ pub type PFNGLCOLORFRAGMENTOP3ATIPROC = ::std::option::Option<
         arg3Mod: GLuint,
     ),
 >;
-pub type PFNGLALPHAFRAGMENTOP1ATIPROC = ::std::option::Option<
+pub type PFNGLALPHAFRAGMENTOP1ATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         op: GLenum,
         dst: GLuint,
@@ -12706,7 +12706,7 @@ pub type PFNGLALPHAFRAGMENTOP1ATIPROC = ::std::option::Option<
         arg1Mod: GLuint,
     ),
 >;
-pub type PFNGLALPHAFRAGMENTOP2ATIPROC = ::std::option::Option<
+pub type PFNGLALPHAFRAGMENTOP2ATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         op: GLenum,
         dst: GLuint,
@@ -12719,7 +12719,7 @@ pub type PFNGLALPHAFRAGMENTOP2ATIPROC = ::std::option::Option<
         arg2Mod: GLuint,
     ),
 >;
-pub type PFNGLALPHAFRAGMENTOP3ATIPROC = ::std::option::Option<
+pub type PFNGLALPHAFRAGMENTOP3ATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         op: GLenum,
         dst: GLuint,
@@ -12736,46 +12736,46 @@ pub type PFNGLALPHAFRAGMENTOP3ATIPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLSETFRAGMENTSHADERCONSTANTATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(dst: GLuint, value: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(dst: GLuint, value: *const GLfloat)>;
 pub type PFNGLMAPOBJECTBUFFERATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> *mut ::std::os::raw::c_void>;
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint) -> *mut libc::c_void>;
 pub type PFNGLUNMAPOBJECTBUFFERATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
 pub type PFNGLPNTRIANGLESIATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLPNTRIANGLESFATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
-pub type PFNGLSTENCILOPSEPARATEATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+pub type PFNGLSTENCILOPSEPARATEATIPROC = ::core::option::Option<
     unsafe extern "C" fn(face: GLenum, sfail: GLenum, dpfail: GLenum, dppass: GLenum),
 >;
-pub type PFNGLSTENCILFUNCSEPARATEATIPROC = ::std::option::Option<
+pub type PFNGLSTENCILFUNCSEPARATEATIPROC = ::core::option::Option<
     unsafe extern "C" fn(frontfunc: GLenum, backfunc: GLenum, ref_: GLint, mask: GLuint),
 >;
-pub type PFNGLNEWOBJECTBUFFERATIPROC = ::std::option::Option<
+pub type PFNGLNEWOBJECTBUFFERATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
         usage: GLenum,
     ) -> GLuint,
 >;
 pub type PFNGLISOBJECTBUFFERATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
-pub type PFNGLUPDATEOBJECTBUFFERATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
+pub type PFNGLUPDATEOBJECTBUFFERATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLuint,
         size: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
         preserve: GLenum,
     ),
 >;
-pub type PFNGLGETOBJECTBUFFERFVATIPROC = ::std::option::Option<
+pub type PFNGLGETOBJECTBUFFERFVATIPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLGETOBJECTBUFFERIVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLFREEOBJECTBUFFERATIPROC = ::std::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
-pub type PFNGLARRAYOBJECTATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLFREEOBJECTBUFFERATIPROC = ::core::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
+pub type PFNGLARRAYOBJECTATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         array: GLenum,
         size: GLint,
@@ -12786,10 +12786,10 @@ pub type PFNGLARRAYOBJECTATIPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETARRAYOBJECTFVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLenum, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(array: GLenum, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETARRAYOBJECTIVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLVARIANTARRAYOBJECTATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(array: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLVARIANTARRAYOBJECTATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         id: GLuint,
         type_: GLenum,
@@ -12799,10 +12799,10 @@ pub type PFNGLVARIANTARRAYOBJECTATIPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETVARIANTARRAYOBJECTFVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETVARIANTARRAYOBJECTIVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLVERTEXATTRIBARRAYOBJECTATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLVERTEXATTRIBARRAYOBJECTATIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
@@ -12814,126 +12814,126 @@ pub type PFNGLVERTEXATTRIBARRAYOBJECTATIPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETVERTEXATTRIBARRAYOBJECTFVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETVERTEXATTRIBARRAYOBJECTIVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLVERTEXSTREAM1SATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLshort)>;
 pub type PFNGLVERTEXSTREAM1SVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
 pub type PFNGLVERTEXSTREAM1IATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLint)>;
 pub type PFNGLVERTEXSTREAM1IVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
 pub type PFNGLVERTEXSTREAM1FATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLfloat)>;
 pub type PFNGLVERTEXSTREAM1FVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
 pub type PFNGLVERTEXSTREAM1DATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLdouble)>;
 pub type PFNGLVERTEXSTREAM1DVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
 pub type PFNGLVERTEXSTREAM2SATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLshort, y: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLshort, y: GLshort)>;
 pub type PFNGLVERTEXSTREAM2SVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
 pub type PFNGLVERTEXSTREAM2IATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLint, y: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLint, y: GLint)>;
 pub type PFNGLVERTEXSTREAM2IVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
 pub type PFNGLVERTEXSTREAM2FATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLfloat, y: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLfloat, y: GLfloat)>;
 pub type PFNGLVERTEXSTREAM2FVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
 pub type PFNGLVERTEXSTREAM2DATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLdouble, y: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLdouble, y: GLdouble)>;
 pub type PFNGLVERTEXSTREAM2DVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
 pub type PFNGLVERTEXSTREAM3SATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLshort, y: GLshort, z: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLshort, y: GLshort, z: GLshort)>;
 pub type PFNGLVERTEXSTREAM3SVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
 pub type PFNGLVERTEXSTREAM3IATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLint, y: GLint, z: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLint, y: GLint, z: GLint)>;
 pub type PFNGLVERTEXSTREAM3IVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
 pub type PFNGLVERTEXSTREAM3FATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLfloat, y: GLfloat, z: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, x: GLfloat, y: GLfloat, z: GLfloat)>;
 pub type PFNGLVERTEXSTREAM3FVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
-pub type PFNGLVERTEXSTREAM3DATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
+pub type PFNGLVERTEXSTREAM3DATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
 pub type PFNGLVERTEXSTREAM3DVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
-pub type PFNGLVERTEXSTREAM4SATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
+pub type PFNGLVERTEXSTREAM4SATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, x: GLshort, y: GLshort, z: GLshort, w: GLshort),
 >;
 pub type PFNGLVERTEXSTREAM4SVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
-pub type PFNGLVERTEXSTREAM4IATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
+pub type PFNGLVERTEXSTREAM4IATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, x: GLint, y: GLint, z: GLint, w: GLint),
 >;
 pub type PFNGLVERTEXSTREAM4IVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
-pub type PFNGLVERTEXSTREAM4FATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
+pub type PFNGLVERTEXSTREAM4FATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat),
 >;
 pub type PFNGLVERTEXSTREAM4FVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
-pub type PFNGLVERTEXSTREAM4DATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
+pub type PFNGLVERTEXSTREAM4DATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble),
 >;
 pub type PFNGLVERTEXSTREAM4DVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
 pub type PFNGLNORMALSTREAM3BATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, nx: GLbyte, ny: GLbyte, nz: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, nx: GLbyte, ny: GLbyte, nz: GLbyte)>;
 pub type PFNGLNORMALSTREAM3BVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLbyte)>;
-pub type PFNGLNORMALSTREAM3SATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLbyte)>;
+pub type PFNGLNORMALSTREAM3SATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, nx: GLshort, ny: GLshort, nz: GLshort),
 >;
 pub type PFNGLNORMALSTREAM3SVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLshort)>;
 pub type PFNGLNORMALSTREAM3IATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, nx: GLint, ny: GLint, nz: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, nx: GLint, ny: GLint, nz: GLint)>;
 pub type PFNGLNORMALSTREAM3IVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
-pub type PFNGLNORMALSTREAM3FATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLint)>;
+pub type PFNGLNORMALSTREAM3FATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, nx: GLfloat, ny: GLfloat, nz: GLfloat),
 >;
 pub type PFNGLNORMALSTREAM3FVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
-pub type PFNGLNORMALSTREAM3DATIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLfloat)>;
+pub type PFNGLNORMALSTREAM3DATIPROC = ::core::option::Option<
     unsafe extern "C" fn(stream: GLenum, nx: GLdouble, ny: GLdouble, nz: GLdouble),
 >;
 pub type PFNGLNORMALSTREAM3DVATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum, coords: *const GLdouble)>;
 pub type PFNGLCLIENTACTIVEVERTEXSTREAMATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(stream: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(stream: GLenum)>;
 pub type PFNGLVERTEXBLENDENVIATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLVERTEXBLENDENVFATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
-pub type GLeglImageOES = *mut ::std::os::raw::c_void;
-pub type PFNGLEGLIMAGETARGETTEXSTORAGEEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+pub type GLeglImageOES = *mut libc::c_void;
+pub type PFNGLEGLIMAGETARGETTEXSTORAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, image: GLeglImageOES, attrib_list: *const GLint),
 >;
-pub type PFNGLEGLIMAGETARGETTEXTURESTORAGEEXTPROC = ::std::option::Option<
+pub type PFNGLEGLIMAGETARGETTEXTURESTORAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, image: GLeglImageOES, attrib_list: *const GLint),
 >;
 pub type PFNGLUNIFORMBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, buffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, buffer: GLuint)>;
 pub type PFNGLGETUNIFORMBUFFERSIZEEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint) -> GLint>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint) -> GLint>;
 pub type PFNGLGETUNIFORMOFFSETEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint) -> GLintptr>;
-pub type PFNGLBLENDCOLOREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint) -> GLintptr>;
+pub type PFNGLBLENDCOLOREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat, alpha: GLfloat),
 >;
 pub type PFNGLBLENDEQUATIONSEPARATEEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeAlpha: GLenum)>;
-pub type PFNGLBLENDFUNCSEPARATEEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeAlpha: GLenum)>;
+pub type PFNGLBLENDFUNCSEPARATEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         sfactorRGB: GLenum,
         dfactorRGB: GLenum,
@@ -12941,34 +12941,34 @@ pub type PFNGLBLENDFUNCSEPARATEEXTPROC = ::std::option::Option<
         dfactorAlpha: GLenum,
     ),
 >;
-pub type PFNGLBLENDEQUATIONEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
-pub type PFNGLCOLORSUBTABLEEXTPROC = ::std::option::Option<
+pub type PFNGLBLENDEQUATIONEXTPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLCOLORSUBTABLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         start: GLsizei,
         count: GLsizei,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOPYCOLORSUBTABLEEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYCOLORSUBTABLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, start: GLsizei, x: GLint, y: GLint, width: GLsizei),
 >;
 pub type PFNGLLOCKARRAYSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(first: GLint, count: GLsizei)>;
-pub type PFNGLUNLOCKARRAYSEXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLCONVOLUTIONFILTER1DEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(first: GLint, count: GLsizei)>;
+pub type PFNGLUNLOCKARRAYSEXTPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLCONVOLUTIONFILTER1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        image: *const ::std::os::raw::c_void,
+        image: *const libc::c_void,
     ),
 >;
-pub type PFNGLCONVOLUTIONFILTER2DEXTPROC = ::std::option::Option<
+pub type PFNGLCONVOLUTIONFILTER2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -12976,20 +12976,20 @@ pub type PFNGLCONVOLUTIONFILTER2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         type_: GLenum,
-        image: *const ::std::os::raw::c_void,
+        image: *const libc::c_void,
     ),
 >;
 pub type PFNGLCONVOLUTIONPARAMETERFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: GLfloat)>;
-pub type PFNGLCONVOLUTIONPARAMETERFVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: GLfloat)>;
+pub type PFNGLCONVOLUTIONPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLCONVOLUTIONPARAMETERIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: GLint)>;
-pub type PFNGLCONVOLUTIONPARAMETERIVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: GLint)>;
+pub type PFNGLCONVOLUTIONPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLCOPYCONVOLUTIONFILTER1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYCONVOLUTIONFILTER1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -12998,7 +12998,7 @@ pub type PFNGLCOPYCONVOLUTIONFILTER1DEXTPROC = ::std::option::Option<
         width: GLsizei,
     ),
 >;
-pub type PFNGLCOPYCONVOLUTIONFILTER2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYCONVOLUTIONFILTER2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -13008,30 +13008,30 @@ pub type PFNGLCOPYCONVOLUTIONFILTER2DEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLGETCONVOLUTIONFILTEREXTPROC = ::std::option::Option<
+pub type PFNGLGETCONVOLUTIONFILTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
-        image: *mut ::std::os::raw::c_void,
+        image: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETCONVOLUTIONPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETCONVOLUTIONPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLGETCONVOLUTIONPARAMETERIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETSEPARABLEFILTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETSEPARABLEFILTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
-        row: *mut ::std::os::raw::c_void,
-        column: *mut ::std::os::raw::c_void,
-        span: *mut ::std::os::raw::c_void,
+        row: *mut libc::c_void,
+        column: *mut libc::c_void,
+        span: *mut libc::c_void,
     ),
 >;
-pub type PFNGLSEPARABLEFILTER2DEXTPROC = ::std::option::Option<
+pub type PFNGLSEPARABLEFILTER2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -13039,47 +13039,47 @@ pub type PFNGLSEPARABLEFILTER2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         type_: GLenum,
-        row: *const ::std::os::raw::c_void,
-        column: *const ::std::os::raw::c_void,
+        row: *const libc::c_void,
+        column: *const libc::c_void,
     ),
 >;
 pub type PFNGLTANGENT3BEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(tx: GLbyte, ty: GLbyte, tz: GLbyte)>;
-pub type PFNGLTANGENT3BVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(tx: GLbyte, ty: GLbyte, tz: GLbyte)>;
+pub type PFNGLTANGENT3BVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
 pub type PFNGLTANGENT3DEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(tx: GLdouble, ty: GLdouble, tz: GLdouble)>;
-pub type PFNGLTANGENT3DVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(tx: GLdouble, ty: GLdouble, tz: GLdouble)>;
+pub type PFNGLTANGENT3DVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLTANGENT3FEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(tx: GLfloat, ty: GLfloat, tz: GLfloat)>;
-pub type PFNGLTANGENT3FVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(tx: GLfloat, ty: GLfloat, tz: GLfloat)>;
+pub type PFNGLTANGENT3FVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLTANGENT3IEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(tx: GLint, ty: GLint, tz: GLint)>;
-pub type PFNGLTANGENT3IVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(tx: GLint, ty: GLint, tz: GLint)>;
+pub type PFNGLTANGENT3IVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLTANGENT3SEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(tx: GLshort, ty: GLshort, tz: GLshort)>;
-pub type PFNGLTANGENT3SVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(tx: GLshort, ty: GLshort, tz: GLshort)>;
+pub type PFNGLTANGENT3SVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLBINORMAL3BEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(bx: GLbyte, by: GLbyte, bz: GLbyte)>;
-pub type PFNGLBINORMAL3BVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(bx: GLbyte, by: GLbyte, bz: GLbyte)>;
+pub type PFNGLBINORMAL3BVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
 pub type PFNGLBINORMAL3DEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(bx: GLdouble, by: GLdouble, bz: GLdouble)>;
-pub type PFNGLBINORMAL3DVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(bx: GLdouble, by: GLdouble, bz: GLdouble)>;
+pub type PFNGLBINORMAL3DVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLBINORMAL3FEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(bx: GLfloat, by: GLfloat, bz: GLfloat)>;
-pub type PFNGLBINORMAL3FVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(bx: GLfloat, by: GLfloat, bz: GLfloat)>;
+pub type PFNGLBINORMAL3FVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLBINORMAL3IEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(bx: GLint, by: GLint, bz: GLint)>;
-pub type PFNGLBINORMAL3IVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(bx: GLint, by: GLint, bz: GLint)>;
+pub type PFNGLBINORMAL3IVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLBINORMAL3SEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(bx: GLshort, by: GLshort, bz: GLshort)>;
-pub type PFNGLBINORMAL3SVEXTPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
-pub type PFNGLTANGENTPOINTEREXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(bx: GLshort, by: GLshort, bz: GLshort)>;
+pub type PFNGLBINORMAL3SVEXTPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+pub type PFNGLTANGENTPOINTEREXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const libc::c_void),
 >;
-pub type PFNGLBINORMALPOINTEREXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const ::std::os::raw::c_void),
+pub type PFNGLBINORMALPOINTEREXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const libc::c_void),
 >;
-pub type PFNGLCOPYTEXIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -13090,7 +13090,7 @@ pub type PFNGLCOPYTEXIMAGE1DEXTPROC = ::std::option::Option<
         border: GLint,
     ),
 >;
-pub type PFNGLCOPYTEXIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -13102,7 +13102,7 @@ pub type PFNGLCOPYTEXIMAGE2DEXTPROC = ::std::option::Option<
         border: GLint,
     ),
 >;
-pub type PFNGLCOPYTEXSUBIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXSUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -13112,7 +13112,7 @@ pub type PFNGLCOPYTEXSUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
     ),
 >;
-pub type PFNGLCOPYTEXSUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXSUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -13124,7 +13124,7 @@ pub type PFNGLCOPYTEXSUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLCOPYTEXSUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXSUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -13138,13 +13138,13 @@ pub type PFNGLCOPYTEXSUBIMAGE3DEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCULLPARAMETERDVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLdouble)>;
 pub type PFNGLCULLPARAMETERFVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfloat)>;
-pub type PFNGLLABELOBJECTEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfloat)>;
+pub type PFNGLLABELOBJECTEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(type_: GLenum, object: GLuint, length: GLsizei, label: *const GLchar),
 >;
-pub type PFNGLGETOBJECTLABELEXTPROC = ::std::option::Option<
+pub type PFNGLGETOBJECTLABELEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         object: GLuint,
@@ -13154,38 +13154,38 @@ pub type PFNGLGETOBJECTLABELEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLINSERTEVENTMARKEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(length: GLsizei, marker: *const GLchar)>;
+    ::core::option::Option<unsafe extern "C" fn(length: GLsizei, marker: *const GLchar)>;
 pub type PFNGLPUSHGROUPMARKEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(length: GLsizei, marker: *const GLchar)>;
-pub type PFNGLPOPGROUPMARKEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(length: GLsizei, marker: *const GLchar)>;
+pub type PFNGLPOPGROUPMARKEREXTPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLDEPTHBOUNDSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(zmin: GLclampd, zmax: GLclampd)>;
+    ::core::option::Option<unsafe extern "C" fn(zmin: GLclampd, zmax: GLclampd)>;
 pub type PFNGLMATRIXLOADFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXLOADDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
 pub type PFNGLMATRIXMULTFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXMULTDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
-pub type PFNGLMATRIXLOADIDENTITYEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
-pub type PFNGLMATRIXROTATEFEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
+pub type PFNGLMATRIXLOADIDENTITYEXTPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLMATRIXROTATEFEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, angle: GLfloat, x: GLfloat, y: GLfloat, z: GLfloat),
 >;
-pub type PFNGLMATRIXROTATEDEXTPROC = ::std::option::Option<
+pub type PFNGLMATRIXROTATEDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, angle: GLdouble, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
 pub type PFNGLMATRIXSCALEFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, x: GLfloat, y: GLfloat, z: GLfloat)>;
-pub type PFNGLMATRIXSCALEDEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, x: GLfloat, y: GLfloat, z: GLfloat)>;
+pub type PFNGLMATRIXSCALEDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
 pub type PFNGLMATRIXTRANSLATEFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, x: GLfloat, y: GLfloat, z: GLfloat)>;
-pub type PFNGLMATRIXTRANSLATEDEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, x: GLfloat, y: GLfloat, z: GLfloat)>;
+pub type PFNGLMATRIXTRANSLATEDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
-pub type PFNGLMATRIXFRUSTUMEXTPROC = ::std::option::Option<
+pub type PFNGLMATRIXFRUSTUMEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         left: GLdouble,
@@ -13196,7 +13196,7 @@ pub type PFNGLMATRIXFRUSTUMEXTPROC = ::std::option::Option<
         zFar: GLdouble,
     ),
 >;
-pub type PFNGLMATRIXORTHOEXTPROC = ::std::option::Option<
+pub type PFNGLMATRIXORTHOEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         left: GLdouble,
@@ -13207,25 +13207,25 @@ pub type PFNGLMATRIXORTHOEXTPROC = ::std::option::Option<
         zFar: GLdouble,
     ),
 >;
-pub type PFNGLMATRIXPOPEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
-pub type PFNGLMATRIXPUSHEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLMATRIXPOPEXTPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLMATRIXPUSHEXTPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
 pub type PFNGLCLIENTATTRIBDEFAULTEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
+    ::core::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
 pub type PFNGLPUSHCLIENTATTRIBDEFAULTEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
-pub type PFNGLTEXTUREPARAMETERFEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
+pub type PFNGLTEXTUREPARAMETERFEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, param: GLfloat),
 >;
-pub type PFNGLTEXTUREPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
-pub type PFNGLTEXTUREPARAMETERIEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPARAMETERIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, param: GLint),
 >;
-pub type PFNGLTEXTUREPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLTEXTUREIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13235,10 +13235,10 @@ pub type PFNGLTEXTUREIMAGE1DEXTPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXTUREIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13249,10 +13249,10 @@ pub type PFNGLTEXTUREIMAGE2DEXTPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXTURESUBIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13261,10 +13261,10 @@ pub type PFNGLTEXTURESUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXTURESUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13275,10 +13275,10 @@ pub type PFNGLTEXTURESUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOPYTEXTUREIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTUREIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13290,7 +13290,7 @@ pub type PFNGLCOPYTEXTUREIMAGE1DEXTPROC = ::std::option::Option<
         border: GLint,
     ),
 >;
-pub type PFNGLCOPYTEXTUREIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTUREIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13303,7 +13303,7 @@ pub type PFNGLCOPYTEXTUREIMAGE2DEXTPROC = ::std::option::Option<
         border: GLint,
     ),
 >;
-pub type PFNGLCOPYTEXTURESUBIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTURESUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13314,7 +13314,7 @@ pub type PFNGLCOPYTEXTURESUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
     ),
 >;
-pub type PFNGLCOPYTEXTURESUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTURESUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13327,23 +13327,23 @@ pub type PFNGLCOPYTEXTURESUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLGETTEXTUREIMAGEEXTPROC = ::std::option::Option<
+pub type PFNGLGETTEXTUREIMAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
         level: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETTEXTUREPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETTEXTUREPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETTEXTUREPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETTEXTUREPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETTEXTURELEVELPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETTEXTURELEVELPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13352,7 +13352,7 @@ pub type PFNGLGETTEXTURELEVELPARAMETERFVEXTPROC = ::std::option::Option<
         params: *mut GLfloat,
     ),
 >;
-pub type PFNGLGETTEXTURELEVELPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETTEXTURELEVELPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13361,7 +13361,7 @@ pub type PFNGLGETTEXTURELEVELPARAMETERIVEXTPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLTEXTUREIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13373,10 +13373,10 @@ pub type PFNGLTEXTUREIMAGE3DEXTPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXTURESUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13389,10 +13389,10 @@ pub type PFNGLTEXTURESUBIMAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOPYTEXTURESUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYTEXTURESUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13407,74 +13407,74 @@ pub type PFNGLCOPYTEXTURESUBIMAGE3DEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLBINDMULTITEXTUREEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(texunit: GLenum, target: GLenum, texture: GLuint)>;
-pub type PFNGLMULTITEXCOORDPOINTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texunit: GLenum, target: GLenum, texture: GLuint)>;
+pub type PFNGLMULTITEXCOORDPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLMULTITEXENVFEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXENVFEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, param: GLfloat),
 >;
-pub type PFNGLMULTITEXENVFVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXENVFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
-pub type PFNGLMULTITEXENVIEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXENVIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, param: GLint),
 >;
-pub type PFNGLMULTITEXENVIVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXENVIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLMULTITEXGENDEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXGENDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, param: GLdouble),
 >;
-pub type PFNGLMULTITEXGENDVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXGENDVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, params: *const GLdouble),
 >;
-pub type PFNGLMULTITEXGENFEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXGENFEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, param: GLfloat),
 >;
-pub type PFNGLMULTITEXGENFVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXGENFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, params: *const GLfloat),
 >;
-pub type PFNGLMULTITEXGENIEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXGENIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, param: GLint),
 >;
-pub type PFNGLMULTITEXGENIVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXGENIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLGETMULTITEXENVFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXENVFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETMULTITEXENVIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXENVIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETMULTITEXGENDVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXGENDVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, params: *mut GLdouble),
 >;
-pub type PFNGLGETMULTITEXGENFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXGENFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETMULTITEXGENIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXGENIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, coord: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLMULTITEXPARAMETERIEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXPARAMETERIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, param: GLint),
 >;
-pub type PFNGLMULTITEXPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLMULTITEXPARAMETERFEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXPARAMETERFEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, param: GLfloat),
 >;
-pub type PFNGLMULTITEXPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
-pub type PFNGLMULTITEXIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13484,10 +13484,10 @@ pub type PFNGLMULTITEXIMAGE1DEXTPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLMULTITEXIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13498,10 +13498,10 @@ pub type PFNGLMULTITEXIMAGE2DEXTPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLMULTITEXSUBIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXSUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13510,10 +13510,10 @@ pub type PFNGLMULTITEXSUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLMULTITEXSUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXSUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13524,10 +13524,10 @@ pub type PFNGLMULTITEXSUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOPYMULTITEXIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYMULTITEXIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13539,7 +13539,7 @@ pub type PFNGLCOPYMULTITEXIMAGE1DEXTPROC = ::std::option::Option<
         border: GLint,
     ),
 >;
-pub type PFNGLCOPYMULTITEXIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYMULTITEXIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13552,7 +13552,7 @@ pub type PFNGLCOPYMULTITEXIMAGE2DEXTPROC = ::std::option::Option<
         border: GLint,
     ),
 >;
-pub type PFNGLCOPYMULTITEXSUBIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYMULTITEXSUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13563,7 +13563,7 @@ pub type PFNGLCOPYMULTITEXSUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
     ),
 >;
-pub type PFNGLCOPYMULTITEXSUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYMULTITEXSUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13576,23 +13576,23 @@ pub type PFNGLCOPYMULTITEXSUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLGETMULTITEXIMAGEEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXIMAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
         level: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *mut ::std::os::raw::c_void,
+        pixels: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETMULTITEXPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETMULTITEXPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETMULTITEXLEVELPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXLEVELPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13601,7 +13601,7 @@ pub type PFNGLGETMULTITEXLEVELPARAMETERFVEXTPROC = ::std::option::Option<
         params: *mut GLfloat,
     ),
 >;
-pub type PFNGLGETMULTITEXLEVELPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXLEVELPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13610,7 +13610,7 @@ pub type PFNGLGETMULTITEXLEVELPARAMETERIVEXTPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLMULTITEXIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13622,10 +13622,10 @@ pub type PFNGLMULTITEXIMAGE3DEXTPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLMULTITEXSUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXSUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13638,10 +13638,10 @@ pub type PFNGLMULTITEXSUBIMAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOPYMULTITEXSUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLCOPYMULTITEXSUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13656,28 +13656,28 @@ pub type PFNGLCOPYMULTITEXSUBIMAGE3DEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLENABLECLIENTSTATEINDEXEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
 pub type PFNGLDISABLECLIENTSTATEINDEXEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
 pub type PFNGLGETFLOATINDEXEDVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLfloat)>;
 pub type PFNGLGETDOUBLEINDEXEDVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLdouble)>;
-pub type PFNGLGETPOINTERINDEXEDVEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLdouble)>;
+pub type PFNGLGETPOINTERINDEXEDVEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut *mut libc::c_void),
 >;
 pub type PFNGLENABLEINDEXEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
 pub type PFNGLDISABLEINDEXEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint)>;
 pub type PFNGLISENABLEDINDEXEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint) -> GLboolean>;
 pub type PFNGLGETINTEGERINDEXEDVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLint)>;
-pub type PFNGLGETBOOLEANINDEXEDVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLint)>;
+pub type PFNGLGETBOOLEANINDEXEDVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLboolean),
 >;
-pub type PFNGLCOMPRESSEDTEXTUREIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTUREIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13688,10 +13688,10 @@ pub type PFNGLCOMPRESSEDTEXTUREIMAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTUREIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTUREIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13701,10 +13701,10 @@ pub type PFNGLCOMPRESSEDTEXTUREIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTUREIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTUREIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13713,10 +13713,10 @@ pub type PFNGLCOMPRESSEDTEXTUREIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13729,10 +13729,10 @@ pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13743,10 +13743,10 @@ pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -13755,18 +13755,18 @@ pub type PFNGLCOMPRESSEDTEXTURESUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETCOMPRESSEDTEXTUREIMAGEEXTPROC = ::std::option::Option<
+pub type PFNGLGETCOMPRESSEDTEXTUREIMAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
         lod: GLint,
-        img: *mut ::std::os::raw::c_void,
+        img: *mut libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDMULTITEXIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDMULTITEXIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13777,10 +13777,10 @@ pub type PFNGLCOMPRESSEDMULTITEXIMAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDMULTITEXIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDMULTITEXIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13790,10 +13790,10 @@ pub type PFNGLCOMPRESSEDMULTITEXIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDMULTITEXIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDMULTITEXIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13802,10 +13802,10 @@ pub type PFNGLCOMPRESSEDMULTITEXIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
         border: GLint,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13818,10 +13818,10 @@ pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13832,10 +13832,10 @@ pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
@@ -13844,68 +13844,68 @@ pub type PFNGLCOMPRESSEDMULTITEXSUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         imageSize: GLsizei,
-        bits: *const ::std::os::raw::c_void,
+        bits: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETCOMPRESSEDMULTITEXIMAGEEXTPROC = ::std::option::Option<
+pub type PFNGLGETCOMPRESSEDMULTITEXIMAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texunit: GLenum,
         target: GLenum,
         lod: GLint,
-        img: *mut ::std::os::raw::c_void,
+        img: *mut libc::c_void,
     ),
 >;
 pub type PFNGLMATRIXLOADTRANSPOSEFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXLOADTRANSPOSEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
 pub type PFNGLMATRIXMULTTRANSPOSEFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXMULTTRANSPOSEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
-pub type PFNGLNAMEDBUFFERDATAEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, m: *const GLdouble)>;
+pub type PFNGLNAMEDBUFFERDATAEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
         usage: GLenum,
     ),
 >;
-pub type PFNGLNAMEDBUFFERSUBDATAEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERSUBDATAEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLMAPNAMEDBUFFEREXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(buffer: GLuint, access: GLenum) -> *mut ::std::os::raw::c_void,
+pub type PFNGLMAPNAMEDBUFFEREXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(buffer: GLuint, access: GLenum) -> *mut libc::c_void,
 >;
 pub type PFNGLUNMAPNAMEDBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
 pub type PFNGLGETNAMEDBUFFERPARAMETERIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETNAMEDBUFFERPOINTERVEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETNAMEDBUFFERPOINTERVEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut *mut libc::c_void),
 >;
-pub type PFNGLGETNAMEDBUFFERSUBDATAEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDBUFFERSUBDATAEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
 pub type PFNGLPROGRAMUNIFORM1FEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat)>;
-pub type PFNGLPROGRAMUNIFORM2FEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat)>;
+pub type PFNGLPROGRAMUNIFORM2FEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM3FEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3FEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLfloat, v1: GLfloat, v2: GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM4FEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4FEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -13916,14 +13916,14 @@ pub type PFNGLPROGRAMUNIFORM4FEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLPROGRAMUNIFORM1IEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint)>;
-pub type PFNGLPROGRAMUNIFORM2IEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint)>;
+pub type PFNGLPROGRAMUNIFORM2IEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint, v1: GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM3IEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3IEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLint, v1: GLint, v2: GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM4IEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4IEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -13933,31 +13933,31 @@ pub type PFNGLPROGRAMUNIFORM4IEXTPROC = ::std::option::Option<
         v3: GLint,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM1FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM2FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM3FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM4FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLfloat),
 >;
-pub type PFNGLPROGRAMUNIFORM1IVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1IVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM2IVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2IVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM3IVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3IVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLPROGRAMUNIFORM4IVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4IVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLint),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -13966,7 +13966,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -13975,7 +13975,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -13984,7 +13984,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X3FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X3FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -13993,7 +13993,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X3FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X2FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X2FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14002,7 +14002,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X2FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X4FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14011,7 +14011,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X4FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X2FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X2FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14020,7 +14020,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X2FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X4FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14029,7 +14029,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X4FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X3FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X3FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14038,45 +14038,45 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X3FVEXTPROC = ::std::option::Option<
         value: *const GLfloat,
     ),
 >;
-pub type PFNGLTEXTUREBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, internalformat: GLenum, buffer: GLuint),
 >;
-pub type PFNGLMULTITEXBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, internalformat: GLenum, buffer: GLuint),
 >;
-pub type PFNGLTEXTUREPARAMETERIIVEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPARAMETERIIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLTEXTUREPARAMETERIUIVEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPARAMETERIUIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *const GLuint),
 >;
-pub type PFNGLGETTEXTUREPARAMETERIIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETTEXTUREPARAMETERIIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETTEXTUREPARAMETERIUIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETTEXTUREPARAMETERIUIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, pname: GLenum, params: *mut GLuint),
 >;
-pub type PFNGLMULTITEXPARAMETERIIVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXPARAMETERIIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLMULTITEXPARAMETERIUIVEXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXPARAMETERIUIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *const GLuint),
 >;
-pub type PFNGLGETMULTITEXPARAMETERIIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXPARAMETERIIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETMULTITEXPARAMETERIUIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMULTITEXPARAMETERIUIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, pname: GLenum, params: *mut GLuint),
 >;
 pub type PFNGLPROGRAMUNIFORM1UIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint)>;
-pub type PFNGLPROGRAMUNIFORM2UIEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint)>;
+pub type PFNGLPROGRAMUNIFORM2UIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint, v1: GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM3UIEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, v0: GLuint, v1: GLuint, v2: GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM4UIEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14086,19 +14086,19 @@ pub type PFNGLPROGRAMUNIFORM4UIEXTPROC = ::std::option::Option<
         v3: GLuint,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM1UIVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM2UIVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM3UIVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLPROGRAMUNIFORM4UIVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETERS4FVEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETERS4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
@@ -14107,7 +14107,7 @@ pub type PFNGLNAMEDPROGRAMLOCALPARAMETERS4FVEXTPROC = ::std::option::Option<
         params: *const GLfloat,
     ),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4IEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4IEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
@@ -14118,10 +14118,10 @@ pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4IEXTPROC = ::std::option::Option<
         w: GLint,
     ),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4IVEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4IVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *const GLint),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETERSI4IVEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETERSI4IVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
@@ -14130,7 +14130,7 @@ pub type PFNGLNAMEDPROGRAMLOCALPARAMETERSI4IVEXTPROC = ::std::option::Option<
         params: *const GLint,
     ),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4UIEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4UIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
@@ -14141,10 +14141,10 @@ pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4UIEXTPROC = ::std::option::Option<
         w: GLuint,
     ),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4UIVEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETERI4UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *const GLuint),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETERSI4UIVEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETERSI4UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
@@ -14153,34 +14153,34 @@ pub type PFNGLNAMEDPROGRAMLOCALPARAMETERSI4UIVEXTPROC = ::std::option::Option<
         params: *const GLuint,
     ),
 >;
-pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERIIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERIIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *mut GLint),
 >;
-pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERIUIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERIUIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *mut GLuint),
 >;
 pub type PFNGLENABLECLIENTSTATEIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
 pub type PFNGLDISABLECLIENTSTATEIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(array: GLenum, index: GLuint)>;
 pub type PFNGLGETFLOATI_VEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, params: *mut GLfloat)>;
-pub type PFNGLGETDOUBLEI_VEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, params: *mut GLfloat)>;
+pub type PFNGLGETDOUBLEI_VEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(pname: GLenum, index: GLuint, params: *mut GLdouble),
 >;
-pub type PFNGLGETPOINTERI_VEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(pname: GLenum, index: GLuint, params: *mut *mut ::std::os::raw::c_void),
+pub type PFNGLGETPOINTERI_VEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(pname: GLenum, index: GLuint, params: *mut *mut libc::c_void),
 >;
-pub type PFNGLNAMEDPROGRAMSTRINGEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMSTRINGEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
         format: GLenum,
         len: GLsizei,
-        string: *const ::std::os::raw::c_void,
+        string: *const libc::c_void,
     ),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4DEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
@@ -14191,10 +14191,10 @@ pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4DEXTPROC = ::std::option::Option<
         w: GLdouble,
     ),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4DVEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *const GLdouble),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4FEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4FEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
@@ -14205,27 +14205,27 @@ pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4FEXTPROC = ::std::option::Option<
         w: GLfloat,
     ),
 >;
-pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4FVEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDPROGRAMLOCALPARAMETER4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *const GLfloat),
 >;
-pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERDVEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERDVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *mut GLdouble),
 >;
-pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDPROGRAMLOCALPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, index: GLuint, params: *mut GLfloat),
 >;
-pub type PFNGLGETNAMEDPROGRAMIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDPROGRAMIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, target: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETNAMEDPROGRAMSTRINGEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDPROGRAMSTRINGEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         target: GLenum,
         pname: GLenum,
-        string: *mut ::std::os::raw::c_void,
+        string: *mut libc::c_void,
     ),
 >;
-pub type PFNGLNAMEDRENDERBUFFERSTORAGEEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDRENDERBUFFERSTORAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         renderbuffer: GLuint,
         internalformat: GLenum,
@@ -14233,10 +14233,10 @@ pub type PFNGLNAMEDRENDERBUFFERSTORAGEEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLGETNAMEDRENDERBUFFERPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDRENDERBUFFERPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(renderbuffer: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         renderbuffer: GLuint,
         samples: GLsizei,
@@ -14245,7 +14245,7 @@ pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::std::option::Option
         height: GLsizei,
     ),
 >;
-pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLECOVERAGEEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLECOVERAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         renderbuffer: GLuint,
         coverageSamples: GLsizei,
@@ -14256,8 +14256,8 @@ pub type PFNGLNAMEDRENDERBUFFERSTORAGEMULTISAMPLECOVERAGEEXTPROC = ::std::option
     ),
 >;
 pub type PFNGLCHECKNAMEDFRAMEBUFFERSTATUSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, target: GLenum) -> GLenum>;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTURE1DEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, target: GLenum) -> GLenum>;
+pub type PFNGLNAMEDFRAMEBUFFERTEXTURE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -14266,7 +14266,7 @@ pub type PFNGLNAMEDFRAMEBUFFERTEXTURE1DEXTPROC = ::std::option::Option<
         level: GLint,
     ),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTURE2DEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERTEXTURE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -14275,7 +14275,7 @@ pub type PFNGLNAMEDFRAMEBUFFERTEXTURE2DEXTPROC = ::std::option::Option<
         level: GLint,
     ),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTURE3DEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERTEXTURE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -14285,7 +14285,7 @@ pub type PFNGLNAMEDFRAMEBUFFERTEXTURE3DEXTPROC = ::std::option::Option<
         zoffset: GLint,
     ),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERRENDERBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERRENDERBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -14293,7 +14293,7 @@ pub type PFNGLNAMEDFRAMEBUFFERRENDERBUFFEREXTPROC = ::std::option::Option<
         renderbuffer: GLuint,
     ),
 >;
-pub type PFNGLGETNAMEDFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -14302,20 +14302,20 @@ pub type PFNGLGETNAMEDFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC = ::std::option::O
     ),
 >;
 pub type PFNGLGENERATETEXTUREMIPMAPEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, target: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, target: GLenum)>;
 pub type PFNGLGENERATEMULTITEXMIPMAPEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(texunit: GLenum, target: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(texunit: GLenum, target: GLenum)>;
 pub type PFNGLFRAMEBUFFERDRAWBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, mode: GLenum)>;
-pub type PFNGLFRAMEBUFFERDRAWBUFFERSEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, mode: GLenum)>;
+pub type PFNGLFRAMEBUFFERDRAWBUFFERSEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, n: GLsizei, bufs: *const GLenum),
 >;
 pub type PFNGLFRAMEBUFFERREADBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, mode: GLenum)>;
-pub type PFNGLGETFRAMEBUFFERPARAMETERIVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, mode: GLenum)>;
+pub type PFNGLGETFRAMEBUFFERPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLNAMEDCOPYBUFFERSUBDATAEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDCOPYBUFFERSUBDATAEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         readBuffer: GLuint,
         writeBuffer: GLuint,
@@ -14324,10 +14324,10 @@ pub type PFNGLNAMEDCOPYBUFFERSUBDATAEXTPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTUREEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERTEXTUREEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, attachment: GLenum, texture: GLuint, level: GLint),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTURELAYEREXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERTEXTURELAYEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -14336,7 +14336,7 @@ pub type PFNGLNAMEDFRAMEBUFFERTEXTURELAYEREXTPROC = ::std::option::Option<
         layer: GLint,
     ),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERTEXTUREFACEEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERTEXTUREFACEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         framebuffer: GLuint,
         attachment: GLenum,
@@ -14345,13 +14345,13 @@ pub type PFNGLNAMEDFRAMEBUFFERTEXTUREFACEEXTPROC = ::std::option::Option<
         face: GLenum,
     ),
 >;
-pub type PFNGLTEXTURERENDERBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURERENDERBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texture: GLuint, target: GLenum, renderbuffer: GLuint),
 >;
-pub type PFNGLMULTITEXRENDERBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLMULTITEXRENDERBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(texunit: GLenum, target: GLenum, renderbuffer: GLuint),
 >;
-pub type PFNGLVERTEXARRAYVERTEXOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14361,7 +14361,7 @@ pub type PFNGLVERTEXARRAYVERTEXOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYCOLOROFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYCOLOROFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14371,10 +14371,10 @@ pub type PFNGLVERTEXARRAYCOLOROFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYEDGEFLAGOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYEDGEFLAGOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, buffer: GLuint, stride: GLsizei, offset: GLintptr),
 >;
-pub type PFNGLVERTEXARRAYINDEXOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYINDEXOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14383,7 +14383,7 @@ pub type PFNGLVERTEXARRAYINDEXOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYNORMALOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYNORMALOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14392,7 +14392,7 @@ pub type PFNGLVERTEXARRAYNORMALOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYTEXCOORDOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYTEXCOORDOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14402,7 +14402,7 @@ pub type PFNGLVERTEXARRAYTEXCOORDOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYMULTITEXCOORDOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYMULTITEXCOORDOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14413,7 +14413,7 @@ pub type PFNGLVERTEXARRAYMULTITEXCOORDOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYFOGCOORDOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYFOGCOORDOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14422,7 +14422,7 @@ pub type PFNGLVERTEXARRAYFOGCOORDOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYSECONDARYCOLOROFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYSECONDARYCOLOROFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14432,7 +14432,7 @@ pub type PFNGLVERTEXARRAYSECONDARYCOLOROFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYVERTEXATTRIBOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXATTRIBOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14444,7 +14444,7 @@ pub type PFNGLVERTEXARRAYVERTEXATTRIBOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLVERTEXARRAYVERTEXATTRIBIOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXATTRIBIOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14456,58 +14456,58 @@ pub type PFNGLVERTEXARRAYVERTEXATTRIBIOFFSETEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLENABLEVERTEXARRAYEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, array: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, array: GLenum)>;
 pub type PFNGLDISABLEVERTEXARRAYEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, array: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, array: GLenum)>;
 pub type PFNGLENABLEVERTEXARRAYATTRIBEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
 pub type PFNGLDISABLEVERTEXARRAYATTRIBEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint)>;
 pub type PFNGLGETVERTEXARRAYINTEGERVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, pname: GLenum, param: *mut GLint)>;
-pub type PFNGLGETVERTEXARRAYPOINTERVEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(vaobj: GLuint, pname: GLenum, param: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, pname: GLenum, param: *mut GLint)>;
+pub type PFNGLGETVERTEXARRAYPOINTERVEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(vaobj: GLuint, pname: GLenum, param: *mut *mut libc::c_void),
 >;
-pub type PFNGLGETVERTEXARRAYINTEGERI_VEXTPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXARRAYINTEGERI_VEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, index: GLuint, pname: GLenum, param: *mut GLint),
 >;
-pub type PFNGLGETVERTEXARRAYPOINTERI_VEXTPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXARRAYPOINTERI_VEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         index: GLuint,
         pname: GLenum,
-        param: *mut *mut ::std::os::raw::c_void,
+        param: *mut *mut libc::c_void,
     ),
 >;
-pub type PFNGLMAPNAMEDBUFFERRANGEEXTPROC = ::std::option::Option<
+pub type PFNGLMAPNAMEDBUFFERRANGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLintptr,
         length: GLsizeiptr,
         access: GLbitfield,
-    ) -> *mut ::std::os::raw::c_void,
+    ) -> *mut libc::c_void,
 >;
-pub type PFNGLFLUSHMAPPEDNAMEDBUFFERRANGEEXTPROC = ::std::option::Option<
+pub type PFNGLFLUSHMAPPEDNAMEDBUFFERRANGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, offset: GLintptr, length: GLsizeiptr),
 >;
-pub type PFNGLNAMEDBUFFERSTORAGEEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERSTORAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
         flags: GLbitfield,
     ),
 >;
-pub type PFNGLCLEARNAMEDBUFFERDATAEXTPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDBUFFERDATAEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         internalformat: GLenum,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLCLEARNAMEDBUFFERSUBDATAEXTPROC = ::std::option::Option<
+pub type PFNGLCLEARNAMEDBUFFERSUBDATAEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         internalformat: GLenum,
@@ -14515,23 +14515,23 @@ pub type PFNGLCLEARNAMEDBUFFERSUBDATAEXTPROC = ::std::option::Option<
         size: GLsizeiptr,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
 pub type PFNGLNAMEDFRAMEBUFFERPARAMETERIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint, pname: GLenum, param: GLint)>;
-pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERIVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint, pname: GLenum, param: GLint)>;
+pub type PFNGLGETNAMEDFRAMEBUFFERPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, pname: GLenum, params: *mut GLint),
 >;
 pub type PFNGLPROGRAMUNIFORM1DEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLdouble)>;
-pub type PFNGLPROGRAMUNIFORM2DEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, x: GLdouble)>;
+pub type PFNGLPROGRAMUNIFORM2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLdouble, y: GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM3DEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM4DEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14541,19 +14541,19 @@ pub type PFNGLPROGRAMUNIFORM4DEXTPROC = ::std::option::Option<
         w: GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORM1DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM1DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM2DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM2DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM3DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM3DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORM4DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORM4DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, value: *const GLdouble),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14562,7 +14562,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14571,7 +14571,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14580,7 +14580,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X3DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X3DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14589,7 +14589,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X3DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX2X4DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX2X4DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14598,7 +14598,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX2X4DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X2DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X2DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14607,7 +14607,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X2DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX3X4DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX3X4DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14616,7 +14616,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX3X4DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X2DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X2DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14625,7 +14625,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X2DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMUNIFORMMATRIX4X3DVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMMATRIX4X3DVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -14634,7 +14634,7 @@ pub type PFNGLPROGRAMUNIFORMMATRIX4X3DVEXTPROC = ::std::option::Option<
         value: *const GLdouble,
     ),
 >;
-pub type PFNGLTEXTUREBUFFERRANGEEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREBUFFERRANGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -14644,7 +14644,7 @@ pub type PFNGLTEXTUREBUFFERRANGEEXTPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE1DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -14653,7 +14653,7 @@ pub type PFNGLTEXTURESTORAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -14663,7 +14663,7 @@ pub type PFNGLTEXTURESTORAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -14674,7 +14674,7 @@ pub type PFNGLTEXTURESTORAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE2DMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE2DMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -14685,7 +14685,7 @@ pub type PFNGLTEXTURESTORAGE2DMULTISAMPLEEXTPROC = ::std::option::Option<
         fixedsamplelocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTURESTORAGE3DMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGE3DMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -14697,7 +14697,7 @@ pub type PFNGLTEXTURESTORAGE3DMULTISAMPLEEXTPROC = ::std::option::Option<
         fixedsamplelocations: GLboolean,
     ),
 >;
-pub type PFNGLVERTEXARRAYBINDVERTEXBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYBINDVERTEXBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         bindingindex: GLuint,
@@ -14706,7 +14706,7 @@ pub type PFNGLVERTEXARRAYBINDVERTEXBUFFEREXTPROC = ::std::option::Option<
         stride: GLsizei,
     ),
 >;
-pub type PFNGLVERTEXARRAYVERTEXATTRIBFORMATEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXATTRIBFORMATEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         attribindex: GLuint,
@@ -14716,7 +14716,7 @@ pub type PFNGLVERTEXARRAYVERTEXATTRIBFORMATEXTPROC = ::std::option::Option<
         relativeoffset: GLuint,
     ),
 >;
-pub type PFNGLVERTEXARRAYVERTEXATTRIBIFORMATEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXATTRIBIFORMATEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         attribindex: GLuint,
@@ -14725,7 +14725,7 @@ pub type PFNGLVERTEXARRAYVERTEXATTRIBIFORMATEXTPROC = ::std::option::Option<
         relativeoffset: GLuint,
     ),
 >;
-pub type PFNGLVERTEXARRAYVERTEXATTRIBLFORMATEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXATTRIBLFORMATEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         attribindex: GLuint,
@@ -14734,13 +14734,13 @@ pub type PFNGLVERTEXARRAYVERTEXATTRIBLFORMATEXTPROC = ::std::option::Option<
         relativeoffset: GLuint,
     ),
 >;
-pub type PFNGLVERTEXARRAYVERTEXATTRIBBINDINGEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXATTRIBBINDINGEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, attribindex: GLuint, bindingindex: GLuint),
 >;
-pub type PFNGLVERTEXARRAYVERTEXBINDINGDIVISOREXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXBINDINGDIVISOREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(vaobj: GLuint, bindingindex: GLuint, divisor: GLuint),
 >;
-pub type PFNGLVERTEXARRAYVERTEXATTRIBLOFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXARRAYVERTEXATTRIBLOFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vaobj: GLuint,
         buffer: GLuint,
@@ -14751,7 +14751,7 @@ pub type PFNGLVERTEXARRAYVERTEXATTRIBLOFFSETEXTPROC = ::std::option::Option<
         offset: GLintptr,
     ),
 >;
-pub type PFNGLTEXTUREPAGECOMMITMENTEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTUREPAGECOMMITMENTEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -14765,34 +14765,34 @@ pub type PFNGLTEXTUREPAGECOMMITMENTEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLVERTEXARRAYVERTEXATTRIBDIVISOREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint, divisor: GLuint)>;
-pub type PFNGLCOLORMASKINDEXEDEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(vaobj: GLuint, index: GLuint, divisor: GLuint)>;
+pub type PFNGLCOLORMASKINDEXEDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, r: GLboolean, g: GLboolean, b: GLboolean, a: GLboolean),
 >;
-pub type PFNGLDRAWARRAYSINSTANCEDEXTPROC = ::std::option::Option<
+pub type PFNGLDRAWARRAYSINSTANCEDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, start: GLint, count: GLsizei, primcount: GLsizei),
 >;
-pub type PFNGLDRAWELEMENTSINSTANCEDEXTPROC = ::std::option::Option<
+pub type PFNGLDRAWELEMENTSINSTANCEDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
         primcount: GLsizei,
     ),
 >;
-pub type PFNGLDRAWRANGEELEMENTSEXTPROC = ::std::option::Option<
+pub type PFNGLDRAWRANGEELEMENTSEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         start: GLuint,
         end: GLuint,
         count: GLsizei,
         type_: GLenum,
-        indices: *const ::std::os::raw::c_void,
+        indices: *const libc::c_void,
     ),
 >;
-pub type GLeglClientBufferEXT = *mut ::std::os::raw::c_void;
-pub type PFNGLBUFFERSTORAGEEXTERNALEXTPROC = ::std::option::Option<
+pub type GLeglClientBufferEXT = *mut libc::c_void;
+pub type PFNGLBUFFERSTORAGEEXTERNALEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         offset: GLintptr,
@@ -14801,7 +14801,7 @@ pub type PFNGLBUFFERSTORAGEEXTERNALEXTPROC = ::std::option::Option<
         flags: GLbitfield,
     ),
 >;
-pub type PFNGLNAMEDBUFFERSTORAGEEXTERNALEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERSTORAGEEXTERNALEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         offset: GLintptr,
@@ -14810,16 +14810,16 @@ pub type PFNGLNAMEDBUFFERSTORAGEEXTERNALEXTPROC = ::std::option::Option<
         flags: GLbitfield,
     ),
 >;
-pub type PFNGLFOGCOORDFEXTPROC = ::std::option::Option<unsafe extern "C" fn(coord: GLfloat)>;
+pub type PFNGLFOGCOORDFEXTPROC = ::core::option::Option<unsafe extern "C" fn(coord: GLfloat)>;
 pub type PFNGLFOGCOORDFVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(coord: *const GLfloat)>;
-pub type PFNGLFOGCOORDDEXTPROC = ::std::option::Option<unsafe extern "C" fn(coord: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(coord: *const GLfloat)>;
+pub type PFNGLFOGCOORDDEXTPROC = ::core::option::Option<unsafe extern "C" fn(coord: GLdouble)>;
 pub type PFNGLFOGCOORDDVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(coord: *const GLdouble)>;
-pub type PFNGLFOGCOORDPOINTEREXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(coord: *const GLdouble)>;
+pub type PFNGLFOGCOORDPOINTEREXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(type_: GLenum, stride: GLsizei, pointer: *const libc::c_void),
 >;
-pub type PFNGLBLITFRAMEBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLBLITFRAMEBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         srcX0: GLint,
         srcY0: GLint,
@@ -14833,7 +14833,7 @@ pub type PFNGLBLITFRAMEBUFFEREXTPROC = ::std::option::Option<
         filter: GLenum,
     ),
 >;
-pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -14843,29 +14843,29 @@ pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLEEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLISRENDERBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(renderbuffer: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(renderbuffer: GLuint) -> GLboolean>;
 pub type PFNGLBINDRENDERBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, renderbuffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, renderbuffer: GLuint)>;
 pub type PFNGLDELETERENDERBUFFERSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *const GLuint)>;
 pub type PFNGLGENRENDERBUFFERSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *mut GLuint)>;
-pub type PFNGLRENDERBUFFERSTORAGEEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, renderbuffers: *mut GLuint)>;
+pub type PFNGLRENDERBUFFERSTORAGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, width: GLsizei, height: GLsizei),
 >;
 pub type PFNGLGETRENDERBUFFERPARAMETERIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLISFRAMEBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(framebuffer: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(framebuffer: GLuint) -> GLboolean>;
 pub type PFNGLBINDFRAMEBUFFEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, framebuffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, framebuffer: GLuint)>;
 pub type PFNGLDELETEFRAMEBUFFERSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *const GLuint)>;
 pub type PFNGLGENFRAMEBUFFERSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, framebuffers: *mut GLuint)>;
 pub type PFNGLCHECKFRAMEBUFFERSTATUSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum) -> GLenum>;
-pub type PFNGLFRAMEBUFFERTEXTURE1DEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum) -> GLenum>;
+pub type PFNGLFRAMEBUFFERTEXTURE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -14874,7 +14874,7 @@ pub type PFNGLFRAMEBUFFERTEXTURE1DEXTPROC = ::std::option::Option<
         level: GLint,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTURE2DEXTPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTURE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -14883,7 +14883,7 @@ pub type PFNGLFRAMEBUFFERTEXTURE2DEXTPROC = ::std::option::Option<
         level: GLint,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTURE3DEXTPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTURE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -14893,7 +14893,7 @@ pub type PFNGLFRAMEBUFFERTEXTURE3DEXTPROC = ::std::option::Option<
         zoffset: GLint,
     ),
 >;
-pub type PFNGLFRAMEBUFFERRENDERBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERRENDERBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -14901,109 +14901,109 @@ pub type PFNGLFRAMEBUFFERRENDERBUFFEREXTPROC = ::std::option::Option<
         renderbuffer: GLuint,
     ),
 >;
-pub type PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETFRAMEBUFFERATTACHMENTPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, attachment: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGENERATEMIPMAPEXTPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+pub type PFNGLGENERATEMIPMAPEXTPROC = ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
 pub type PFNGLPROGRAMPARAMETERIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
-pub type PFNGLPROGRAMENVPARAMETERS4FVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, pname: GLenum, value: GLint)>;
+pub type PFNGLPROGRAMENVPARAMETERS4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLfloat),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETERS4FVEXTPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETERS4FVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLfloat),
 >;
-pub type PFNGLGETUNIFORMUIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETUNIFORMUIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, params: *mut GLuint),
 >;
-pub type PFNGLBINDFRAGDATALOCATIONEXTPROC = ::std::option::Option<
+pub type PFNGLBINDFRAGDATALOCATIONEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, color: GLuint, name: *const GLchar),
 >;
 pub type PFNGLGETFRAGDATALOCATIONEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
 pub type PFNGLUNIFORM1UIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint)>;
 pub type PFNGLUNIFORM2UIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint)>;
-pub type PFNGLUNIFORM3UIEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint)>;
+pub type PFNGLUNIFORM3UIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint),
 >;
-pub type PFNGLUNIFORM4UIEXTPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, v0: GLuint, v1: GLuint, v2: GLuint, v3: GLuint),
 >;
-pub type PFNGLUNIFORM1UIVEXTPROC = ::std::option::Option<
+pub type PFNGLUNIFORM1UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLUNIFORM2UIVEXTPROC = ::std::option::Option<
+pub type PFNGLUNIFORM2UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLUNIFORM3UIVEXTPROC = ::std::option::Option<
+pub type PFNGLUNIFORM3UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLUNIFORM4UIVEXTPROC = ::std::option::Option<
+pub type PFNGLUNIFORM4UIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint),
 >;
-pub type PFNGLGETHISTOGRAMEXTPROC = ::std::option::Option<
+pub type PFNGLGETHISTOGRAMEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         reset: GLboolean,
         format: GLenum,
         type_: GLenum,
-        values: *mut ::std::os::raw::c_void,
+        values: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETHISTOGRAMPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETHISTOGRAMPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLGETHISTOGRAMPARAMETERIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETMINMAXEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETMINMAXEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         reset: GLboolean,
         format: GLenum,
         type_: GLenum,
-        values: *mut ::std::os::raw::c_void,
+        values: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETMINMAXPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMINMAXPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLGETMINMAXPARAMETERIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLHISTOGRAMEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLHISTOGRAMEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, width: GLsizei, internalformat: GLenum, sink: GLboolean),
 >;
-pub type PFNGLMINMAXEXTPROC = ::std::option::Option<
+pub type PFNGLMINMAXEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, sink: GLboolean),
 >;
-pub type PFNGLRESETHISTOGRAMEXTPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
-pub type PFNGLRESETMINMAXEXTPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+pub type PFNGLRESETHISTOGRAMEXTPROC = ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
+pub type PFNGLRESETMINMAXEXTPROC = ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
 pub type PFNGLINDEXFUNCEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLclampf)>;
+    ::core::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLclampf)>;
 pub type PFNGLINDEXMATERIALEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
-pub type PFNGLAPPLYTEXTUREEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
-pub type PFNGLTEXTURELIGHTEXTPROC = ::std::option::Option<unsafe extern "C" fn(pname: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
+pub type PFNGLAPPLYTEXTUREEXTPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLTEXTURELIGHTEXTPROC = ::core::option::Option<unsafe extern "C" fn(pname: GLenum)>;
 pub type PFNGLTEXTUREMATERIALEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
 pub type PFNGLGETUNSIGNEDBYTEVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, data: *mut GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, data: *mut GLubyte)>;
 pub type PFNGLGETUNSIGNEDBYTEI_VEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, data: *mut GLubyte)>;
 pub type PFNGLDELETEMEMORYOBJECTSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, memoryObjects: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, memoryObjects: *const GLuint)>;
 pub type PFNGLISMEMORYOBJECTEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(memoryObject: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(memoryObject: GLuint) -> GLboolean>;
 pub type PFNGLCREATEMEMORYOBJECTSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, memoryObjects: *mut GLuint)>;
-pub type PFNGLMEMORYOBJECTPARAMETERIVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, memoryObjects: *mut GLuint)>;
+pub type PFNGLMEMORYOBJECTPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(memoryObject: GLuint, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLGETMEMORYOBJECTPARAMETERIVEXTPROC = ::std::option::Option<
+pub type PFNGLGETMEMORYOBJECTPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(memoryObject: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLTEXSTORAGEMEM2DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGEMEM2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         levels: GLsizei,
@@ -15014,7 +15014,7 @@ pub type PFNGLTEXSTORAGEMEM2DEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLTEXSTORAGEMEM2DMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGEMEM2DMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -15026,7 +15026,7 @@ pub type PFNGLTEXSTORAGEMEM2DMULTISAMPLEEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLTEXSTORAGEMEM3DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGEMEM3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         levels: GLsizei,
@@ -15038,7 +15038,7 @@ pub type PFNGLTEXSTORAGEMEM3DEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLTEXSTORAGEMEM3DMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGEMEM3DMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         samples: GLsizei,
@@ -15051,10 +15051,10 @@ pub type PFNGLTEXSTORAGEMEM3DMULTISAMPLEEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLBUFFERSTORAGEMEMEXTPROC = ::std::option::Option<
+pub type PFNGLBUFFERSTORAGEMEMEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, size: GLsizeiptr, memory: GLuint, offset: GLuint64),
 >;
-pub type PFNGLTEXTURESTORAGEMEM2DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGEMEM2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         levels: GLsizei,
@@ -15065,7 +15065,7 @@ pub type PFNGLTEXTURESTORAGEMEM2DEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLTEXTURESTORAGEMEM2DMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGEMEM2DMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         samples: GLsizei,
@@ -15077,7 +15077,7 @@ pub type PFNGLTEXTURESTORAGEMEM2DMULTISAMPLEEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLTEXTURESTORAGEMEM3DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGEMEM3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         levels: GLsizei,
@@ -15089,7 +15089,7 @@ pub type PFNGLTEXTURESTORAGEMEM3DEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLTEXTURESTORAGEMEM3DMULTISAMPLEEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGEMEM3DMULTISAMPLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         samples: GLsizei,
@@ -15102,10 +15102,10 @@ pub type PFNGLTEXTURESTORAGEMEM3DMULTISAMPLEEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLNAMEDBUFFERSTORAGEMEMEXTPROC = ::std::option::Option<
+pub type PFNGLNAMEDBUFFERSTORAGEMEMEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, size: GLsizeiptr, memory: GLuint, offset: GLuint64),
 >;
-pub type PFNGLTEXSTORAGEMEM1DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXSTORAGEMEM1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         levels: GLsizei,
@@ -15115,7 +15115,7 @@ pub type PFNGLTEXSTORAGEMEM1DEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLTEXTURESTORAGEMEM1DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXTURESTORAGEMEM1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         levels: GLsizei,
@@ -15125,26 +15125,26 @@ pub type PFNGLTEXTURESTORAGEMEM1DEXTPROC = ::std::option::Option<
         offset: GLuint64,
     ),
 >;
-pub type PFNGLIMPORTMEMORYFDEXTPROC = ::std::option::Option<
+pub type PFNGLIMPORTMEMORYFDEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(memory: GLuint, size: GLuint64, handleType: GLenum, fd: GLint),
 >;
-pub type PFNGLIMPORTMEMORYWIN32HANDLEEXTPROC = ::std::option::Option<
+pub type PFNGLIMPORTMEMORYWIN32HANDLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         memory: GLuint,
         size: GLuint64,
         handleType: GLenum,
-        handle: *mut ::std::os::raw::c_void,
+        handle: *mut libc::c_void,
     ),
 >;
-pub type PFNGLIMPORTMEMORYWIN32NAMEEXTPROC = ::std::option::Option<
+pub type PFNGLIMPORTMEMORYWIN32NAMEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         memory: GLuint,
         size: GLuint64,
         handleType: GLenum,
-        name: *const ::std::os::raw::c_void,
+        name: *const libc::c_void,
     ),
 >;
-pub type PFNGLMULTIDRAWARRAYSEXTPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWARRAYSEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         first: *const GLint,
@@ -15152,120 +15152,120 @@ pub type PFNGLMULTIDRAWARRAYSEXTPROC = ::std::option::Option<
         primcount: GLsizei,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSEXTPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         count: *const GLsizei,
         type_: GLenum,
-        indices: *const *const ::std::os::raw::c_void,
+        indices: *const *const libc::c_void,
         primcount: GLsizei,
     ),
 >;
 pub type PFNGLSAMPLEMASKEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
-pub type PFNGLSAMPLEPATTERNEXTPROC = ::std::option::Option<unsafe extern "C" fn(pattern: GLenum)>;
-pub type PFNGLCOLORTABLEEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
+pub type PFNGLSAMPLEPATTERNEXTPROC = ::core::option::Option<unsafe extern "C" fn(pattern: GLenum)>;
+pub type PFNGLCOLORTABLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalFormat: GLenum,
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        table: *const ::std::os::raw::c_void,
+        table: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETCOLORTABLEEXTPROC = ::std::option::Option<
+pub type PFNGLGETCOLORTABLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
     ),
 >;
 pub type PFNGLGETCOLORTABLEPARAMETERIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETCOLORTABLEPARAMETERFVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETCOLORTABLEPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLPIXELTRANSFORMPARAMETERIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLPIXELTRANSFORMPARAMETERFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfloat)>;
-pub type PFNGLPIXELTRANSFORMPARAMETERIVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfloat)>;
+pub type PFNGLPIXELTRANSFORMPARAMETERIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLPIXELTRANSFORMPARAMETERFVEXTPROC = ::std::option::Option<
+pub type PFNGLPIXELTRANSFORMPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLGETPIXELTRANSFORMPARAMETERIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETPIXELTRANSFORMPARAMETERFVEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETPIXELTRANSFORMPARAMETERFVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLPOINTPARAMETERFEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPOINTPARAMETERFVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLPOLYGONOFFSETEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLfloat, bias: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLfloat, bias: GLfloat)>;
 pub type PFNGLPOLYGONOFFSETCLAMPEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat, clamp: GLfloat)>;
-pub type PFNGLPROVOKINGVERTEXEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat, clamp: GLfloat)>;
+pub type PFNGLPROVOKINGVERTEXEXTPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
 pub type PFNGLRASTERSAMPLESEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(samples: GLuint, fixedsamplelocations: GLboolean)>;
+    ::core::option::Option<unsafe extern "C" fn(samples: GLuint, fixedsamplelocations: GLboolean)>;
 pub type PFNGLSECONDARYCOLOR3BEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLbyte, green: GLbyte, blue: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLbyte, green: GLbyte, blue: GLbyte)>;
 pub type PFNGLSECONDARYCOLOR3BVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLbyte)>;
 pub type PFNGLSECONDARYCOLOR3DEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLdouble, green: GLdouble, blue: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLdouble, green: GLdouble, blue: GLdouble)>;
 pub type PFNGLSECONDARYCOLOR3DVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLSECONDARYCOLOR3FEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLfloat, green: GLfloat, blue: GLfloat)>;
 pub type PFNGLSECONDARYCOLOR3FVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLSECONDARYCOLOR3IEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLint, green: GLint, blue: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLint, green: GLint, blue: GLint)>;
 pub type PFNGLSECONDARYCOLOR3IVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLSECONDARYCOLOR3SEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLshort, green: GLshort, blue: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLshort, green: GLshort, blue: GLshort)>;
 pub type PFNGLSECONDARYCOLOR3SVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLSECONDARYCOLOR3UBEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLubyte, green: GLubyte, blue: GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLubyte, green: GLubyte, blue: GLubyte)>;
 pub type PFNGLSECONDARYCOLOR3UBVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLubyte)>;
 pub type PFNGLSECONDARYCOLOR3UIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLuint, green: GLuint, blue: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLuint, green: GLuint, blue: GLuint)>;
 pub type PFNGLSECONDARYCOLOR3UIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLuint)>;
 pub type PFNGLSECONDARYCOLOR3USEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLushort, green: GLushort, blue: GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLushort, green: GLushort, blue: GLushort)>;
 pub type PFNGLSECONDARYCOLOR3USVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLushort)>;
-pub type PFNGLSECONDARYCOLORPOINTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLushort)>;
+pub type PFNGLSECONDARYCOLORPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLGENSEMAPHORESEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, semaphores: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, semaphores: *mut GLuint)>;
 pub type PFNGLDELETESEMAPHORESEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, semaphores: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, semaphores: *const GLuint)>;
 pub type PFNGLISSEMAPHOREEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(semaphore: GLuint) -> GLboolean>;
-pub type PFNGLSEMAPHOREPARAMETERUI64VEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(semaphore: GLuint) -> GLboolean>;
+pub type PFNGLSEMAPHOREPARAMETERUI64VEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(semaphore: GLuint, pname: GLenum, params: *const GLuint64),
 >;
-pub type PFNGLGETSEMAPHOREPARAMETERUI64VEXTPROC = ::std::option::Option<
+pub type PFNGLGETSEMAPHOREPARAMETERUI64VEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(semaphore: GLuint, pname: GLenum, params: *mut GLuint64),
 >;
-pub type PFNGLWAITSEMAPHOREEXTPROC = ::std::option::Option<
+pub type PFNGLWAITSEMAPHOREEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         semaphore: GLuint,
         numBufferBarriers: GLuint,
@@ -15275,7 +15275,7 @@ pub type PFNGLWAITSEMAPHOREEXTPROC = ::std::option::Option<
         srcLayouts: *const GLenum,
     ),
 >;
-pub type PFNGLSIGNALSEMAPHOREEXTPROC = ::std::option::Option<
+pub type PFNGLSIGNALSEMAPHOREEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         semaphore: GLuint,
         numBufferBarriers: GLuint,
@@ -15286,28 +15286,28 @@ pub type PFNGLSIGNALSEMAPHOREEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLIMPORTSEMAPHOREFDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(semaphore: GLuint, handleType: GLenum, fd: GLint)>;
-pub type PFNGLIMPORTSEMAPHOREWIN32HANDLEEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(semaphore: GLuint, handleType: GLenum, fd: GLint)>;
+pub type PFNGLIMPORTSEMAPHOREWIN32HANDLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         semaphore: GLuint,
         handleType: GLenum,
-        handle: *mut ::std::os::raw::c_void,
+        handle: *mut libc::c_void,
     ),
 >;
-pub type PFNGLIMPORTSEMAPHOREWIN32NAMEEXTPROC = ::std::option::Option<
+pub type PFNGLIMPORTSEMAPHOREWIN32NAMEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         semaphore: GLuint,
         handleType: GLenum,
-        name: *const ::std::os::raw::c_void,
+        name: *const libc::c_void,
     ),
 >;
 pub type PFNGLUSESHADERPROGRAMEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, program: GLuint)>;
-pub type PFNGLACTIVEPROGRAMEXTPROC = ::std::option::Option<unsafe extern "C" fn(program: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, program: GLuint)>;
+pub type PFNGLACTIVEPROGRAMEXTPROC = ::core::option::Option<unsafe extern "C" fn(program: GLuint)>;
 pub type PFNGLCREATESHADERPROGRAMEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, string: *const GLchar) -> GLuint>;
-pub type PFNGLFRAMEBUFFERFETCHBARRIEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLBINDIMAGETEXTUREEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, string: *const GLchar) -> GLuint>;
+pub type PFNGLFRAMEBUFFERFETCHBARRIEREXTPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLBINDIMAGETEXTUREEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         texture: GLuint,
@@ -15319,11 +15319,11 @@ pub type PFNGLBINDIMAGETEXTUREEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLMEMORYBARRIEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(barriers: GLbitfield)>;
+    ::core::option::Option<unsafe extern "C" fn(barriers: GLbitfield)>;
 pub type PFNGLSTENCILCLEARTAGEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(stencilTagBits: GLsizei, stencilClearTag: GLuint)>;
-pub type PFNGLACTIVESTENCILFACEEXTPROC = ::std::option::Option<unsafe extern "C" fn(face: GLenum)>;
-pub type PFNGLTEXSUBIMAGE1DEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stencilTagBits: GLsizei, stencilClearTag: GLuint)>;
+pub type PFNGLACTIVESTENCILFACEEXTPROC = ::core::option::Option<unsafe extern "C" fn(face: GLenum)>;
+pub type PFNGLTEXSUBIMAGE1DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -15331,10 +15331,10 @@ pub type PFNGLTEXSUBIMAGE1DEXTPROC = ::std::option::Option<
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXSUBIMAGE2DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXSUBIMAGE2DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -15344,10 +15344,10 @@ pub type PFNGLTEXSUBIMAGE2DEXTPROC = ::std::option::Option<
         height: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -15358,10 +15358,10 @@ pub type PFNGLTEXIMAGE3DEXTPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXSUBIMAGE3DEXTPROC = ::std::option::Option<
+pub type PFNGLTEXSUBIMAGE3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -15373,10 +15373,10 @@ pub type PFNGLTEXSUBIMAGE3DEXTPROC = ::std::option::Option<
         depth: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTURELAYEREXTPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTURELAYEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -15385,26 +15385,26 @@ pub type PFNGLFRAMEBUFFERTEXTURELAYEREXTPROC = ::std::option::Option<
         layer: GLint,
     ),
 >;
-pub type PFNGLTEXBUFFEREXTPROC = ::std::option::Option<
+pub type PFNGLTEXBUFFEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, internalformat: GLenum, buffer: GLuint),
 >;
-pub type PFNGLTEXPARAMETERIIVEXTPROC = ::std::option::Option<
+pub type PFNGLTEXPARAMETERIIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLTEXPARAMETERIUIVEXTPROC = ::std::option::Option<
+pub type PFNGLTEXPARAMETERIUIVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLuint),
 >;
 pub type PFNGLGETTEXPARAMETERIIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETTEXPARAMETERIUIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLuint)>;
-pub type PFNGLCLEARCOLORIIEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLuint)>;
+pub type PFNGLCLEARCOLORIIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLint, green: GLint, blue: GLint, alpha: GLint),
 >;
-pub type PFNGLCLEARCOLORIUIEXTPROC = ::std::option::Option<
+pub type PFNGLCLEARCOLORIUIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLuint, green: GLuint, blue: GLuint, alpha: GLuint),
 >;
-pub type PFNGLARETEXTURESRESIDENTEXTPROC = ::std::option::Option<
+pub type PFNGLARETEXTURESRESIDENTEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         n: GLsizei,
         textures: *const GLuint,
@@ -15412,25 +15412,25 @@ pub type PFNGLARETEXTURESRESIDENTEXTPROC = ::std::option::Option<
     ) -> GLboolean,
 >;
 pub type PFNGLBINDTEXTUREEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, texture: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, texture: GLuint)>;
 pub type PFNGLDELETETEXTURESEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, textures: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, textures: *const GLuint)>;
 pub type PFNGLGENTEXTURESEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, textures: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, textures: *mut GLuint)>;
 pub type PFNGLISTEXTUREEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLboolean>;
-pub type PFNGLPRIORITIZETEXTURESEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLboolean>;
+pub type PFNGLPRIORITIZETEXTURESEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(n: GLsizei, textures: *const GLuint, priorities: *const GLclampf),
 >;
-pub type PFNGLTEXTURENORMALEXTPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLTEXTURENORMALEXTPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
 pub type PFNGLGETQUERYOBJECTI64VEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint64)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint64)>;
 pub type PFNGLGETQUERYOBJECTUI64VEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint64)>;
 pub type PFNGLBEGINTRANSFORMFEEDBACKEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
-pub type PFNGLENDTRANSFORMFEEDBACKEXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLBINDBUFFERRANGEEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
+pub type PFNGLENDTRANSFORMFEEDBACKEXTPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLBINDBUFFERRANGEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -15439,12 +15439,12 @@ pub type PFNGLBINDBUFFERRANGEEXTPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLBINDBUFFEROFFSETEXTPROC = ::std::option::Option<
+pub type PFNGLBINDBUFFEROFFSETEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr),
 >;
 pub type PFNGLBINDBUFFERBASEEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint)>;
-pub type PFNGLTRANSFORMFEEDBACKVARYINGSEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint)>;
+pub type PFNGLTRANSFORMFEEDBACKVARYINGSEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         count: GLsizei,
@@ -15452,7 +15452,7 @@ pub type PFNGLTRANSFORMFEEDBACKVARYINGSEXTPROC = ::std::option::Option<
         bufferMode: GLenum,
     ),
 >;
-pub type PFNGLGETTRANSFORMFEEDBACKVARYINGEXTPROC = ::std::option::Option<
+pub type PFNGLGETTRANSFORMFEEDBACKVARYINGEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         index: GLuint,
@@ -15463,103 +15463,103 @@ pub type PFNGLGETTRANSFORMFEEDBACKVARYINGEXTPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
-pub type PFNGLARRAYELEMENTEXTPROC = ::std::option::Option<unsafe extern "C" fn(i: GLint)>;
-pub type PFNGLCOLORPOINTEREXTPROC = ::std::option::Option<
+pub type PFNGLARRAYELEMENTEXTPROC = ::core::option::Option<unsafe extern "C" fn(i: GLint)>;
+pub type PFNGLCOLORPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
         count: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLDRAWARRAYSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei)>;
-pub type PFNGLEDGEFLAGPOINTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei)>;
+pub type PFNGLEDGEFLAGPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(stride: GLsizei, count: GLsizei, pointer: *const GLboolean),
 >;
-pub type PFNGLGETPOINTERVEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(pname: GLenum, params: *mut *mut ::std::os::raw::c_void),
+pub type PFNGLGETPOINTERVEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(pname: GLenum, params: *mut *mut libc::c_void),
 >;
-pub type PFNGLINDEXPOINTEREXTPROC = ::std::option::Option<
+pub type PFNGLINDEXPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         stride: GLsizei,
         count: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLNORMALPOINTEREXTPROC = ::std::option::Option<
+pub type PFNGLNORMALPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         stride: GLsizei,
         count: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXCOORDPOINTEREXTPROC = ::std::option::Option<
+pub type PFNGLTEXCOORDPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
         count: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLVERTEXPOINTEREXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
         count: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLVERTEXATTRIBL1DEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
 pub type PFNGLVERTEXATTRIBL2DEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
-pub type PFNGLVERTEXATTRIBL3DEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
+pub type PFNGLVERTEXATTRIBL3DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
-pub type PFNGLVERTEXATTRIBL4DEXTPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBL4DEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIBL1DVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBL2DVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBL3DVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBL4DVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
-pub type PFNGLVERTEXATTRIBLPOINTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+pub type PFNGLVERTEXATTRIBLPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLGETVERTEXATTRIBLDVEXTPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXATTRIBLDVEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLdouble),
 >;
-pub type PFNGLBEGINVERTEXSHADEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLENDVERTEXSHADEREXTPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLBINDVERTEXSHADEREXTPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
+pub type PFNGLBEGINVERTEXSHADEREXTPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLENDVERTEXSHADEREXTPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLBINDVERTEXSHADEREXTPROC = ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
 pub type PFNGLGENVERTEXSHADERSEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(range: GLuint) -> GLuint>;
-pub type PFNGLDELETEVERTEXSHADEREXTPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(range: GLuint) -> GLuint>;
+pub type PFNGLDELETEVERTEXSHADEREXTPROC = ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
 pub type PFNGLSHADEROP1EXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(op: GLenum, res: GLuint, arg1: GLuint)>;
-pub type PFNGLSHADEROP2EXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(op: GLenum, res: GLuint, arg1: GLuint)>;
+pub type PFNGLSHADEROP2EXTPROC = ::core::option::Option<
     unsafe extern "C" fn(op: GLenum, res: GLuint, arg1: GLuint, arg2: GLuint),
 >;
-pub type PFNGLSHADEROP3EXTPROC = ::std::option::Option<
+pub type PFNGLSHADEROP3EXTPROC = ::core::option::Option<
     unsafe extern "C" fn(op: GLenum, res: GLuint, arg1: GLuint, arg2: GLuint, arg3: GLuint),
 >;
-pub type PFNGLSWIZZLEEXTPROC = ::std::option::Option<
+pub type PFNGLSWIZZLEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         res: GLuint,
         in_: GLuint,
@@ -15569,7 +15569,7 @@ pub type PFNGLSWIZZLEEXTPROC = ::std::option::Option<
         outW: GLenum,
     ),
 >;
-pub type PFNGLWRITEMASKEXTPROC = ::std::option::Option<
+pub type PFNGLWRITEMASKEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         res: GLuint,
         in_: GLuint,
@@ -15580,10 +15580,10 @@ pub type PFNGLWRITEMASKEXTPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLINSERTCOMPONENTEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(res: GLuint, src: GLuint, num: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(res: GLuint, src: GLuint, num: GLuint)>;
 pub type PFNGLEXTRACTCOMPONENTEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(res: GLuint, src: GLuint, num: GLuint)>;
-pub type PFNGLGENSYMBOLSEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(res: GLuint, src: GLuint, num: GLuint)>;
+pub type PFNGLGENSYMBOLSEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         datatype: GLenum,
         storagetype: GLenum,
@@ -15591,119 +15591,119 @@ pub type PFNGLGENSYMBOLSEXTPROC = ::std::option::Option<
         components: GLuint,
     ) -> GLuint,
 >;
-pub type PFNGLSETINVARIANTEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(id: GLuint, type_: GLenum, addr: *const ::std::os::raw::c_void),
+pub type PFNGLSETINVARIANTEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(id: GLuint, type_: GLenum, addr: *const libc::c_void),
 >;
-pub type PFNGLSETLOCALCONSTANTEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(id: GLuint, type_: GLenum, addr: *const ::std::os::raw::c_void),
+pub type PFNGLSETLOCALCONSTANTEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(id: GLuint, type_: GLenum, addr: *const libc::c_void),
 >;
 pub type PFNGLVARIANTBVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLbyte)>;
 pub type PFNGLVARIANTSVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLshort)>;
 pub type PFNGLVARIANTIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLint)>;
 pub type PFNGLVARIANTFVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLfloat)>;
 pub type PFNGLVARIANTDVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLdouble)>;
 pub type PFNGLVARIANTUBVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLubyte)>;
 pub type PFNGLVARIANTUSVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLushort)>;
 pub type PFNGLVARIANTUIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLuint)>;
-pub type PFNGLVARIANTPOINTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, addr: *const GLuint)>;
+pub type PFNGLVARIANTPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         id: GLuint,
         type_: GLenum,
         stride: GLuint,
-        addr: *const ::std::os::raw::c_void,
+        addr: *const libc::c_void,
     ),
 >;
 pub type PFNGLENABLEVARIANTCLIENTSTATEEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
 pub type PFNGLDISABLEVARIANTCLIENTSTATEEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
 pub type PFNGLBINDLIGHTPARAMETEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, value: GLenum) -> GLuint>;
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, value: GLenum) -> GLuint>;
 pub type PFNGLBINDMATERIALPARAMETEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, value: GLenum) -> GLuint>;
-pub type PFNGLBINDTEXGENPARAMETEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, value: GLenum) -> GLuint>;
+pub type PFNGLBINDTEXGENPARAMETEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(unit: GLenum, coord: GLenum, value: GLenum) -> GLuint,
 >;
 pub type PFNGLBINDTEXTUREUNITPARAMETEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(unit: GLenum, value: GLenum) -> GLuint>;
+    ::core::option::Option<unsafe extern "C" fn(unit: GLenum, value: GLenum) -> GLuint>;
 pub type PFNGLBINDPARAMETEREXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(value: GLenum) -> GLuint>;
+    ::core::option::Option<unsafe extern "C" fn(value: GLenum) -> GLuint>;
 pub type PFNGLISVARIANTENABLEDEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, cap: GLenum) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, cap: GLenum) -> GLboolean>;
 pub type PFNGLGETVARIANTBOOLEANVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLboolean)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLboolean)>;
 pub type PFNGLGETVARIANTINTEGERVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLint)>;
 pub type PFNGLGETVARIANTFLOATVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLfloat)>;
-pub type PFNGLGETVARIANTPOINTERVEXTPROC = ::std::option::Option<
-    unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLfloat)>;
+pub type PFNGLGETVARIANTPOINTERVEXTPROC = ::core::option::Option<
+    unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut *mut libc::c_void),
 >;
 pub type PFNGLGETINVARIANTBOOLEANVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLboolean)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLboolean)>;
 pub type PFNGLGETINVARIANTINTEGERVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLint)>;
 pub type PFNGLGETINVARIANTFLOATVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLfloat)>;
 pub type PFNGLGETLOCALCONSTANTBOOLEANVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLboolean)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLboolean)>;
 pub type PFNGLGETLOCALCONSTANTINTEGERVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLint)>;
 pub type PFNGLGETLOCALCONSTANTFLOATVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLfloat)>;
-pub type PFNGLVERTEXWEIGHTFEXTPROC = ::std::option::Option<unsafe extern "C" fn(weight: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, value: GLenum, data: *mut GLfloat)>;
+pub type PFNGLVERTEXWEIGHTFEXTPROC = ::core::option::Option<unsafe extern "C" fn(weight: GLfloat)>;
 pub type PFNGLVERTEXWEIGHTFVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(weight: *const GLfloat)>;
-pub type PFNGLVERTEXWEIGHTPOINTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(weight: *const GLfloat)>;
+pub type PFNGLVERTEXWEIGHTPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
-pub type PFNGLACQUIREKEYEDMUTEXWIN32EXTPROC = ::std::option::Option<
+pub type PFNGLACQUIREKEYEDMUTEXWIN32EXTPROC = ::core::option::Option<
     unsafe extern "C" fn(memory: GLuint, key: GLuint64, timeout: GLuint) -> GLboolean,
 >;
 pub type PFNGLRELEASEKEYEDMUTEXWIN32EXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(memory: GLuint, key: GLuint64) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(memory: GLuint, key: GLuint64) -> GLboolean>;
 pub type PFNGLWINDOWRECTANGLESEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, count: GLsizei, box_: *const GLint)>;
-pub type PFNGLIMPORTSYNCEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, count: GLsizei, box_: *const GLint)>;
+pub type PFNGLIMPORTSYNCEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         external_sync_type: GLenum,
         external_sync: GLintptr,
         flags: GLbitfield,
     ) -> GLsync,
 >;
-pub type PFNGLFRAMETERMINATORGREMEDYPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLSTRINGMARKERGREMEDYPROC = ::std::option::Option<
-    unsafe extern "C" fn(len: GLsizei, string: *const ::std::os::raw::c_void),
+pub type PFNGLFRAMETERMINATORGREMEDYPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLSTRINGMARKERGREMEDYPROC = ::core::option::Option<
+    unsafe extern "C" fn(len: GLsizei, string: *const libc::c_void),
 >;
 pub type PFNGLIMAGETRANSFORMPARAMETERIHPPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLIMAGETRANSFORMPARAMETERFHPPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfloat)>;
-pub type PFNGLIMAGETRANSFORMPARAMETERIVHPPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, param: GLfloat)>;
+pub type PFNGLIMAGETRANSFORMPARAMETERIVHPPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLIMAGETRANSFORMPARAMETERFVHPPROC = ::std::option::Option<
+pub type PFNGLIMAGETRANSFORMPARAMETERFVHPPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLGETIMAGETRANSFORMPARAMETERIVHPPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETIMAGETRANSFORMPARAMETERFVHPPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETIMAGETRANSFORMPARAMETERFVHPPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLMULTIMODEDRAWARRAYSIBMPROC = ::std::option::Option<
+pub type PFNGLMULTIMODEDRAWARRAYSIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: *const GLenum,
         first: *const GLint,
@@ -15712,81 +15712,81 @@ pub type PFNGLMULTIMODEDRAWARRAYSIBMPROC = ::std::option::Option<
         modestride: GLint,
     ),
 >;
-pub type PFNGLMULTIMODEDRAWELEMENTSIBMPROC = ::std::option::Option<
+pub type PFNGLMULTIMODEDRAWELEMENTSIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: *const GLenum,
         count: *const GLsizei,
         type_: GLenum,
-        indices: *const *const ::std::os::raw::c_void,
+        indices: *const *const libc::c_void,
         primcount: GLsizei,
         modestride: GLint,
     ),
 >;
-pub type PFNGLFLUSHSTATICDATAIBMPROC = ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
-pub type PFNGLCOLORPOINTERLISTIBMPROC = ::std::option::Option<
+pub type PFNGLFLUSHSTATICDATAIBMPROC = ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
+pub type PFNGLCOLORPOINTERLISTIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLint,
-        pointer: *mut *const ::std::os::raw::c_void,
+        pointer: *mut *const libc::c_void,
         ptrstride: GLint,
     ),
 >;
-pub type PFNGLSECONDARYCOLORPOINTERLISTIBMPROC = ::std::option::Option<
+pub type PFNGLSECONDARYCOLORPOINTERLISTIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLint,
-        pointer: *mut *const ::std::os::raw::c_void,
+        pointer: *mut *const libc::c_void,
         ptrstride: GLint,
     ),
 >;
-pub type PFNGLEDGEFLAGPOINTERLISTIBMPROC = ::std::option::Option<
+pub type PFNGLEDGEFLAGPOINTERLISTIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(stride: GLint, pointer: *mut *const GLboolean, ptrstride: GLint),
 >;
-pub type PFNGLFOGCOORDPOINTERLISTIBMPROC = ::std::option::Option<
+pub type PFNGLFOGCOORDPOINTERLISTIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         stride: GLint,
-        pointer: *mut *const ::std::os::raw::c_void,
+        pointer: *mut *const libc::c_void,
         ptrstride: GLint,
     ),
 >;
-pub type PFNGLINDEXPOINTERLISTIBMPROC = ::std::option::Option<
+pub type PFNGLINDEXPOINTERLISTIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         stride: GLint,
-        pointer: *mut *const ::std::os::raw::c_void,
+        pointer: *mut *const libc::c_void,
         ptrstride: GLint,
     ),
 >;
-pub type PFNGLNORMALPOINTERLISTIBMPROC = ::std::option::Option<
+pub type PFNGLNORMALPOINTERLISTIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         stride: GLint,
-        pointer: *mut *const ::std::os::raw::c_void,
+        pointer: *mut *const libc::c_void,
         ptrstride: GLint,
     ),
 >;
-pub type PFNGLTEXCOORDPOINTERLISTIBMPROC = ::std::option::Option<
-    unsafe extern "C" fn(
-        size: GLint,
-        type_: GLenum,
-        stride: GLint,
-        pointer: *mut *const ::std::os::raw::c_void,
-        ptrstride: GLint,
-    ),
->;
-pub type PFNGLVERTEXPOINTERLISTIBMPROC = ::std::option::Option<
+pub type PFNGLTEXCOORDPOINTERLISTIBMPROC = ::core::option::Option<
     unsafe extern "C" fn(
         size: GLint,
         type_: GLenum,
         stride: GLint,
-        pointer: *mut *const ::std::os::raw::c_void,
+        pointer: *mut *const libc::c_void,
         ptrstride: GLint,
     ),
 >;
-pub type PFNGLBLENDFUNCSEPARATEINGRPROC = ::std::option::Option<
+pub type PFNGLVERTEXPOINTERLISTIBMPROC = ::core::option::Option<
+    unsafe extern "C" fn(
+        size: GLint,
+        type_: GLenum,
+        stride: GLint,
+        pointer: *mut *const libc::c_void,
+        ptrstride: GLint,
+    ),
+>;
+pub type PFNGLBLENDFUNCSEPARATEINGRPROC = ::core::option::Option<
     unsafe extern "C" fn(
         sfactorRGB: GLenum,
         dfactorRGB: GLenum,
@@ -15795,44 +15795,44 @@ pub type PFNGLBLENDFUNCSEPARATEINGRPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLAPPLYFRAMEBUFFERATTACHMENTCMAAINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLSYNCTEXTUREINTELPROC = ::std::option::Option<unsafe extern "C" fn(texture: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLSYNCTEXTUREINTELPROC = ::core::option::Option<unsafe extern "C" fn(texture: GLuint)>;
 pub type PFNGLUNMAPTEXTURE2DINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, level: GLint)>;
-pub type PFNGLMAPTEXTURE2DINTELPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, level: GLint)>;
+pub type PFNGLMAPTEXTURE2DINTELPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
         access: GLbitfield,
         stride: *mut GLint,
         layout: *mut GLenum,
-    ) -> *mut ::std::os::raw::c_void,
+    ) -> *mut libc::c_void,
 >;
-pub type PFNGLVERTEXPOINTERVINTELPROC = ::std::option::Option<
-    unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const ::std::os::raw::c_void),
+pub type PFNGLVERTEXPOINTERVINTELPROC = ::core::option::Option<
+    unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const libc::c_void),
 >;
-pub type PFNGLNORMALPOINTERVINTELPROC = ::std::option::Option<
-    unsafe extern "C" fn(type_: GLenum, pointer: *mut *const ::std::os::raw::c_void),
+pub type PFNGLNORMALPOINTERVINTELPROC = ::core::option::Option<
+    unsafe extern "C" fn(type_: GLenum, pointer: *mut *const libc::c_void),
 >;
-pub type PFNGLCOLORPOINTERVINTELPROC = ::std::option::Option<
-    unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const ::std::os::raw::c_void),
+pub type PFNGLCOLORPOINTERVINTELPROC = ::core::option::Option<
+    unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const libc::c_void),
 >;
-pub type PFNGLTEXCOORDPOINTERVINTELPROC = ::std::option::Option<
-    unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const ::std::os::raw::c_void),
+pub type PFNGLTEXCOORDPOINTERVINTELPROC = ::core::option::Option<
+    unsafe extern "C" fn(size: GLint, type_: GLenum, pointer: *mut *const libc::c_void),
 >;
 pub type PFNGLBEGINPERFQUERYINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(queryHandle: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(queryHandle: GLuint)>;
 pub type PFNGLCREATEPERFQUERYINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(queryId: GLuint, queryHandle: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(queryId: GLuint, queryHandle: *mut GLuint)>;
 pub type PFNGLDELETEPERFQUERYINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(queryHandle: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(queryHandle: GLuint)>;
 pub type PFNGLENDPERFQUERYINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(queryHandle: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(queryHandle: GLuint)>;
 pub type PFNGLGETFIRSTPERFQUERYIDINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(queryId: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(queryId: *mut GLuint)>;
 pub type PFNGLGETNEXTPERFQUERYIDINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(queryId: GLuint, nextQueryId: *mut GLuint)>;
-pub type PFNGLGETPERFCOUNTERINFOINTELPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(queryId: GLuint, nextQueryId: *mut GLuint)>;
+pub type PFNGLGETPERFCOUNTERINFOINTELPROC = ::core::option::Option<
     unsafe extern "C" fn(
         queryId: GLuint,
         counterId: GLuint,
@@ -15847,18 +15847,18 @@ pub type PFNGLGETPERFCOUNTERINFOINTELPROC = ::std::option::Option<
         rawCounterMaxValue: *mut GLuint64,
     ),
 >;
-pub type PFNGLGETPERFQUERYDATAINTELPROC = ::std::option::Option<
+pub type PFNGLGETPERFQUERYDATAINTELPROC = ::core::option::Option<
     unsafe extern "C" fn(
         queryHandle: GLuint,
         flags: GLuint,
         dataSize: GLsizei,
-        data: *mut ::std::os::raw::c_void,
+        data: *mut libc::c_void,
         bytesWritten: *mut GLuint,
     ),
 >;
 pub type PFNGLGETPERFQUERYIDBYNAMEINTELPROC =
-    ::std::option::Option<unsafe extern "C" fn(queryName: *mut GLchar, queryId: *mut GLuint)>;
-pub type PFNGLGETPERFQUERYINFOINTELPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(queryName: *mut GLchar, queryId: *mut GLuint)>;
+pub type PFNGLGETPERFQUERYINFOINTELPROC = ::core::option::Option<
     unsafe extern "C" fn(
         queryId: GLuint,
         queryNameLength: GLuint,
@@ -15869,58 +15869,58 @@ pub type PFNGLGETPERFQUERYINFOINTELPROC = ::std::option::Option<
         capsMask: *mut GLuint,
     ),
 >;
-pub type PFNGLRESIZEBUFFERSMESAPROC = ::std::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLRESIZEBUFFERSMESAPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLWINDOWPOS2DMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble)>;
 pub type PFNGLWINDOWPOS2DVMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLWINDOWPOS2FMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat)>;
-pub type PFNGLWINDOWPOS2FVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
-pub type PFNGLWINDOWPOS2IMESAPROC = ::std::option::Option<unsafe extern "C" fn(x: GLint, y: GLint)>;
-pub type PFNGLWINDOWPOS2IVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat)>;
+pub type PFNGLWINDOWPOS2FVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+pub type PFNGLWINDOWPOS2IMESAPROC = ::core::option::Option<unsafe extern "C" fn(x: GLint, y: GLint)>;
+pub type PFNGLWINDOWPOS2IVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLWINDOWPOS2SMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort)>;
-pub type PFNGLWINDOWPOS2SVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort)>;
+pub type PFNGLWINDOWPOS2SVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLWINDOWPOS3DMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble)>;
 pub type PFNGLWINDOWPOS3DVMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLWINDOWPOS3FMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat)>;
-pub type PFNGLWINDOWPOS3FVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat)>;
+pub type PFNGLWINDOWPOS3FVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLWINDOWPOS3IMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint)>;
-pub type PFNGLWINDOWPOS3IVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint)>;
+pub type PFNGLWINDOWPOS3IVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLWINDOWPOS3SMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort)>;
-pub type PFNGLWINDOWPOS3SVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort)>;
+pub type PFNGLWINDOWPOS3SVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLWINDOWPOS4DMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble)>;
 pub type PFNGLWINDOWPOS4DVMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLdouble)>;
 pub type PFNGLWINDOWPOS4FMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat)>;
-pub type PFNGLWINDOWPOS4FVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat)>;
+pub type PFNGLWINDOWPOS4FVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLfloat)>;
 pub type PFNGLWINDOWPOS4IMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint, w: GLint)>;
-pub type PFNGLWINDOWPOS4IVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLint, y: GLint, z: GLint, w: GLint)>;
+pub type PFNGLWINDOWPOS4IVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLint)>;
 pub type PFNGLWINDOWPOS4SMESAPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort, w: GLshort)>;
-pub type PFNGLWINDOWPOS4SVMESAPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLshort, y: GLshort, z: GLshort, w: GLshort)>;
+pub type PFNGLWINDOWPOS4SVMESAPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLshort)>;
 pub type PFNGLBEGINCONDITIONALRENDERNVXPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
-pub type PFNGLENDCONDITIONALRENDERNVXPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLLGPUNAMEDBUFFERSUBDATANVXPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
+pub type PFNGLENDCONDITIONALRENDERNVXPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLLGPUNAMEDBUFFERSUBDATANVXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         gpuMask: GLbitfield,
         buffer: GLuint,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLLGPUCOPYIMAGESUBDATANVXPROC = ::std::option::Option<
+pub type PFNGLLGPUCOPYIMAGESUBDATANVXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         sourceGpu: GLuint,
         destinationGpuMask: GLbitfield,
@@ -15941,43 +15941,43 @@ pub type PFNGLLGPUCOPYIMAGESUBDATANVXPROC = ::std::option::Option<
         depth: GLsizei,
     ),
 >;
-pub type PFNGLLGPUINTERLOCKNVXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLLGPUINTERLOCKNVXPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLALPHATOCOVERAGEDITHERCONTROLNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
-pub type PFNGLMULTIDRAWARRAYSINDIRECTBINDLESSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLMULTIDRAWARRAYSINDIRECTBINDLESSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawCount: GLsizei,
         stride: GLsizei,
         vertexBufferCount: GLint,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSINDIRECTBINDLESSNVPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSINDIRECTBINDLESSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         type_: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawCount: GLsizei,
         stride: GLsizei,
         vertexBufferCount: GLint,
     ),
 >;
-pub type PFNGLMULTIDRAWARRAYSINDIRECTBINDLESSCOUNTNVPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWARRAYSINDIRECTBINDLESSCOUNTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawCount: GLsizei,
         maxDrawCount: GLsizei,
         stride: GLsizei,
         vertexBufferCount: GLint,
     ),
 >;
-pub type PFNGLMULTIDRAWELEMENTSINDIRECTBINDLESSCOUNTNVPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWELEMENTSINDIRECTBINDLESSCOUNTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         mode: GLenum,
         type_: GLenum,
-        indirect: *const ::std::os::raw::c_void,
+        indirect: *const libc::c_void,
         drawCount: GLsizei,
         maxDrawCount: GLsizei,
         stride: GLsizei,
@@ -15985,14 +15985,14 @@ pub type PFNGLMULTIDRAWELEMENTSINDIRECTBINDLESSCOUNTNVPROC = ::std::option::Opti
     ),
 >;
 pub type PFNGLGETTEXTUREHANDLENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLuint64>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint) -> GLuint64>;
 pub type PFNGLGETTEXTURESAMPLERHANDLENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, sampler: GLuint) -> GLuint64>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, sampler: GLuint) -> GLuint64>;
 pub type PFNGLMAKETEXTUREHANDLERESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
 pub type PFNGLMAKETEXTUREHANDLENONRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
-pub type PFNGLGETIMAGEHANDLENVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
+pub type PFNGLGETIMAGEHANDLENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         level: GLint,
@@ -16002,41 +16002,41 @@ pub type PFNGLGETIMAGEHANDLENVPROC = ::std::option::Option<
     ) -> GLuint64,
 >;
 pub type PFNGLMAKEIMAGEHANDLERESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64, access: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64, access: GLenum)>;
 pub type PFNGLMAKEIMAGEHANDLENONRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64)>;
 pub type PFNGLUNIFORMHANDLEUI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, value: GLuint64)>;
-pub type PFNGLUNIFORMHANDLEUI64VNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, value: GLuint64)>;
+pub type PFNGLUNIFORMHANDLEUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64),
 >;
 pub type PFNGLPROGRAMUNIFORMHANDLEUI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, value: GLuint64)>;
-pub type PFNGLPROGRAMUNIFORMHANDLEUI64VNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, location: GLint, value: GLuint64)>;
+pub type PFNGLPROGRAMUNIFORMHANDLEUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, count: GLsizei, values: *const GLuint64),
 >;
 pub type PFNGLISTEXTUREHANDLERESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
 pub type PFNGLISIMAGEHANDLERESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(handle: GLuint64) -> GLboolean>;
 pub type PFNGLBLENDPARAMETERINVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLint)>;
-pub type PFNGLBLENDBARRIERNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLint)>;
+pub type PFNGLBLENDBARRIERNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLVIEWPORTPOSITIONWSCALENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, xcoeff: GLfloat, ycoeff: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, xcoeff: GLfloat, ycoeff: GLfloat)>;
 pub type PFNGLCREATESTATESNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, states: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, states: *mut GLuint)>;
 pub type PFNGLDELETESTATESNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, states: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, states: *const GLuint)>;
 pub type PFNGLISSTATENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(state: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(state: GLuint) -> GLboolean>;
 pub type PFNGLSTATECAPTURENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(state: GLuint, mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(state: GLuint, mode: GLenum)>;
 pub type PFNGLGETCOMMANDHEADERNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(tokenID: GLenum, size: GLuint) -> GLuint>;
+    ::core::option::Option<unsafe extern "C" fn(tokenID: GLenum, size: GLuint) -> GLuint>;
 pub type PFNGLGETSTAGEINDEXNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(shadertype: GLenum) -> GLushort>;
-pub type PFNGLDRAWCOMMANDSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(shadertype: GLenum) -> GLushort>;
+pub type PFNGLDRAWCOMMANDSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         primitiveMode: GLenum,
         buffer: GLuint,
@@ -16045,7 +16045,7 @@ pub type PFNGLDRAWCOMMANDSNVPROC = ::std::option::Option<
         count: GLuint,
     ),
 >;
-pub type PFNGLDRAWCOMMANDSADDRESSNVPROC = ::std::option::Option<
+pub type PFNGLDRAWCOMMANDSADDRESSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         primitiveMode: GLenum,
         indirects: *const GLuint64,
@@ -16053,7 +16053,7 @@ pub type PFNGLDRAWCOMMANDSADDRESSNVPROC = ::std::option::Option<
         count: GLuint,
     ),
 >;
-pub type PFNGLDRAWCOMMANDSSTATESNVPROC = ::std::option::Option<
+pub type PFNGLDRAWCOMMANDSSTATESNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         buffer: GLuint,
         indirects: *const GLintptr,
@@ -16063,7 +16063,7 @@ pub type PFNGLDRAWCOMMANDSSTATESNVPROC = ::std::option::Option<
         count: GLuint,
     ),
 >;
-pub type PFNGLDRAWCOMMANDSSTATESADDRESSNVPROC = ::std::option::Option<
+pub type PFNGLDRAWCOMMANDSSTATESADDRESSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         indirects: *const GLuint64,
         sizes: *const GLsizei,
@@ -16073,16 +16073,16 @@ pub type PFNGLDRAWCOMMANDSSTATESADDRESSNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCREATECOMMANDLISTSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, lists: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, lists: *mut GLuint)>;
 pub type PFNGLDELETECOMMANDLISTSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, lists: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, lists: *const GLuint)>;
 pub type PFNGLISCOMMANDLISTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(list: GLuint) -> GLboolean>;
-pub type PFNGLLISTDRAWCOMMANDSSTATESCLIENTNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(list: GLuint) -> GLboolean>;
+pub type PFNGLLISTDRAWCOMMANDSSTATESCLIENTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         list: GLuint,
         segment: GLuint,
-        indirects: *mut *const ::std::os::raw::c_void,
+        indirects: *mut *const libc::c_void,
         sizes: *const GLsizei,
         states: *const GLuint,
         fbos: *const GLuint,
@@ -16090,19 +16090,19 @@ pub type PFNGLLISTDRAWCOMMANDSSTATESCLIENTNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCOMMANDLISTSEGMENTSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(list: GLuint, segments: GLuint)>;
-pub type PFNGLCOMPILECOMMANDLISTNVPROC = ::std::option::Option<unsafe extern "C" fn(list: GLuint)>;
-pub type PFNGLCALLCOMMANDLISTNVPROC = ::std::option::Option<unsafe extern "C" fn(list: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(list: GLuint, segments: GLuint)>;
+pub type PFNGLCOMPILECOMMANDLISTNVPROC = ::core::option::Option<unsafe extern "C" fn(list: GLuint)>;
+pub type PFNGLCALLCOMMANDLISTNVPROC = ::core::option::Option<unsafe extern "C" fn(list: GLuint)>;
 pub type PFNGLBEGINCONDITIONALRENDERNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, mode: GLenum)>;
-pub type PFNGLENDCONDITIONALRENDERNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, mode: GLenum)>;
+pub type PFNGLENDCONDITIONALRENDERNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLSUBPIXELPRECISIONBIASNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(xbits: GLuint, ybits: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(xbits: GLuint, ybits: GLuint)>;
 pub type PFNGLCONSERVATIVERASTERPARAMETERFNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, value: GLfloat)>;
 pub type PFNGLCONSERVATIVERASTERPARAMETERINVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
-pub type PFNGLCOPYIMAGESUBDATANVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+pub type PFNGLCOPYIMAGESUBDATANVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         srcName: GLuint,
         srcTarget: GLenum,
@@ -16122,11 +16122,11 @@ pub type PFNGLCOPYIMAGESUBDATANVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLDEPTHRANGEDNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(zNear: GLdouble, zFar: GLdouble)>;
-pub type PFNGLCLEARDEPTHDNVPROC = ::std::option::Option<unsafe extern "C" fn(depth: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(zNear: GLdouble, zFar: GLdouble)>;
+pub type PFNGLCLEARDEPTHDNVPROC = ::core::option::Option<unsafe extern "C" fn(depth: GLdouble)>;
 pub type PFNGLDEPTHBOUNDSDNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(zmin: GLdouble, zmax: GLdouble)>;
-pub type PFNGLDRAWTEXTURENVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(zmin: GLdouble, zmax: GLdouble)>;
+pub type PFNGLDRAWTEXTURENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         sampler: GLuint,
@@ -16141,8 +16141,8 @@ pub type PFNGLDRAWTEXTURENVPROC = ::std::option::Option<
         t1: GLfloat,
     ),
 >;
-pub type GLVULKANPROCNV = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLDRAWVKIMAGENVPROC = ::std::option::Option<
+pub type GLVULKANPROCNV = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLDRAWVKIMAGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         vkImage: GLuint64,
         sampler: GLuint,
@@ -16158,13 +16158,13 @@ pub type PFNGLDRAWVKIMAGENVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETVKPROCADDRNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(name: *const GLchar) -> GLVULKANPROCNV>;
+    ::core::option::Option<unsafe extern "C" fn(name: *const GLchar) -> GLVULKANPROCNV>;
 pub type PFNGLWAITVKSEMAPHORENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(vkSemaphore: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(vkSemaphore: GLuint64)>;
 pub type PFNGLSIGNALVKSEMAPHORENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(vkSemaphore: GLuint64)>;
-pub type PFNGLSIGNALVKFENCENVPROC = ::std::option::Option<unsafe extern "C" fn(vkFence: GLuint64)>;
-pub type PFNGLMAPCONTROLPOINTSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(vkSemaphore: GLuint64)>;
+pub type PFNGLSIGNALVKFENCENVPROC = ::core::option::Option<unsafe extern "C" fn(vkFence: GLuint64)>;
+pub type PFNGLMAPCONTROLPOINTSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -16174,16 +16174,16 @@ pub type PFNGLMAPCONTROLPOINTSNVPROC = ::std::option::Option<
         uorder: GLint,
         vorder: GLint,
         packed: GLboolean,
-        points: *const ::std::os::raw::c_void,
+        points: *const libc::c_void,
     ),
 >;
-pub type PFNGLMAPPARAMETERIVNVPROC = ::std::option::Option<
+pub type PFNGLMAPPARAMETERIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLMAPPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLMAPPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
-pub type PFNGLGETMAPCONTROLPOINTSNVPROC = ::std::option::Option<
+pub type PFNGLGETMAPCONTROLPOINTSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -16191,44 +16191,44 @@ pub type PFNGLGETMAPCONTROLPOINTSNVPROC = ::std::option::Option<
         ustride: GLsizei,
         vstride: GLsizei,
         packed: GLboolean,
-        points: *mut ::std::os::raw::c_void,
+        points: *mut libc::c_void,
     ),
 >;
 pub type PFNGLGETMAPPARAMETERIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETMAPPARAMETERFVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETMAPPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETMAPATTRIBPARAMETERIVNVPROC = ::std::option::Option<
+pub type PFNGLGETMAPATTRIBPARAMETERIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETMAPATTRIBPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLGETMAPATTRIBPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLEVALMAPSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, mode: GLenum)>;
 pub type PFNGLGETMULTISAMPLEFVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, index: GLuint, val: *mut GLfloat)>;
 pub type PFNGLSAMPLEMASKINDEXEDNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, mask: GLbitfield)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, mask: GLbitfield)>;
 pub type PFNGLTEXRENDERBUFFERNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, renderbuffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, renderbuffer: GLuint)>;
 pub type PFNGLDELETEFENCESNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *const GLuint)>;
 pub type PFNGLGENFENCESNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, fences: *mut GLuint)>;
 pub type PFNGLISFENCENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
 pub type PFNGLTESTFENCENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(fence: GLuint) -> GLboolean>;
 pub type PFNGLGETFENCEIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(fence: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLFINISHFENCENVPROC = ::std::option::Option<unsafe extern "C" fn(fence: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(fence: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLFINISHFENCENVPROC = ::core::option::Option<unsafe extern "C" fn(fence: GLuint)>;
 pub type PFNGLSETFENCENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(fence: GLuint, condition: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(fence: GLuint, condition: GLenum)>;
 pub type PFNGLFRAGMENTCOVERAGECOLORNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(color: GLuint)>;
-pub type PFNGLPROGRAMNAMEDPARAMETER4FNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(color: GLuint)>;
+pub type PFNGLPROGRAMNAMEDPARAMETER4FNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         id: GLuint,
         len: GLsizei,
@@ -16239,10 +16239,10 @@ pub type PFNGLPROGRAMNAMEDPARAMETER4FNVPROC = ::std::option::Option<
         w: GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMNAMEDPARAMETER4FVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMNAMEDPARAMETER4FVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, len: GLsizei, name: *const GLubyte, v: *const GLfloat),
 >;
-pub type PFNGLPROGRAMNAMEDPARAMETER4DNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMNAMEDPARAMETER4DNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         id: GLuint,
         len: GLsizei,
@@ -16253,22 +16253,22 @@ pub type PFNGLPROGRAMNAMEDPARAMETER4DNVPROC = ::std::option::Option<
         w: GLdouble,
     ),
 >;
-pub type PFNGLPROGRAMNAMEDPARAMETER4DVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMNAMEDPARAMETER4DVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, len: GLsizei, name: *const GLubyte, v: *const GLdouble),
 >;
-pub type PFNGLGETPROGRAMNAMEDPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMNAMEDPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, len: GLsizei, name: *const GLubyte, params: *mut GLfloat),
 >;
-pub type PFNGLGETPROGRAMNAMEDPARAMETERDVNVPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMNAMEDPARAMETERDVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(id: GLuint, len: GLsizei, name: *const GLubyte, params: *mut GLdouble),
 >;
 pub type PFNGLCOVERAGEMODULATIONTABLENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, v: *const GLfloat)>;
 pub type PFNGLGETCOVERAGEMODULATIONTABLENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(bufsize: GLsizei, v: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(bufsize: GLsizei, v: *mut GLfloat)>;
 pub type PFNGLCOVERAGEMODULATIONNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(components: GLenum)>;
-pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(components: GLenum)>;
+pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLECOVERAGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         coverageSamples: GLsizei,
@@ -16279,11 +16279,11 @@ pub type PFNGLRENDERBUFFERSTORAGEMULTISAMPLECOVERAGENVPROC = ::std::option::Opti
     ),
 >;
 pub type PFNGLPROGRAMVERTEXLIMITNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, limit: GLint)>;
-pub type PFNGLFRAMEBUFFERTEXTUREEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, limit: GLint)>;
+pub type PFNGLFRAMEBUFFERTEXTUREEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, attachment: GLenum, texture: GLuint, level: GLint),
 >;
-pub type PFNGLFRAMEBUFFERTEXTUREFACEEXTPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTUREFACEEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -16292,17 +16292,17 @@ pub type PFNGLFRAMEBUFFERTEXTUREFACEEXTPROC = ::std::option::Option<
         face: GLenum,
     ),
 >;
-pub type PFNGLRENDERGPUMASKNVPROC = ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
-pub type PFNGLMULTICASTBUFFERSUBDATANVPROC = ::std::option::Option<
+pub type PFNGLRENDERGPUMASKNVPROC = ::core::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
+pub type PFNGLMULTICASTBUFFERSUBDATANVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         gpuMask: GLbitfield,
         buffer: GLuint,
         offset: GLintptr,
         size: GLsizeiptr,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ),
 >;
-pub type PFNGLMULTICASTCOPYBUFFERSUBDATANVPROC = ::std::option::Option<
+pub type PFNGLMULTICASTCOPYBUFFERSUBDATANVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         readGpu: GLuint,
         writeGpuMask: GLbitfield,
@@ -16313,7 +16313,7 @@ pub type PFNGLMULTICASTCOPYBUFFERSUBDATANVPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLMULTICASTCOPYIMAGESUBDATANVPROC = ::std::option::Option<
+pub type PFNGLMULTICASTCOPYIMAGESUBDATANVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         srcGpu: GLuint,
         dstGpuMask: GLbitfield,
@@ -16334,7 +16334,7 @@ pub type PFNGLMULTICASTCOPYIMAGESUBDATANVPROC = ::std::option::Option<
         srcDepth: GLsizei,
     ),
 >;
-pub type PFNGLMULTICASTBLITFRAMEBUFFERNVPROC = ::std::option::Option<
+pub type PFNGLMULTICASTBLITFRAMEBUFFERNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         srcGpu: GLuint,
         dstGpu: GLuint,
@@ -16350,7 +16350,7 @@ pub type PFNGLMULTICASTBLITFRAMEBUFFERNVPROC = ::std::option::Option<
         filter: GLenum,
     ),
 >;
-pub type PFNGLMULTICASTFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::std::option::Option<
+pub type PFNGLMULTICASTFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         gpu: GLuint,
         framebuffer: GLuint,
@@ -16359,155 +16359,155 @@ pub type PFNGLMULTICASTFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::std::option::Optio
         v: *const GLfloat,
     ),
 >;
-pub type PFNGLMULTICASTBARRIERNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLMULTICASTBARRIERNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLMULTICASTWAITSYNCNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(signalGpu: GLuint, waitGpuMask: GLbitfield)>;
-pub type PFNGLMULTICASTGETQUERYOBJECTIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(signalGpu: GLuint, waitGpuMask: GLbitfield)>;
+pub type PFNGLMULTICASTGETQUERYOBJECTIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(gpu: GLuint, id: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLMULTICASTGETQUERYOBJECTUIVNVPROC = ::std::option::Option<
+pub type PFNGLMULTICASTGETQUERYOBJECTUIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(gpu: GLuint, id: GLuint, pname: GLenum, params: *mut GLuint),
 >;
-pub type PFNGLMULTICASTGETQUERYOBJECTI64VNVPROC = ::std::option::Option<
+pub type PFNGLMULTICASTGETQUERYOBJECTI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(gpu: GLuint, id: GLuint, pname: GLenum, params: *mut GLint64),
 >;
-pub type PFNGLMULTICASTGETQUERYOBJECTUI64VNVPROC = ::std::option::Option<
+pub type PFNGLMULTICASTGETQUERYOBJECTUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(gpu: GLuint, id: GLuint, pname: GLenum, params: *mut GLuint64),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETERI4INVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETERI4INVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETERI4IVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETERI4IVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLint),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETERSI4IVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETERSI4IVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLint),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETERI4UINVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETERI4UINVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETERI4UIVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETERI4UIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLuint),
 >;
-pub type PFNGLPROGRAMLOCALPARAMETERSI4UIVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMLOCALPARAMETERSI4UIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLuint),
 >;
-pub type PFNGLPROGRAMENVPARAMETERI4INVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETERI4INVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint),
 >;
-pub type PFNGLPROGRAMENVPARAMETERI4IVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETERI4IVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLint),
 >;
-pub type PFNGLPROGRAMENVPARAMETERSI4IVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETERSI4IVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLint),
 >;
-pub type PFNGLPROGRAMENVPARAMETERI4UINVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETERI4UINVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint),
 >;
-pub type PFNGLPROGRAMENVPARAMETERI4UIVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETERI4UIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, params: *const GLuint),
 >;
-pub type PFNGLPROGRAMENVPARAMETERSI4UIVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMENVPARAMETERSI4UIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, params: *const GLuint),
 >;
 pub type PFNGLGETPROGRAMLOCALPARAMETERIIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLint)>;
 pub type PFNGLGETPROGRAMLOCALPARAMETERIUIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLuint)>;
 pub type PFNGLGETPROGRAMENVPARAMETERIIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLint)>;
 pub type PFNGLGETPROGRAMENVPARAMETERIUIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLuint)>;
-pub type PFNGLPROGRAMSUBROUTINEPARAMETERSUIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, params: *mut GLuint)>;
+pub type PFNGLPROGRAMSUBROUTINEPARAMETERSUIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, count: GLsizei, params: *const GLuint),
 >;
 pub type PFNGLGETPROGRAMSUBROUTINEPARAMETERUIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, param: *mut GLuint)>;
-pub type GLhalfNV = ::std::os::raw::c_ushort;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, param: *mut GLuint)>;
+pub type GLhalfNV = libc::c_ushort;
 pub type PFNGLVERTEX2HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLhalfNV, y: GLhalfNV)>;
-pub type PFNGLVERTEX2HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLhalfNV, y: GLhalfNV)>;
+pub type PFNGLVERTEX2HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLVERTEX3HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLhalfNV, y: GLhalfNV, z: GLhalfNV)>;
-pub type PFNGLVERTEX3HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLhalfNV, y: GLhalfNV, z: GLhalfNV)>;
+pub type PFNGLVERTEX3HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLVERTEX4HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(x: GLhalfNV, y: GLhalfNV, z: GLhalfNV, w: GLhalfNV)>;
-pub type PFNGLVERTEX4HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(x: GLhalfNV, y: GLhalfNV, z: GLhalfNV, w: GLhalfNV)>;
+pub type PFNGLVERTEX4HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLNORMAL3HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(nx: GLhalfNV, ny: GLhalfNV, nz: GLhalfNV)>;
-pub type PFNGLNORMAL3HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(nx: GLhalfNV, ny: GLhalfNV, nz: GLhalfNV)>;
+pub type PFNGLNORMAL3HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLCOLOR3HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV)>;
-pub type PFNGLCOLOR3HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
-pub type PFNGLCOLOR4HNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV)>;
+pub type PFNGLCOLOR3HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+pub type PFNGLCOLOR4HNVPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV, alpha: GLhalfNV),
 >;
-pub type PFNGLCOLOR4HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
-pub type PFNGLTEXCOORD1HNVPROC = ::std::option::Option<unsafe extern "C" fn(s: GLhalfNV)>;
-pub type PFNGLTEXCOORD1HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+pub type PFNGLCOLOR4HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+pub type PFNGLTEXCOORD1HNVPROC = ::core::option::Option<unsafe extern "C" fn(s: GLhalfNV)>;
+pub type PFNGLTEXCOORD1HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLTEXCOORD2HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLhalfNV, t: GLhalfNV)>;
-pub type PFNGLTEXCOORD2HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLhalfNV, t: GLhalfNV)>;
+pub type PFNGLTEXCOORD2HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLTEXCOORD3HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLhalfNV, t: GLhalfNV, r: GLhalfNV)>;
-pub type PFNGLTEXCOORD3HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLhalfNV, t: GLhalfNV, r: GLhalfNV)>;
+pub type PFNGLTEXCOORD3HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLTEXCOORD4HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(s: GLhalfNV, t: GLhalfNV, r: GLhalfNV, q: GLhalfNV)>;
-pub type PFNGLTEXCOORD4HVNVPROC = ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(s: GLhalfNV, t: GLhalfNV, r: GLhalfNV, q: GLhalfNV)>;
+pub type PFNGLTEXCOORD4HVNVPROC = ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
 pub type PFNGLMULTITEXCOORD1HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLhalfNV)>;
 pub type PFNGLMULTITEXCOORD1HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
 pub type PFNGLMULTITEXCOORD2HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, s: GLhalfNV, t: GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, s: GLhalfNV, t: GLhalfNV)>;
 pub type PFNGLMULTITEXCOORD2HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
-pub type PFNGLMULTITEXCOORD3HNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
+pub type PFNGLMULTITEXCOORD3HNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, s: GLhalfNV, t: GLhalfNV, r: GLhalfNV),
 >;
 pub type PFNGLMULTITEXCOORD3HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
-pub type PFNGLMULTITEXCOORD4HNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
+pub type PFNGLMULTITEXCOORD4HNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, s: GLhalfNV, t: GLhalfNV, r: GLhalfNV, q: GLhalfNV),
 >;
 pub type PFNGLMULTITEXCOORD4HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
-pub type PFNGLFOGCOORDHNVPROC = ::std::option::Option<unsafe extern "C" fn(fog: GLhalfNV)>;
-pub type PFNGLFOGCOORDHVNVPROC = ::std::option::Option<unsafe extern "C" fn(fog: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, v: *const GLhalfNV)>;
+pub type PFNGLFOGCOORDHNVPROC = ::core::option::Option<unsafe extern "C" fn(fog: GLhalfNV)>;
+pub type PFNGLFOGCOORDHVNVPROC = ::core::option::Option<unsafe extern "C" fn(fog: *const GLhalfNV)>;
 pub type PFNGLSECONDARYCOLOR3HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(red: GLhalfNV, green: GLhalfNV, blue: GLhalfNV)>;
 pub type PFNGLSECONDARYCOLOR3HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
-pub type PFNGLVERTEXWEIGHTHNVPROC = ::std::option::Option<unsafe extern "C" fn(weight: GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(v: *const GLhalfNV)>;
+pub type PFNGLVERTEXWEIGHTHNVPROC = ::core::option::Option<unsafe extern "C" fn(weight: GLhalfNV)>;
 pub type PFNGLVERTEXWEIGHTHVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(weight: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(weight: *const GLhalfNV)>;
 pub type PFNGLVERTEXATTRIB1HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLhalfNV)>;
 pub type PFNGLVERTEXATTRIB1HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
 pub type PFNGLVERTEXATTRIB2HNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLhalfNV, y: GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLhalfNV, y: GLhalfNV)>;
 pub type PFNGLVERTEXATTRIB2HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
-pub type PFNGLVERTEXATTRIB3HNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
+pub type PFNGLVERTEXATTRIB3HNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLhalfNV, y: GLhalfNV, z: GLhalfNV),
 >;
 pub type PFNGLVERTEXATTRIB3HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
-pub type PFNGLVERTEXATTRIB4HNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
+pub type PFNGLVERTEXATTRIB4HNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLhalfNV, y: GLhalfNV, z: GLhalfNV, w: GLhalfNV),
 >;
 pub type PFNGLVERTEXATTRIB4HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLhalfNV)>;
 pub type PFNGLVERTEXATTRIBS1HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
 pub type PFNGLVERTEXATTRIBS2HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
 pub type PFNGLVERTEXATTRIBS3HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
 pub type PFNGLVERTEXATTRIBS4HVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
-pub type PFNGLGETINTERNALFORMATSAMPLEIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, n: GLsizei, v: *const GLhalfNV)>;
+pub type PFNGLGETINTERNALFORMATSAMPLEIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -16517,7 +16517,7 @@ pub type PFNGLGETINTERNALFORMATSAMPLEIVNVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETMEMORYOBJECTDETACHEDRESOURCESUIVNVPROC = ::std::option::Option<
+pub type PFNGLGETMEMORYOBJECTDETACHEDRESOURCESUIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         memory: GLuint,
         pname: GLenum,
@@ -16527,23 +16527,23 @@ pub type PFNGLGETMEMORYOBJECTDETACHEDRESOURCESUIVNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLRESETMEMORYOBJECTPARAMETERNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(memory: GLuint, pname: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(memory: GLuint, pname: GLenum)>;
 pub type PFNGLTEXATTACHMEMORYNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, memory: GLuint, offset: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, memory: GLuint, offset: GLuint64)>;
 pub type PFNGLBUFFERATTACHMEMORYNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, memory: GLuint, offset: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, memory: GLuint, offset: GLuint64)>;
 pub type PFNGLTEXTUREATTACHMEMORYNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint, memory: GLuint, offset: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint, memory: GLuint, offset: GLuint64)>;
 pub type PFNGLNAMEDBUFFERATTACHMEMORYNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint, memory: GLuint, offset: GLuint64)>;
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint, memory: GLuint, offset: GLuint64)>;
 pub type PFNGLDRAWMESHTASKSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(first: GLuint, count: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(first: GLuint, count: GLuint)>;
 pub type PFNGLDRAWMESHTASKSINDIRECTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(indirect: GLintptr)>;
-pub type PFNGLMULTIDRAWMESHTASKSINDIRECTNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(indirect: GLintptr)>;
+pub type PFNGLMULTIDRAWMESHTASKSINDIRECTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(indirect: GLintptr, drawcount: GLsizei, stride: GLsizei),
 >;
-pub type PFNGLMULTIDRAWMESHTASKSINDIRECTCOUNTNVPROC = ::std::option::Option<
+pub type PFNGLMULTIDRAWMESHTASKSINDIRECTCOUNTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         indirect: GLintptr,
         drawcount: GLintptr,
@@ -16552,18 +16552,18 @@ pub type PFNGLMULTIDRAWMESHTASKSINDIRECTCOUNTNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGENOCCLUSIONQUERIESNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLDELETEOCCLUSIONQUERIESNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
 pub type PFNGLISOCCLUSIONQUERYNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
-pub type PFNGLBEGINOCCLUSIONQUERYNVPROC = ::std::option::Option<unsafe extern "C" fn(id: GLuint)>;
-pub type PFNGLENDOCCLUSIONQUERYNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
+pub type PFNGLBEGINOCCLUSIONQUERYNVPROC = ::core::option::Option<unsafe extern "C" fn(id: GLuint)>;
+pub type PFNGLENDOCCLUSIONQUERYNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLGETOCCLUSIONQUERYIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETOCCLUSIONQUERYUIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
-pub type PFNGLPROGRAMBUFFERPARAMETERSFVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLuint)>;
+pub type PFNGLPROGRAMBUFFERPARAMETERSFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         bindingIndex: GLuint,
@@ -16572,7 +16572,7 @@ pub type PFNGLPROGRAMBUFFERPARAMETERSFVNVPROC = ::std::option::Option<
         params: *const GLfloat,
     ),
 >;
-pub type PFNGLPROGRAMBUFFERPARAMETERSIIVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMBUFFERPARAMETERSIIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         bindingIndex: GLuint,
@@ -16581,7 +16581,7 @@ pub type PFNGLPROGRAMBUFFERPARAMETERSIIVNVPROC = ::std::option::Option<
         params: *const GLint,
     ),
 >;
-pub type PFNGLPROGRAMBUFFERPARAMETERSIUIVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMBUFFERPARAMETERSIUIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         bindingIndex: GLuint,
@@ -16591,29 +16591,29 @@ pub type PFNGLPROGRAMBUFFERPARAMETERSIUIVNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGENPATHSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(range: GLsizei) -> GLuint>;
+    ::core::option::Option<unsafe extern "C" fn(range: GLsizei) -> GLuint>;
 pub type PFNGLDELETEPATHSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, range: GLsizei)>;
-pub type PFNGLISPATHNVPROC = ::std::option::Option<unsafe extern "C" fn(path: GLuint) -> GLboolean>;
-pub type PFNGLPATHCOMMANDSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, range: GLsizei)>;
+pub type PFNGLISPATHNVPROC = ::core::option::Option<unsafe extern "C" fn(path: GLuint) -> GLboolean>;
+pub type PFNGLPATHCOMMANDSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         path: GLuint,
         numCommands: GLsizei,
         commands: *const GLubyte,
         numCoords: GLsizei,
         coordType: GLenum,
-        coords: *const ::std::os::raw::c_void,
+        coords: *const libc::c_void,
     ),
 >;
-pub type PFNGLPATHCOORDSNVPROC = ::std::option::Option<
+pub type PFNGLPATHCOORDSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         path: GLuint,
         numCoords: GLsizei,
         coordType: GLenum,
-        coords: *const ::std::os::raw::c_void,
+        coords: *const libc::c_void,
     ),
 >;
-pub type PFNGLPATHSUBCOMMANDSNVPROC = ::std::option::Option<
+pub type PFNGLPATHSUBCOMMANDSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         path: GLuint,
         commandStart: GLsizei,
@@ -16622,45 +16622,45 @@ pub type PFNGLPATHSUBCOMMANDSNVPROC = ::std::option::Option<
         commands: *const GLubyte,
         numCoords: GLsizei,
         coordType: GLenum,
-        coords: *const ::std::os::raw::c_void,
+        coords: *const libc::c_void,
     ),
 >;
-pub type PFNGLPATHSUBCOORDSNVPROC = ::std::option::Option<
+pub type PFNGLPATHSUBCOORDSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         path: GLuint,
         coordStart: GLsizei,
         numCoords: GLsizei,
         coordType: GLenum,
-        coords: *const ::std::os::raw::c_void,
+        coords: *const libc::c_void,
     ),
 >;
-pub type PFNGLPATHSTRINGNVPROC = ::std::option::Option<
+pub type PFNGLPATHSTRINGNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         path: GLuint,
         format: GLenum,
         length: GLsizei,
-        pathString: *const ::std::os::raw::c_void,
+        pathString: *const libc::c_void,
     ),
 >;
-pub type PFNGLPATHGLYPHSNVPROC = ::std::option::Option<
+pub type PFNGLPATHGLYPHSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         firstPathName: GLuint,
         fontTarget: GLenum,
-        fontName: *const ::std::os::raw::c_void,
+        fontName: *const libc::c_void,
         fontStyle: GLbitfield,
         numGlyphs: GLsizei,
         type_: GLenum,
-        charcodes: *const ::std::os::raw::c_void,
+        charcodes: *const libc::c_void,
         handleMissingGlyphs: GLenum,
         pathParameterTemplate: GLuint,
         emScale: GLfloat,
     ),
 >;
-pub type PFNGLPATHGLYPHRANGENVPROC = ::std::option::Option<
+pub type PFNGLPATHGLYPHRANGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         firstPathName: GLuint,
         fontTarget: GLenum,
-        fontName: *const ::std::os::raw::c_void,
+        fontName: *const libc::c_void,
         fontStyle: GLbitfield,
         firstGlyph: GLuint,
         numGlyphs: GLsizei,
@@ -16669,7 +16669,7 @@ pub type PFNGLPATHGLYPHRANGENVPROC = ::std::option::Option<
         emScale: GLfloat,
     ),
 >;
-pub type PFNGLWEIGHTPATHSNVPROC = ::std::option::Option<
+pub type PFNGLWEIGHTPATHSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         resultPath: GLuint,
         numPaths: GLsizei,
@@ -16678,11 +16678,11 @@ pub type PFNGLWEIGHTPATHSNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCOPYPATHNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(resultPath: GLuint, srcPath: GLuint)>;
-pub type PFNGLINTERPOLATEPATHSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(resultPath: GLuint, srcPath: GLuint)>;
+pub type PFNGLINTERPOLATEPATHSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(resultPath: GLuint, pathA: GLuint, pathB: GLuint, weight: GLfloat),
 >;
-pub type PFNGLTRANSFORMPATHNVPROC = ::std::option::Option<
+pub type PFNGLTRANSFORMPATHNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         resultPath: GLuint,
         srcPath: GLuint,
@@ -16691,29 +16691,29 @@ pub type PFNGLTRANSFORMPATHNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLPATHPARAMETERIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *const GLint)>;
 pub type PFNGLPATHPARAMETERINVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: GLint)>;
 pub type PFNGLPATHPARAMETERFVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *const GLfloat)>;
 pub type PFNGLPATHPARAMETERFNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: GLfloat)>;
-pub type PFNGLPATHDASHARRAYNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: GLfloat)>;
+pub type PFNGLPATHDASHARRAYNVPROC = ::core::option::Option<
     unsafe extern "C" fn(path: GLuint, dashCount: GLsizei, dashArray: *const GLfloat),
 >;
 pub type PFNGLPATHSTENCILFUNCNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLint, mask: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(func: GLenum, ref_: GLint, mask: GLuint)>;
 pub type PFNGLPATHSTENCILDEPTHOFFSETNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLfloat, units: GLfloat)>;
 pub type PFNGLSTENCILFILLPATHNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, fillMode: GLenum, mask: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, fillMode: GLenum, mask: GLuint)>;
 pub type PFNGLSTENCILSTROKEPATHNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, reference: GLint, mask: GLuint)>;
-pub type PFNGLSTENCILFILLPATHINSTANCEDNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, reference: GLint, mask: GLuint)>;
+pub type PFNGLSTENCILFILLPATHINSTANCEDNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         fillMode: GLenum,
         mask: GLuint,
@@ -16721,11 +16721,11 @@ pub type PFNGLSTENCILFILLPATHINSTANCEDNVPROC = ::std::option::Option<
         transformValues: *const GLfloat,
     ),
 >;
-pub type PFNGLSTENCILSTROKEPATHINSTANCEDNVPROC = ::std::option::Option<
+pub type PFNGLSTENCILSTROKEPATHINSTANCEDNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         reference: GLint,
         mask: GLuint,
@@ -16733,27 +16733,27 @@ pub type PFNGLSTENCILSTROKEPATHINSTANCEDNVPROC = ::std::option::Option<
         transformValues: *const GLfloat,
     ),
 >;
-pub type PFNGLPATHCOVERDEPTHFUNCNVPROC = ::std::option::Option<unsafe extern "C" fn(func: GLenum)>;
+pub type PFNGLPATHCOVERDEPTHFUNCNVPROC = ::core::option::Option<unsafe extern "C" fn(func: GLenum)>;
 pub type PFNGLCOVERFILLPATHNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, coverMode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, coverMode: GLenum)>;
 pub type PFNGLCOVERSTROKEPATHNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, coverMode: GLenum)>;
-pub type PFNGLCOVERFILLPATHINSTANCEDNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, coverMode: GLenum)>;
+pub type PFNGLCOVERFILLPATHINSTANCEDNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         coverMode: GLenum,
         transformType: GLenum,
         transformValues: *const GLfloat,
     ),
 >;
-pub type PFNGLCOVERSTROKEPATHINSTANCEDNVPROC = ::std::option::Option<
+pub type PFNGLCOVERSTROKEPATHINSTANCEDNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         coverMode: GLenum,
         transformType: GLenum,
@@ -16761,27 +16761,27 @@ pub type PFNGLCOVERSTROKEPATHINSTANCEDNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLGETPATHPARAMETERIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *mut GLint)>;
 pub type PFNGLGETPATHPARAMETERFVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, pname: GLenum, value: *mut GLfloat)>;
 pub type PFNGLGETPATHCOMMANDSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, commands: *mut GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, commands: *mut GLubyte)>;
 pub type PFNGLGETPATHCOORDSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, coords: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, coords: *mut GLfloat)>;
 pub type PFNGLGETPATHDASHARRAYNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, dashArray: *mut GLfloat)>;
-pub type PFNGLGETPATHMETRICSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, dashArray: *mut GLfloat)>;
+pub type PFNGLGETPATHMETRICSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         metricQueryMask: GLbitfield,
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         stride: GLsizei,
         metrics: *mut GLfloat,
     ),
 >;
-pub type PFNGLGETPATHMETRICRANGENVPROC = ::std::option::Option<
+pub type PFNGLGETPATHMETRICRANGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         metricQueryMask: GLbitfield,
         firstPathName: GLuint,
@@ -16790,12 +16790,12 @@ pub type PFNGLGETPATHMETRICRANGENVPROC = ::std::option::Option<
         metrics: *mut GLfloat,
     ),
 >;
-pub type PFNGLGETPATHSPACINGNVPROC = ::std::option::Option<
+pub type PFNGLGETPATHSPACINGNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         pathListMode: GLenum,
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         advanceScale: GLfloat,
         kerningScale: GLfloat,
@@ -16803,15 +16803,15 @@ pub type PFNGLGETPATHSPACINGNVPROC = ::std::option::Option<
         returnedSpacing: *mut GLfloat,
     ),
 >;
-pub type PFNGLISPOINTINFILLPATHNVPROC = ::std::option::Option<
+pub type PFNGLISPOINTINFILLPATHNVPROC = ::core::option::Option<
     unsafe extern "C" fn(path: GLuint, mask: GLuint, x: GLfloat, y: GLfloat) -> GLboolean,
 >;
 pub type PFNGLISPOINTINSTROKEPATHNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(path: GLuint, x: GLfloat, y: GLfloat) -> GLboolean>;
-pub type PFNGLGETPATHLENGTHNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(path: GLuint, x: GLfloat, y: GLfloat) -> GLboolean>;
+pub type PFNGLGETPATHLENGTHNVPROC = ::core::option::Option<
     unsafe extern "C" fn(path: GLuint, startSegment: GLsizei, numSegments: GLsizei) -> GLfloat,
 >;
-pub type PFNGLPOINTALONGPATHNVPROC = ::std::option::Option<
+pub type PFNGLPOINTALONGPATHNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         path: GLuint,
         startSegment: GLsizei,
@@ -16824,28 +16824,28 @@ pub type PFNGLPOINTALONGPATHNVPROC = ::std::option::Option<
     ) -> GLboolean,
 >;
 pub type PFNGLMATRIXLOAD3X2FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXLOAD3X3FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXLOADTRANSPOSE3X3FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXMULT3X2FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXMULT3X3FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
 pub type PFNGLMATRIXMULTTRANSPOSE3X3FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
-pub type PFNGLSTENCILTHENCOVERFILLPATHNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(matrixMode: GLenum, m: *const GLfloat)>;
+pub type PFNGLSTENCILTHENCOVERFILLPATHNVPROC = ::core::option::Option<
     unsafe extern "C" fn(path: GLuint, fillMode: GLenum, mask: GLuint, coverMode: GLenum),
 >;
-pub type PFNGLSTENCILTHENCOVERSTROKEPATHNVPROC = ::std::option::Option<
+pub type PFNGLSTENCILTHENCOVERSTROKEPATHNVPROC = ::core::option::Option<
     unsafe extern "C" fn(path: GLuint, reference: GLint, mask: GLuint, coverMode: GLenum),
 >;
-pub type PFNGLSTENCILTHENCOVERFILLPATHINSTANCEDNVPROC = ::std::option::Option<
+pub type PFNGLSTENCILTHENCOVERFILLPATHINSTANCEDNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         fillMode: GLenum,
         mask: GLuint,
@@ -16854,11 +16854,11 @@ pub type PFNGLSTENCILTHENCOVERFILLPATHINSTANCEDNVPROC = ::std::option::Option<
         transformValues: *const GLfloat,
     ),
 >;
-pub type PFNGLSTENCILTHENCOVERSTROKEPATHINSTANCEDNVPROC = ::std::option::Option<
+pub type PFNGLSTENCILTHENCOVERSTROKEPATHINSTANCEDNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         numPaths: GLsizei,
         pathNameType: GLenum,
-        paths: *const ::std::os::raw::c_void,
+        paths: *const libc::c_void,
         pathBase: GLuint,
         reference: GLint,
         mask: GLuint,
@@ -16867,21 +16867,21 @@ pub type PFNGLSTENCILTHENCOVERSTROKEPATHINSTANCEDNVPROC = ::std::option::Option<
         transformValues: *const GLfloat,
     ),
 >;
-pub type PFNGLPATHGLYPHINDEXRANGENVPROC = ::std::option::Option<
+pub type PFNGLPATHGLYPHINDEXRANGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         fontTarget: GLenum,
-        fontName: *const ::std::os::raw::c_void,
+        fontName: *const libc::c_void,
         fontStyle: GLbitfield,
         pathParameterTemplate: GLuint,
         emScale: GLfloat,
         baseAndCount: *mut GLuint,
     ) -> GLenum,
 >;
-pub type PFNGLPATHGLYPHINDEXARRAYNVPROC = ::std::option::Option<
+pub type PFNGLPATHGLYPHINDEXARRAYNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         firstPathName: GLuint,
         fontTarget: GLenum,
-        fontName: *const ::std::os::raw::c_void,
+        fontName: *const libc::c_void,
         fontStyle: GLbitfield,
         firstGlyphIndex: GLuint,
         numGlyphs: GLsizei,
@@ -16889,12 +16889,12 @@ pub type PFNGLPATHGLYPHINDEXARRAYNVPROC = ::std::option::Option<
         emScale: GLfloat,
     ) -> GLenum,
 >;
-pub type PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC = ::std::option::Option<
+pub type PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         firstPathName: GLuint,
         fontTarget: GLenum,
         fontSize: GLsizeiptr,
-        fontData: *const ::std::os::raw::c_void,
+        fontData: *const libc::c_void,
         faceIndex: GLsizei,
         firstGlyphIndex: GLuint,
         numGlyphs: GLsizei,
@@ -16902,7 +16902,7 @@ pub type PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC = ::std::option::Option<
         emScale: GLfloat,
     ) -> GLenum,
 >;
-pub type PFNGLPROGRAMPATHFRAGMENTINPUTGENNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMPATHFRAGMENTINPUTGENNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -16911,7 +16911,7 @@ pub type PFNGLPROGRAMPATHFRAGMENTINPUTGENNVPROC = ::std::option::Option<
         coeffs: *const GLfloat,
     ),
 >;
-pub type PFNGLGETPROGRAMRESOURCEFVNVPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMRESOURCEFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         programInterface: GLenum,
@@ -16923,7 +16923,7 @@ pub type PFNGLGETPROGRAMRESOURCEFVNVPROC = ::std::option::Option<
         params: *mut GLfloat,
     ),
 >;
-pub type PFNGLPATHCOLORGENNVPROC = ::std::option::Option<
+pub type PFNGLPATHCOLORGENNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         color: GLenum,
         genMode: GLenum,
@@ -16931,7 +16931,7 @@ pub type PFNGLPATHCOLORGENNVPROC = ::std::option::Option<
         coeffs: *const GLfloat,
     ),
 >;
-pub type PFNGLPATHTEXGENNVPROC = ::std::option::Option<
+pub type PFNGLPATHTEXGENNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texCoordSet: GLenum,
         genMode: GLenum,
@@ -16939,27 +16939,27 @@ pub type PFNGLPATHTEXGENNVPROC = ::std::option::Option<
         coeffs: *const GLfloat,
     ),
 >;
-pub type PFNGLPATHFOGGENNVPROC = ::std::option::Option<unsafe extern "C" fn(genMode: GLenum)>;
+pub type PFNGLPATHFOGGENNVPROC = ::core::option::Option<unsafe extern "C" fn(genMode: GLenum)>;
 pub type PFNGLGETPATHCOLORGENIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(color: GLenum, pname: GLenum, value: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(color: GLenum, pname: GLenum, value: *mut GLint)>;
 pub type PFNGLGETPATHCOLORGENFVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(color: GLenum, pname: GLenum, value: *mut GLfloat)>;
-pub type PFNGLGETPATHTEXGENIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(color: GLenum, pname: GLenum, value: *mut GLfloat)>;
+pub type PFNGLGETPATHTEXGENIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(texCoordSet: GLenum, pname: GLenum, value: *mut GLint),
 >;
-pub type PFNGLGETPATHTEXGENFVNVPROC = ::std::option::Option<
+pub type PFNGLGETPATHTEXGENFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(texCoordSet: GLenum, pname: GLenum, value: *mut GLfloat),
 >;
-pub type PFNGLPIXELDATARANGENVPROC = ::std::option::Option<
-    unsafe extern "C" fn(target: GLenum, length: GLsizei, pointer: *const ::std::os::raw::c_void),
+pub type PFNGLPIXELDATARANGENVPROC = ::core::option::Option<
+    unsafe extern "C" fn(target: GLenum, length: GLsizei, pointer: *const libc::c_void),
 >;
 pub type PFNGLFLUSHPIXELDATARANGENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
 pub type PFNGLPOINTPARAMETERINVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLPOINTPARAMETERIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
-pub type PFNGLPRESENTFRAMEKEYEDNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+pub type PFNGLPRESENTFRAMEKEYEDNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_slot: GLuint,
         minPresentTime: GLuint64EXT,
@@ -16974,7 +16974,7 @@ pub type PFNGLPRESENTFRAMEKEYEDNVPROC = ::std::option::Option<
         key1: GLuint,
     ),
 >;
-pub type PFNGLPRESENTFRAMEDUALFILLNVPROC = ::std::option::Option<
+pub type PFNGLPRESENTFRAMEDUALFILLNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_slot: GLuint,
         minPresentTime: GLuint64EXT,
@@ -16991,22 +16991,22 @@ pub type PFNGLPRESENTFRAMEDUALFILLNVPROC = ::std::option::Option<
         fill3: GLuint,
     ),
 >;
-pub type PFNGLGETVIDEOIVNVPROC = ::std::option::Option<
+pub type PFNGLGETVIDEOIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(video_slot: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETVIDEOUIVNVPROC = ::std::option::Option<
+pub type PFNGLGETVIDEOUIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(video_slot: GLuint, pname: GLenum, params: *mut GLuint),
 >;
-pub type PFNGLGETVIDEOI64VNVPROC = ::std::option::Option<
+pub type PFNGLGETVIDEOI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(video_slot: GLuint, pname: GLenum, params: *mut GLint64EXT),
 >;
-pub type PFNGLGETVIDEOUI64VNVPROC = ::std::option::Option<
+pub type PFNGLGETVIDEOUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(video_slot: GLuint, pname: GLenum, params: *mut GLuint64EXT),
 >;
-pub type PFNGLPRIMITIVERESTARTNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLPRIMITIVERESTARTNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLPRIMITIVERESTARTINDEXNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint)>;
-pub type PFNGLQUERYRESOURCENVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint)>;
+pub type PFNGLQUERYRESOURCENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         queryType: GLenum,
         tagId: GLint,
@@ -17015,20 +17015,20 @@ pub type PFNGLQUERYRESOURCENVPROC = ::std::option::Option<
     ) -> GLint,
 >;
 pub type PFNGLGENQUERYRESOURCETAGNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, tagIds: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, tagIds: *mut GLint)>;
 pub type PFNGLDELETEQUERYRESOURCETAGNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, tagIds: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, tagIds: *const GLint)>;
 pub type PFNGLQUERYRESOURCETAGNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(tagId: GLint, tagString: *const GLchar)>;
+    ::core::option::Option<unsafe extern "C" fn(tagId: GLint, tagString: *const GLchar)>;
 pub type PFNGLCOMBINERPARAMETERFVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLCOMBINERPARAMETERFNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLCOMBINERPARAMETERIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
 pub type PFNGLCOMBINERPARAMETERINVPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
-pub type PFNGLCOMBINERINPUTNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+pub type PFNGLCOMBINERINPUTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         stage: GLenum,
         portion: GLenum,
@@ -17038,7 +17038,7 @@ pub type PFNGLCOMBINERINPUTNVPROC = ::std::option::Option<
         componentUsage: GLenum,
     ),
 >;
-pub type PFNGLCOMBINEROUTPUTNVPROC = ::std::option::Option<
+pub type PFNGLCOMBINEROUTPUTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         stage: GLenum,
         portion: GLenum,
@@ -17052,10 +17052,10 @@ pub type PFNGLCOMBINEROUTPUTNVPROC = ::std::option::Option<
         muxSum: GLboolean,
     ),
 >;
-pub type PFNGLFINALCOMBINERINPUTNVPROC = ::std::option::Option<
+pub type PFNGLFINALCOMBINERINPUTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(variable: GLenum, input: GLenum, mapping: GLenum, componentUsage: GLenum),
 >;
-pub type PFNGLGETCOMBINERINPUTPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLGETCOMBINERINPUTPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         stage: GLenum,
         portion: GLenum,
@@ -17064,7 +17064,7 @@ pub type PFNGLGETCOMBINERINPUTPARAMETERFVNVPROC = ::std::option::Option<
         params: *mut GLfloat,
     ),
 >;
-pub type PFNGLGETCOMBINERINPUTPARAMETERIVNVPROC = ::std::option::Option<
+pub type PFNGLGETCOMBINERINPUTPARAMETERIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         stage: GLenum,
         portion: GLenum,
@@ -17073,64 +17073,64 @@ pub type PFNGLGETCOMBINERINPUTPARAMETERIVNVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETCOMBINEROUTPUTPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLGETCOMBINEROUTPUTPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(stage: GLenum, portion: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETCOMBINEROUTPUTPARAMETERIVNVPROC = ::std::option::Option<
+pub type PFNGLGETCOMBINEROUTPUTPARAMETERIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(stage: GLenum, portion: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(variable: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
-pub type PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC = ::std::option::Option<
+pub type PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(variable: GLenum, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLCOMBINERSTAGEPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLCOMBINERSTAGEPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(stage: GLenum, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLGETCOMBINERSTAGEPARAMETERFVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(stage: GLenum, pname: GLenum, params: *mut GLfloat)>;
-pub type PFNGLFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(stage: GLenum, pname: GLenum, params: *mut GLfloat)>;
+pub type PFNGLFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
-pub type PFNGLNAMEDFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::std::option::Option<
+pub type PFNGLNAMEDFRAMEBUFFERSAMPLELOCATIONSFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(framebuffer: GLuint, start: GLuint, count: GLsizei, v: *const GLfloat),
 >;
-pub type PFNGLRESOLVEDEPTHVALUESNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLSCISSOREXCLUSIVENVPROC = ::std::option::Option<
+pub type PFNGLRESOLVEDEPTHVALUESNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLSCISSOREXCLUSIVENVPROC = ::core::option::Option<
     unsafe extern "C" fn(x: GLint, y: GLint, width: GLsizei, height: GLsizei),
 >;
 pub type PFNGLSCISSOREXCLUSIVEARRAYVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(first: GLuint, count: GLsizei, v: *const GLint)>;
 pub type PFNGLMAKEBUFFERRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, access: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, access: GLenum)>;
 pub type PFNGLMAKEBUFFERNONRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum)>;
 pub type PFNGLISBUFFERRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum) -> GLboolean>;
 pub type PFNGLMAKENAMEDBUFFERRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint, access: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint, access: GLenum)>;
 pub type PFNGLMAKENAMEDBUFFERNONRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint)>;
 pub type PFNGLISNAMEDBUFFERRESIDENTNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
-pub type PFNGLGETBUFFERPARAMETERUI64VNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(buffer: GLuint) -> GLboolean>;
+pub type PFNGLGETBUFFERPARAMETERUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLuint64EXT),
 >;
-pub type PFNGLGETNAMEDBUFFERPARAMETERUI64VNVPROC = ::std::option::Option<
+pub type PFNGLGETNAMEDBUFFERPARAMETERUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(buffer: GLuint, pname: GLenum, params: *mut GLuint64EXT),
 >;
 pub type PFNGLGETINTEGERUI64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(value: GLenum, result: *mut GLuint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(value: GLenum, result: *mut GLuint64EXT)>;
 pub type PFNGLUNIFORMUI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(location: GLint, value: GLuint64EXT)>;
-pub type PFNGLUNIFORMUI64VNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(location: GLint, value: GLuint64EXT)>;
+pub type PFNGLUNIFORMUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(location: GLint, count: GLsizei, value: *const GLuint64EXT),
 >;
-pub type PFNGLPROGRAMUNIFORMUI64NVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMUI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, location: GLint, value: GLuint64EXT),
 >;
-pub type PFNGLPROGRAMUNIFORMUI64VNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMUNIFORMUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         location: GLint,
@@ -17139,24 +17139,24 @@ pub type PFNGLPROGRAMUNIFORMUI64VNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLBINDSHADINGRATEIMAGENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(texture: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(texture: GLuint)>;
 pub type PFNGLGETSHADINGRATEIMAGEPALETTENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(viewport: GLuint, entry: GLuint, rate: *mut GLenum)>;
-pub type PFNGLGETSHADINGRATESAMPLELOCATIONIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(viewport: GLuint, entry: GLuint, rate: *mut GLenum)>;
+pub type PFNGLGETSHADINGRATESAMPLELOCATIONIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(rate: GLenum, samples: GLuint, index: GLuint, location: *mut GLint),
 >;
 pub type PFNGLSHADINGRATEIMAGEBARRIERNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(synchronize: GLboolean)>;
-pub type PFNGLSHADINGRATEIMAGEPALETTENVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(synchronize: GLboolean)>;
+pub type PFNGLSHADINGRATEIMAGEPALETTENVPROC = ::core::option::Option<
     unsafe extern "C" fn(viewport: GLuint, first: GLuint, count: GLsizei, rates: *const GLenum),
 >;
 pub type PFNGLSHADINGRATESAMPLEORDERNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(order: GLenum)>;
-pub type PFNGLSHADINGRATESAMPLEORDERCUSTOMNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(order: GLenum)>;
+pub type PFNGLSHADINGRATESAMPLEORDERCUSTOMNVPROC = ::core::option::Option<
     unsafe extern "C" fn(rate: GLenum, samples: GLuint, locations: *const GLint),
 >;
-pub type PFNGLTEXTUREBARRIERNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLTEXIMAGE2DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
+pub type PFNGLTEXTUREBARRIERNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLTEXIMAGE2DMULTISAMPLECOVERAGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         coverageSamples: GLsizei,
@@ -17167,7 +17167,7 @@ pub type PFNGLTEXIMAGE2DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
         fixedSampleLocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXIMAGE3DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
+pub type PFNGLTEXIMAGE3DMULTISAMPLECOVERAGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         coverageSamples: GLsizei,
@@ -17179,7 +17179,7 @@ pub type PFNGLTEXIMAGE3DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
         fixedSampleLocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTUREIMAGE2DMULTISAMPLENVPROC = ::std::option::Option<
+pub type PFNGLTEXTUREIMAGE2DMULTISAMPLENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -17190,7 +17190,7 @@ pub type PFNGLTEXTUREIMAGE2DMULTISAMPLENVPROC = ::std::option::Option<
         fixedSampleLocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTUREIMAGE3DMULTISAMPLENVPROC = ::std::option::Option<
+pub type PFNGLTEXTUREIMAGE3DMULTISAMPLENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -17202,7 +17202,7 @@ pub type PFNGLTEXTUREIMAGE3DMULTISAMPLENVPROC = ::std::option::Option<
         fixedSampleLocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTUREIMAGE2DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
+pub type PFNGLTEXTUREIMAGE2DMULTISAMPLECOVERAGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -17214,7 +17214,7 @@ pub type PFNGLTEXTUREIMAGE2DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
         fixedSampleLocations: GLboolean,
     ),
 >;
-pub type PFNGLTEXTUREIMAGE3DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
+pub type PFNGLTEXTUREIMAGE3DMULTISAMPLECOVERAGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         texture: GLuint,
         target: GLenum,
@@ -17228,12 +17228,12 @@ pub type PFNGLTEXTUREIMAGE3DMULTISAMPLECOVERAGENVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLBEGINTRANSFORMFEEDBACKNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
-pub type PFNGLENDTRANSFORMFEEDBACKNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLTRANSFORMFEEDBACKATTRIBSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(primitiveMode: GLenum)>;
+pub type PFNGLENDTRANSFORMFEEDBACKNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLTRANSFORMFEEDBACKATTRIBSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(count: GLsizei, attribs: *const GLint, bufferMode: GLenum),
 >;
-pub type PFNGLBINDBUFFERRANGENVPROC = ::std::option::Option<
+pub type PFNGLBINDBUFFERRANGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -17242,12 +17242,12 @@ pub type PFNGLBINDBUFFERRANGENVPROC = ::std::option::Option<
         size: GLsizeiptr,
     ),
 >;
-pub type PFNGLBINDBUFFEROFFSETNVPROC = ::std::option::Option<
+pub type PFNGLBINDBUFFEROFFSETNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint, offset: GLintptr),
 >;
 pub type PFNGLBINDBUFFERBASENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint)>;
-pub type PFNGLTRANSFORMFEEDBACKVARYINGSNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, buffer: GLuint)>;
+pub type PFNGLTRANSFORMFEEDBACKVARYINGSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         count: GLsizei,
@@ -17256,10 +17256,10 @@ pub type PFNGLTRANSFORMFEEDBACKVARYINGSNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLACTIVEVARYINGNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar)>;
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar)>;
 pub type PFNGLGETVARYINGLOCATIONNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
-pub type PFNGLGETACTIVEVARYINGNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(program: GLuint, name: *const GLchar) -> GLint>;
+pub type PFNGLGETACTIVEVARYINGNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         program: GLuint,
         index: GLuint,
@@ -17270,10 +17270,10 @@ pub type PFNGLGETACTIVEVARYINGNVPROC = ::std::option::Option<
         name: *mut GLchar,
     ),
 >;
-pub type PFNGLGETTRANSFORMFEEDBACKVARYINGNVPROC = ::std::option::Option<
+pub type PFNGLGETTRANSFORMFEEDBACKVARYINGNVPROC = ::core::option::Option<
     unsafe extern "C" fn(program: GLuint, index: GLuint, location: *mut GLint),
 >;
-pub type PFNGLTRANSFORMFEEDBACKSTREAMATTRIBSNVPROC = ::std::option::Option<
+pub type PFNGLTRANSFORMFEEDBACKSTREAMATTRIBSNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         count: GLsizei,
         attribs: *const GLint,
@@ -17283,46 +17283,46 @@ pub type PFNGLTRANSFORMFEEDBACKSTREAMATTRIBSNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLBINDTRANSFORMFEEDBACKNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
 pub type PFNGLDELETETRANSFORMFEEDBACKSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *const GLuint)>;
 pub type PFNGLGENTRANSFORMFEEDBACKSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, ids: *mut GLuint)>;
 pub type PFNGLISTRANSFORMFEEDBACKNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
-pub type PFNGLPAUSETRANSFORMFEEDBACKNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLRESUMETRANSFORMFEEDBACKNVPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
+pub type PFNGLPAUSETRANSFORMFEEDBACKNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLRESUMETRANSFORMFEEDBACKNVPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLDRAWTRANSFORMFEEDBACKNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(mode: GLenum, id: GLuint)>;
 pub type GLvdpauSurfaceNV = GLintptr;
-pub type PFNGLVDPAUINITNVPROC = ::std::option::Option<
+pub type PFNGLVDPAUINITNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
-        vdpDevice: *const ::std::os::raw::c_void,
-        getProcAddress: *const ::std::os::raw::c_void,
+        vdpDevice: *const libc::c_void,
+        getProcAddress: *const libc::c_void,
     ),
 >;
-pub type PFNGLVDPAUFININVPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLVDPAUREGISTERVIDEOSURFACENVPROC = ::std::option::Option<
+pub type PFNGLVDPAUFININVPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLVDPAUREGISTERVIDEOSURFACENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
-        vdpSurface: *const ::std::os::raw::c_void,
+        vdpSurface: *const libc::c_void,
         target: GLenum,
         numTextureNames: GLsizei,
         textureNames: *const GLuint,
     ) -> GLvdpauSurfaceNV,
 >;
-pub type PFNGLVDPAUREGISTEROUTPUTSURFACENVPROC = ::std::option::Option<
+pub type PFNGLVDPAUREGISTEROUTPUTSURFACENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
-        vdpSurface: *const ::std::os::raw::c_void,
+        vdpSurface: *const libc::c_void,
         target: GLenum,
         numTextureNames: GLsizei,
         textureNames: *const GLuint,
     ) -> GLvdpauSurfaceNV,
 >;
 pub type PFNGLVDPAUISSURFACENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(surface: GLvdpauSurfaceNV) -> GLboolean>;
+    ::core::option::Option<unsafe extern "C" fn(surface: GLvdpauSurfaceNV) -> GLboolean>;
 pub type PFNGLVDPAUUNREGISTERSURFACENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(surface: GLvdpauSurfaceNV)>;
-pub type PFNGLVDPAUGETSURFACEIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(surface: GLvdpauSurfaceNV)>;
+pub type PFNGLVDPAUGETSURFACEIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         surface: GLvdpauSurfaceNV,
         pname: GLenum,
@@ -17332,52 +17332,52 @@ pub type PFNGLVDPAUGETSURFACEIVNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLVDPAUSURFACEACCESSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(surface: GLvdpauSurfaceNV, access: GLenum)>;
-pub type PFNGLVDPAUMAPSURFACESNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(surface: GLvdpauSurfaceNV, access: GLenum)>;
+pub type PFNGLVDPAUMAPSURFACESNVPROC = ::core::option::Option<
     unsafe extern "C" fn(numSurfaces: GLsizei, surfaces: *const GLvdpauSurfaceNV),
 >;
-pub type PFNGLVDPAUUNMAPSURFACESNVPROC = ::std::option::Option<
+pub type PFNGLVDPAUUNMAPSURFACESNVPROC = ::core::option::Option<
     unsafe extern "C" fn(numSurface: GLsizei, surfaces: *const GLvdpauSurfaceNV),
 >;
-pub type PFNGLVDPAUREGISTERVIDEOSURFACEWITHPICTURESTRUCTURENVPROC = ::std::option::Option<
+pub type PFNGLVDPAUREGISTERVIDEOSURFACEWITHPICTURESTRUCTURENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
-        vdpSurface: *const ::std::os::raw::c_void,
+        vdpSurface: *const libc::c_void,
         target: GLenum,
         numTextureNames: GLsizei,
         textureNames: *const GLuint,
         isFrameStructure: GLboolean,
     ) -> GLvdpauSurfaceNV,
 >;
-pub type PFNGLFLUSHVERTEXARRAYRANGENVPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLVERTEXARRAYRANGENVPROC = ::std::option::Option<
-    unsafe extern "C" fn(length: GLsizei, pointer: *const ::std::os::raw::c_void),
+pub type PFNGLFLUSHVERTEXARRAYRANGENVPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLVERTEXARRAYRANGENVPROC = ::core::option::Option<
+    unsafe extern "C" fn(length: GLsizei, pointer: *const libc::c_void),
 >;
 pub type PFNGLVERTEXATTRIBL1I64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint64EXT)>;
 pub type PFNGLVERTEXATTRIBL2I64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint64EXT, y: GLint64EXT)>;
-pub type PFNGLVERTEXATTRIBL3I64NVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint64EXT, y: GLint64EXT)>;
+pub type PFNGLVERTEXATTRIBL3I64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLint64EXT, y: GLint64EXT, z: GLint64EXT),
 >;
-pub type PFNGLVERTEXATTRIBL4I64NVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBL4I64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLint64EXT, y: GLint64EXT, z: GLint64EXT, w: GLint64EXT),
 >;
 pub type PFNGLVERTEXATTRIBL1I64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
 pub type PFNGLVERTEXATTRIBL2I64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
 pub type PFNGLVERTEXATTRIBL3I64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
 pub type PFNGLVERTEXATTRIBL4I64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint64EXT)>;
 pub type PFNGLVERTEXATTRIBL1UI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint64EXT)>;
 pub type PFNGLVERTEXATTRIBL2UI64NVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint64EXT, y: GLuint64EXT)>;
-pub type PFNGLVERTEXATTRIBL3UI64NVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint64EXT, y: GLuint64EXT)>;
+pub type PFNGLVERTEXATTRIBL3UI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLuint64EXT, y: GLuint64EXT, z: GLuint64EXT),
 >;
-pub type PFNGLVERTEXATTRIBL4UI64NVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBL4UI64NVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         x: GLuint64EXT,
@@ -17387,41 +17387,41 @@ pub type PFNGLVERTEXATTRIBL4UI64NVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLVERTEXATTRIBL1UI64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
 pub type PFNGLVERTEXATTRIBL2UI64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
 pub type PFNGLVERTEXATTRIBL3UI64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
 pub type PFNGLVERTEXATTRIBL4UI64VNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
-pub type PFNGLGETVERTEXATTRIBLI64VNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint64EXT)>;
+pub type PFNGLGETVERTEXATTRIBLI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint64EXT),
 >;
-pub type PFNGLGETVERTEXATTRIBLUI64VNVPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXATTRIBLUI64VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint64EXT),
 >;
-pub type PFNGLVERTEXATTRIBLFORMATNVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBLFORMATNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, size: GLint, type_: GLenum, stride: GLsizei),
 >;
-pub type PFNGLBUFFERADDRESSRANGENVPROC = ::std::option::Option<
+pub type PFNGLBUFFERADDRESSRANGENVPROC = ::core::option::Option<
     unsafe extern "C" fn(pname: GLenum, index: GLuint, address: GLuint64EXT, length: GLsizeiptr),
 >;
 pub type PFNGLVERTEXFORMATNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
 pub type PFNGLNORMALFORMATNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, stride: GLsizei)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, stride: GLsizei)>;
 pub type PFNGLCOLORFORMATNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
 pub type PFNGLINDEXFORMATNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, stride: GLsizei)>;
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, stride: GLsizei)>;
 pub type PFNGLTEXCOORDFORMATNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
-pub type PFNGLEDGEFLAGFORMATNVPROC = ::std::option::Option<unsafe extern "C" fn(stride: GLsizei)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
+pub type PFNGLEDGEFLAGFORMATNVPROC = ::core::option::Option<unsafe extern "C" fn(stride: GLsizei)>;
 pub type PFNGLSECONDARYCOLORFORMATNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLint, type_: GLenum, stride: GLsizei)>;
 pub type PFNGLFOGCOORDFORMATNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(type_: GLenum, stride: GLsizei)>;
-pub type PFNGLVERTEXATTRIBFORMATNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(type_: GLenum, stride: GLsizei)>;
+pub type PFNGLVERTEXATTRIBFORMATNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
@@ -17430,13 +17430,13 @@ pub type PFNGLVERTEXATTRIBFORMATNVPROC = ::std::option::Option<
         stride: GLsizei,
     ),
 >;
-pub type PFNGLVERTEXATTRIBIFORMATNVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBIFORMATNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, size: GLint, type_: GLenum, stride: GLsizei),
 >;
-pub type PFNGLGETINTEGERUI64I_VNVPROC = ::std::option::Option<
+pub type PFNGLGETINTEGERUI64I_VNVPROC = ::core::option::Option<
     unsafe extern "C" fn(value: GLenum, index: GLuint, result: *mut GLuint64EXT),
 >;
-pub type PFNGLAREPROGRAMSRESIDENTNVPROC = ::std::option::Option<
+pub type PFNGLAREPROGRAMSRESIDENTNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         n: GLsizei,
         programs: *const GLuint,
@@ -17444,42 +17444,42 @@ pub type PFNGLAREPROGRAMSRESIDENTNVPROC = ::std::option::Option<
     ) -> GLboolean,
 >;
 pub type PFNGLBINDPROGRAMNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint)>;
 pub type PFNGLDELETEPROGRAMSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *const GLuint)>;
 pub type PFNGLEXECUTEPROGRAMNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, id: GLuint, params: *const GLfloat)>;
 pub type PFNGLGENPROGRAMSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *mut GLuint)>;
-pub type PFNGLGETPROGRAMPARAMETERDVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *mut GLuint)>;
+pub type PFNGLGETPROGRAMPARAMETERDVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, pname: GLenum, params: *mut GLdouble),
 >;
-pub type PFNGLGETPROGRAMPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLGETPROGRAMPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLGETPROGRAMIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETPROGRAMSTRINGNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, program: *mut GLubyte)>;
-pub type PFNGLGETTRACKMATRIXIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint, pname: GLenum, program: *mut GLubyte)>;
+pub type PFNGLGETTRACKMATRIXIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, address: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETVERTEXATTRIBDVNVPROC = ::std::option::Option<
+pub type PFNGLGETVERTEXATTRIBDVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLdouble),
 >;
 pub type PFNGLGETVERTEXATTRIBFVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETVERTEXATTRIBIVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLGETVERTEXATTRIBPOINTERVNVPROC = ::std::option::Option<
-    unsafe extern "C" fn(index: GLuint, pname: GLenum, pointer: *mut *mut ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLGETVERTEXATTRIBPOINTERVNVPROC = ::core::option::Option<
+    unsafe extern "C" fn(index: GLuint, pname: GLenum, pointer: *mut *mut libc::c_void),
 >;
 pub type PFNGLISPROGRAMNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
-pub type PFNGLLOADPROGRAMNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(id: GLuint) -> GLboolean>;
+pub type PFNGLLOADPROGRAMNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, id: GLuint, len: GLsizei, program: *const GLubyte),
 >;
-pub type PFNGLPROGRAMPARAMETER4DNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMPARAMETER4DNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -17490,8 +17490,8 @@ pub type PFNGLPROGRAMPARAMETER4DNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLPROGRAMPARAMETER4DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, v: *const GLdouble)>;
-pub type PFNGLPROGRAMPARAMETER4FNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, v: *const GLdouble)>;
+pub type PFNGLPROGRAMPARAMETER4FNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         index: GLuint,
@@ -17502,168 +17502,168 @@ pub type PFNGLPROGRAMPARAMETER4FNVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLPROGRAMPARAMETER4FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, v: *const GLfloat)>;
-pub type PFNGLPROGRAMPARAMETERS4DVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, index: GLuint, v: *const GLfloat)>;
+pub type PFNGLPROGRAMPARAMETERS4DVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, v: *const GLdouble),
 >;
-pub type PFNGLPROGRAMPARAMETERS4FVNVPROC = ::std::option::Option<
+pub type PFNGLPROGRAMPARAMETERS4FVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, index: GLuint, count: GLsizei, v: *const GLfloat),
 >;
 pub type PFNGLREQUESTRESIDENTPROGRAMSNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *const GLuint)>;
-pub type PFNGLTRACKMATRIXNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, programs: *const GLuint)>;
+pub type PFNGLTRACKMATRIXNVPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, address: GLuint, matrix: GLenum, transform: GLenum),
 >;
-pub type PFNGLVERTEXATTRIBPOINTERNVPROC = ::std::option::Option<
+pub type PFNGLVERTEXATTRIBPOINTERNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         fsize: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLVERTEXATTRIB1DNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble)>;
 pub type PFNGLVERTEXATTRIB1DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB1FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat)>;
 pub type PFNGLVERTEXATTRIB1FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB1SNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort)>;
 pub type PFNGLVERTEXATTRIB1SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIB2DNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble)>;
 pub type PFNGLVERTEXATTRIB2DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB2FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat)>;
 pub type PFNGLVERTEXATTRIB2FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB2SNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort)>;
 pub type PFNGLVERTEXATTRIB2SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
-pub type PFNGLVERTEXATTRIB3DNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+pub type PFNGLVERTEXATTRIB3DNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIB3DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIB3FNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
 pub type PFNGLVERTEXATTRIB3FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIB3SNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort)>;
 pub type PFNGLVERTEXATTRIB3SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
-pub type PFNGLVERTEXATTRIB4DNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+pub type PFNGLVERTEXATTRIB4DNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLdouble, y: GLdouble, z: GLdouble, w: GLdouble),
 >;
 pub type PFNGLVERTEXATTRIB4DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
-pub type PFNGLVERTEXATTRIB4FNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLdouble)>;
+pub type PFNGLVERTEXATTRIB4FNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLfloat, y: GLfloat, z: GLfloat, w: GLfloat),
 >;
 pub type PFNGLVERTEXATTRIB4FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
-pub type PFNGLVERTEXATTRIB4SNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLfloat)>;
+pub type PFNGLVERTEXATTRIB4SNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLshort, y: GLshort, z: GLshort, w: GLshort),
 >;
 pub type PFNGLVERTEXATTRIB4SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
-pub type PFNGLVERTEXATTRIB4UBNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+pub type PFNGLVERTEXATTRIB4UBNVPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLubyte, y: GLubyte, z: GLubyte, w: GLubyte),
 >;
 pub type PFNGLVERTEXATTRIB4UBVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIBS1DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBS1FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIBS1SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIBS2DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBS2FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIBS2SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIBS3DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBS3FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIBS3SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIBS4DVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLdouble)>;
 pub type PFNGLVERTEXATTRIBS4FVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLfloat)>;
 pub type PFNGLVERTEXATTRIBS4SVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIBS4UBVNVPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, count: GLsizei, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIBI1IEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint)>;
 pub type PFNGLVERTEXATTRIBI2IEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint)>;
 pub type PFNGLVERTEXATTRIBI3IEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint, z: GLint)>;
-pub type PFNGLVERTEXATTRIBI4IEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint, z: GLint)>;
+pub type PFNGLVERTEXATTRIBI4IEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLint, y: GLint, z: GLint, w: GLint),
 >;
 pub type PFNGLVERTEXATTRIBI1UIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint)>;
 pub type PFNGLVERTEXATTRIBI2UIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint)>;
 pub type PFNGLVERTEXATTRIBI3UIEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint, z: GLuint)>;
-pub type PFNGLVERTEXATTRIBI4UIEXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint, z: GLuint)>;
+pub type PFNGLVERTEXATTRIBI4UIEXTPROC = ::core::option::Option<
     unsafe extern "C" fn(index: GLuint, x: GLuint, y: GLuint, z: GLuint, w: GLuint),
 >;
 pub type PFNGLVERTEXATTRIBI1IVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI2IVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI3IVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI4IVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLint)>;
 pub type PFNGLVERTEXATTRIBI1UIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI2UIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI3UIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI4UIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLuint)>;
 pub type PFNGLVERTEXATTRIBI4BVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLbyte)>;
 pub type PFNGLVERTEXATTRIBI4SVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLshort)>;
 pub type PFNGLVERTEXATTRIBI4UBVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLubyte)>;
 pub type PFNGLVERTEXATTRIBI4USVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
-pub type PFNGLVERTEXATTRIBIPOINTEREXTPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, v: *const GLushort)>;
+pub type PFNGLVERTEXATTRIBIPOINTEREXTPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         size: GLint,
         type_: GLenum,
         stride: GLsizei,
-        pointer: *const ::std::os::raw::c_void,
+        pointer: *const libc::c_void,
     ),
 >;
 pub type PFNGLGETVERTEXATTRIBIIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETVERTEXATTRIBIUIVEXTPROC =
-    ::std::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(index: GLuint, pname: GLenum, params: *mut GLuint)>;
 pub type PFNGLBEGINVIDEOCAPTURENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(video_capture_slot: GLuint)>;
-pub type PFNGLBINDVIDEOCAPTURESTREAMBUFFERNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(video_capture_slot: GLuint)>;
+pub type PFNGLBINDVIDEOCAPTURESTREAMBUFFERNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17671,7 +17671,7 @@ pub type PFNGLBINDVIDEOCAPTURESTREAMBUFFERNVPROC = ::std::option::Option<
         offset: GLintptrARB,
     ),
 >;
-pub type PFNGLBINDVIDEOCAPTURESTREAMTEXTURENVPROC = ::std::option::Option<
+pub type PFNGLBINDVIDEOCAPTURESTREAMTEXTURENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17681,11 +17681,11 @@ pub type PFNGLBINDVIDEOCAPTURESTREAMTEXTURENVPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLENDVIDEOCAPTURENVPROC =
-    ::std::option::Option<unsafe extern "C" fn(video_capture_slot: GLuint)>;
-pub type PFNGLGETVIDEOCAPTUREIVNVPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(video_capture_slot: GLuint)>;
+pub type PFNGLGETVIDEOCAPTUREIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(video_capture_slot: GLuint, pname: GLenum, params: *mut GLint),
 >;
-pub type PFNGLGETVIDEOCAPTURESTREAMIVNVPROC = ::std::option::Option<
+pub type PFNGLGETVIDEOCAPTURESTREAMIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17693,7 +17693,7 @@ pub type PFNGLGETVIDEOCAPTURESTREAMIVNVPROC = ::std::option::Option<
         params: *mut GLint,
     ),
 >;
-pub type PFNGLGETVIDEOCAPTURESTREAMFVNVPROC = ::std::option::Option<
+pub type PFNGLGETVIDEOCAPTURESTREAMFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17701,7 +17701,7 @@ pub type PFNGLGETVIDEOCAPTURESTREAMFVNVPROC = ::std::option::Option<
         params: *mut GLfloat,
     ),
 >;
-pub type PFNGLGETVIDEOCAPTURESTREAMDVNVPROC = ::std::option::Option<
+pub type PFNGLGETVIDEOCAPTURESTREAMDVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17709,14 +17709,14 @@ pub type PFNGLGETVIDEOCAPTURESTREAMDVNVPROC = ::std::option::Option<
         params: *mut GLdouble,
     ),
 >;
-pub type PFNGLVIDEOCAPTURENVPROC = ::std::option::Option<
+pub type PFNGLVIDEOCAPTURENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         sequence_num: *mut GLuint,
         capture_time: *mut GLuint64EXT,
     ) -> GLenum,
 >;
-pub type PFNGLVIDEOCAPTURESTREAMPARAMETERIVNVPROC = ::std::option::Option<
+pub type PFNGLVIDEOCAPTURESTREAMPARAMETERIVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17724,7 +17724,7 @@ pub type PFNGLVIDEOCAPTURESTREAMPARAMETERIVNVPROC = ::std::option::Option<
         params: *const GLint,
     ),
 >;
-pub type PFNGLVIDEOCAPTURESTREAMPARAMETERFVNVPROC = ::std::option::Option<
+pub type PFNGLVIDEOCAPTURESTREAMPARAMETERFVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17732,7 +17732,7 @@ pub type PFNGLVIDEOCAPTURESTREAMPARAMETERFVNVPROC = ::std::option::Option<
         params: *const GLfloat,
     ),
 >;
-pub type PFNGLVIDEOCAPTURESTREAMPARAMETERDVNVPROC = ::std::option::Option<
+pub type PFNGLVIDEOCAPTURESTREAMPARAMETERDVNVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         video_capture_slot: GLuint,
         stream: GLuint,
@@ -17740,7 +17740,7 @@ pub type PFNGLVIDEOCAPTURESTREAMPARAMETERDVNVPROC = ::std::option::Option<
         params: *const GLdouble,
     ),
 >;
-pub type PFNGLVIEWPORTSWIZZLENVPROC = ::std::option::Option<
+pub type PFNGLVIEWPORTSWIZZLENVPROC = ::core::option::Option<
     unsafe extern "C" fn(
         index: GLuint,
         swizzlex: GLenum,
@@ -17749,7 +17749,7 @@ pub type PFNGLVIEWPORTSWIZZLENVPROC = ::std::option::Option<
         swizzlew: GLenum,
     ),
 >;
-pub type PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC = ::std::option::Option<
+pub type PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         attachment: GLenum,
@@ -17760,39 +17760,39 @@ pub type PFNGLFRAMEBUFFERTEXTUREMULTIVIEWOVRPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLHINTPGIPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, mode: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, mode: GLint)>;
 pub type PFNGLDETAILTEXFUNCSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, points: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, points: *const GLfloat)>;
 pub type PFNGLGETDETAILTEXFUNCSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, points: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, points: *mut GLfloat)>;
 pub type PFNGLFOGFUNCSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: GLsizei, points: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(n: GLsizei, points: *const GLfloat)>;
 pub type PFNGLGETFOGFUNCSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(points: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(points: *mut GLfloat)>;
 pub type PFNGLSAMPLEMASKSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
-pub type PFNGLSAMPLEPATTERNSGISPROC = ::std::option::Option<unsafe extern "C" fn(pattern: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(value: GLclampf, invert: GLboolean)>;
+pub type PFNGLSAMPLEPATTERNSGISPROC = ::core::option::Option<unsafe extern "C" fn(pattern: GLenum)>;
 pub type PFNGLPIXELTEXGENPARAMETERISGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLPIXELTEXGENPARAMETERIVSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
 pub type PFNGLPIXELTEXGENPARAMETERFSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPIXELTEXGENPARAMETERFVSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLGETPIXELTEXGENPARAMETERIVSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETPIXELTEXGENPARAMETERFVSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLPOINTPARAMETERFSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLPOINTPARAMETERFVSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLSHARPENTEXFUNCSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, points: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, n: GLsizei, points: *const GLfloat)>;
 pub type PFNGLGETSHARPENTEXFUNCSGISPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, points: *mut GLfloat)>;
-pub type PFNGLTEXIMAGE4DSGISPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, points: *mut GLfloat)>;
+pub type PFNGLTEXIMAGE4DSGISPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -17804,10 +17804,10 @@ pub type PFNGLTEXIMAGE4DSGISPROC = ::std::option::Option<
         border: GLint,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXSUBIMAGE4DSGISPROC = ::std::option::Option<
+pub type PFNGLTEXSUBIMAGE4DSGISPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         level: GLint,
@@ -17821,95 +17821,95 @@ pub type PFNGLTEXSUBIMAGE4DSGISPROC = ::std::option::Option<
         size4d: GLsizei,
         format: GLenum,
         type_: GLenum,
-        pixels: *const ::std::os::raw::c_void,
+        pixels: *const libc::c_void,
     ),
 >;
-pub type PFNGLTEXTURECOLORMASKSGISPROC = ::std::option::Option<
+pub type PFNGLTEXTURECOLORMASKSGISPROC = ::core::option::Option<
     unsafe extern "C" fn(red: GLboolean, green: GLboolean, blue: GLboolean, alpha: GLboolean),
 >;
-pub type PFNGLGETTEXFILTERFUNCSGISPROC = ::std::option::Option<
+pub type PFNGLGETTEXFILTERFUNCSGISPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, filter: GLenum, weights: *mut GLfloat),
 >;
-pub type PFNGLTEXFILTERFUNCSGISPROC = ::std::option::Option<
+pub type PFNGLTEXFILTERFUNCSGISPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, filter: GLenum, n: GLsizei, weights: *const GLfloat),
 >;
-pub type PFNGLASYNCMARKERSGIXPROC = ::std::option::Option<unsafe extern "C" fn(marker: GLuint)>;
+pub type PFNGLASYNCMARKERSGIXPROC = ::core::option::Option<unsafe extern "C" fn(marker: GLuint)>;
 pub type PFNGLFINISHASYNCSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(markerp: *mut GLuint) -> GLint>;
+    ::core::option::Option<unsafe extern "C" fn(markerp: *mut GLuint) -> GLint>;
 pub type PFNGLPOLLASYNCSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(markerp: *mut GLuint) -> GLint>;
+    ::core::option::Option<unsafe extern "C" fn(markerp: *mut GLuint) -> GLint>;
 pub type PFNGLGENASYNCMARKERSSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(range: GLsizei) -> GLuint>;
+    ::core::option::Option<unsafe extern "C" fn(range: GLsizei) -> GLuint>;
 pub type PFNGLDELETEASYNCMARKERSSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(marker: GLuint, range: GLsizei)>;
+    ::core::option::Option<unsafe extern "C" fn(marker: GLuint, range: GLsizei)>;
 pub type PFNGLISASYNCMARKERSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(marker: GLuint) -> GLboolean>;
-pub type PFNGLFLUSHRASTERSGIXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(marker: GLuint) -> GLboolean>;
+pub type PFNGLFLUSHRASTERSGIXPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLFRAGMENTCOLORMATERIALSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, mode: GLenum)>;
 pub type PFNGLFRAGMENTLIGHTFSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, param: GLfloat)>;
-pub type PFNGLFRAGMENTLIGHTFVSGIXPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, param: GLfloat)>;
+pub type PFNGLFRAGMENTLIGHTFVSGIXPROC = ::core::option::Option<
     unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLFRAGMENTLIGHTISGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLFRAGMENTLIGHTIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *const GLint)>;
 pub type PFNGLFRAGMENTLIGHTMODELFSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLFRAGMENTLIGHTMODELFVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLFRAGMENTLIGHTMODELISGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLFRAGMENTLIGHTMODELIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
 pub type PFNGLFRAGMENTMATERIALFSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLfloat)>;
-pub type PFNGLFRAGMENTMATERIALFVSGIXPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLfloat)>;
+pub type PFNGLFRAGMENTMATERIALFVSGIXPROC = ::core::option::Option<
     unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLFRAGMENTMATERIALISGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, param: GLint)>;
 pub type PFNGLFRAGMENTMATERIALIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *const GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *const GLint)>;
 pub type PFNGLGETFRAGMENTLIGHTFVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETFRAGMENTLIGHTIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(light: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLGETFRAGMENTMATERIALFVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETFRAGMENTMATERIALIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(face: GLenum, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLLIGHTENVISGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
-pub type PFNGLFRAMEZOOMSGIXPROC = ::std::option::Option<unsafe extern "C" fn(factor: GLint)>;
-pub type PFNGLIGLOOINTERFACESGIXPROC = ::std::option::Option<
-    unsafe extern "C" fn(pname: GLenum, params: *const ::std::os::raw::c_void),
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+pub type PFNGLFRAMEZOOMSGIXPROC = ::core::option::Option<unsafe extern "C" fn(factor: GLint)>;
+pub type PFNGLIGLOOINTERFACESGIXPROC = ::core::option::Option<
+    unsafe extern "C" fn(pname: GLenum, params: *const libc::c_void),
 >;
-pub type PFNGLGETINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn() -> GLint>;
+pub type PFNGLGETINSTRUMENTSSGIXPROC = ::core::option::Option<unsafe extern "C" fn() -> GLint>;
 pub type PFNGLINSTRUMENTSBUFFERSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(size: GLsizei, buffer: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(size: GLsizei, buffer: *mut GLint)>;
 pub type PFNGLPOLLINSTRUMENTSSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(marker_p: *mut GLint) -> GLint>;
-pub type PFNGLREADINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn(marker: GLint)>;
-pub type PFNGLSTARTINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLSTOPINSTRUMENTSSGIXPROC = ::std::option::Option<unsafe extern "C" fn(marker: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(marker_p: *mut GLint) -> GLint>;
+pub type PFNGLREADINSTRUMENTSSGIXPROC = ::core::option::Option<unsafe extern "C" fn(marker: GLint)>;
+pub type PFNGLSTARTINSTRUMENTSSGIXPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLSTOPINSTRUMENTSSGIXPROC = ::core::option::Option<unsafe extern "C" fn(marker: GLint)>;
 pub type PFNGLGETLISTPARAMETERFVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *mut GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *mut GLfloat)>;
 pub type PFNGLGETLISTPARAMETERIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *mut GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *mut GLint)>;
 pub type PFNGLLISTPARAMETERFSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, param: GLfloat)>;
-pub type PFNGLLISTPARAMETERFVSGIXPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, param: GLfloat)>;
+pub type PFNGLLISTPARAMETERFVSGIXPROC = ::core::option::Option<
     unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *const GLfloat),
 >;
 pub type PFNGLLISTPARAMETERISGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, param: GLint)>;
 pub type PFNGLLISTPARAMETERIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *const GLint)>;
-pub type PFNGLPIXELTEXGENSGIXPROC = ::std::option::Option<unsafe extern "C" fn(mode: GLenum)>;
-pub type PFNGLDEFORMATIONMAP3DSGIXPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(list: GLuint, pname: GLenum, params: *const GLint)>;
+pub type PFNGLPIXELTEXGENSGIXPROC = ::core::option::Option<unsafe extern "C" fn(mode: GLenum)>;
+pub type PFNGLDEFORMATIONMAP3DSGIXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         u1: GLdouble,
@@ -17927,7 +17927,7 @@ pub type PFNGLDEFORMATIONMAP3DSGIXPROC = ::std::option::Option<
         points: *const GLdouble,
     ),
 >;
-pub type PFNGLDEFORMATIONMAP3FSGIXPROC = ::std::option::Option<
+pub type PFNGLDEFORMATIONMAP3FSGIXPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         u1: GLfloat,
@@ -17945,37 +17945,37 @@ pub type PFNGLDEFORMATIONMAP3FSGIXPROC = ::std::option::Option<
         points: *const GLfloat,
     ),
 >;
-pub type PFNGLDEFORMSGIXPROC = ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
+pub type PFNGLDEFORMSGIXPROC = ::core::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
 pub type PFNGLLOADIDENTITYDEFORMATIONMAPSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
+    ::core::option::Option<unsafe extern "C" fn(mask: GLbitfield)>;
 pub type PFNGLREFERENCEPLANESGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(equation: *const GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(equation: *const GLdouble)>;
 pub type PFNGLSPRITEPARAMETERFSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLfloat)>;
 pub type PFNGLSPRITEPARAMETERFVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLfloat)>;
 pub type PFNGLSPRITEPARAMETERISGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, param: GLint)>;
 pub type PFNGLSPRITEPARAMETERIVSGIXPROC =
-    ::std::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
-pub type PFNGLTAGSAMPLEBUFFERSGIXPROC = ::std::option::Option<unsafe extern "C" fn()>;
-pub type PFNGLCOLORTABLESGIPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(pname: GLenum, params: *const GLint)>;
+pub type PFNGLTAGSAMPLEBUFFERSGIXPROC = ::core::option::Option<unsafe extern "C" fn()>;
+pub type PFNGLCOLORTABLESGIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        table: *const ::std::os::raw::c_void,
+        table: *const libc::c_void,
     ),
 >;
-pub type PFNGLCOLORTABLEPARAMETERFVSGIPROC = ::std::option::Option<
+pub type PFNGLCOLORTABLEPARAMETERFVSGIPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLfloat),
 >;
-pub type PFNGLCOLORTABLEPARAMETERIVSGIPROC = ::std::option::Option<
+pub type PFNGLCOLORTABLEPARAMETERIVSGIPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *const GLint),
 >;
-pub type PFNGLCOPYCOLORTABLESGIPROC = ::std::option::Option<
+pub type PFNGLCOPYCOLORTABLESGIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         internalformat: GLenum,
@@ -17984,62 +17984,62 @@ pub type PFNGLCOPYCOLORTABLESGIPROC = ::std::option::Option<
         width: GLsizei,
     ),
 >;
-pub type PFNGLGETCOLORTABLESGIPROC = ::std::option::Option<
+pub type PFNGLGETCOLORTABLESGIPROC = ::core::option::Option<
     unsafe extern "C" fn(
         target: GLenum,
         format: GLenum,
         type_: GLenum,
-        table: *mut ::std::os::raw::c_void,
+        table: *mut libc::c_void,
     ),
 >;
-pub type PFNGLGETCOLORTABLEPARAMETERFVSGIPROC = ::std::option::Option<
+pub type PFNGLGETCOLORTABLEPARAMETERFVSGIPROC = ::core::option::Option<
     unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLfloat),
 >;
 pub type PFNGLGETCOLORTABLEPARAMETERIVSGIPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
-pub type PFNGLFINISHTEXTURESUNXPROC = ::std::option::Option<unsafe extern "C" fn()>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, pname: GLenum, params: *mut GLint)>;
+pub type PFNGLFINISHTEXTURESUNXPROC = ::core::option::Option<unsafe extern "C" fn()>;
 pub type PFNGLGLOBALALPHAFACTORBSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLbyte)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLbyte)>;
 pub type PFNGLGLOBALALPHAFACTORSSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLshort)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLshort)>;
 pub type PFNGLGLOBALALPHAFACTORISUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLint)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLint)>;
 pub type PFNGLGLOBALALPHAFACTORFSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLfloat)>;
 pub type PFNGLGLOBALALPHAFACTORDSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLdouble)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLdouble)>;
 pub type PFNGLGLOBALALPHAFACTORUBSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLubyte)>;
 pub type PFNGLGLOBALALPHAFACTORUSSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(factor: GLushort)>;
 pub type PFNGLGLOBALALPHAFACTORUISUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(factor: GLuint)>;
-pub type PFNGLDRAWMESHARRAYSSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(factor: GLuint)>;
+pub type PFNGLDRAWMESHARRAYSSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(mode: GLenum, first: GLint, count: GLsizei, width: GLsizei),
 >;
-pub type PFNGLREPLACEMENTCODEUISUNPROC = ::std::option::Option<unsafe extern "C" fn(code: GLuint)>;
+pub type PFNGLREPLACEMENTCODEUISUNPROC = ::core::option::Option<unsafe extern "C" fn(code: GLuint)>;
 pub type PFNGLREPLACEMENTCODEUSSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(code: GLushort)>;
-pub type PFNGLREPLACEMENTCODEUBSUNPROC = ::std::option::Option<unsafe extern "C" fn(code: GLubyte)>;
+    ::core::option::Option<unsafe extern "C" fn(code: GLushort)>;
+pub type PFNGLREPLACEMENTCODEUBSUNPROC = ::core::option::Option<unsafe extern "C" fn(code: GLubyte)>;
 pub type PFNGLREPLACEMENTCODEUIVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(code: *const GLuint)>;
+    ::core::option::Option<unsafe extern "C" fn(code: *const GLuint)>;
 pub type PFNGLREPLACEMENTCODEUSVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(code: *const GLushort)>;
+    ::core::option::Option<unsafe extern "C" fn(code: *const GLushort)>;
 pub type PFNGLREPLACEMENTCODEUBVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(code: *const GLubyte)>;
-pub type PFNGLREPLACEMENTCODEPOINTERSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(code: *const GLubyte)>;
+pub type PFNGLREPLACEMENTCODEPOINTERSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         type_: GLenum,
         stride: GLsizei,
-        pointer: *mut *const ::std::os::raw::c_void,
+        pointer: *mut *const libc::c_void,
     ),
 >;
-pub type PFNGLCOLOR4UBVERTEX2FSUNPROC = ::std::option::Option<
+pub type PFNGLCOLOR4UBVERTEX2FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(r: GLubyte, g: GLubyte, b: GLubyte, a: GLubyte, x: GLfloat, y: GLfloat),
 >;
 pub type PFNGLCOLOR4UBVERTEX2FVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(c: *const GLubyte, v: *const GLfloat)>;
-pub type PFNGLCOLOR4UBVERTEX3FSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(c: *const GLubyte, v: *const GLfloat)>;
+pub type PFNGLCOLOR4UBVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         r: GLubyte,
         g: GLubyte,
@@ -18051,18 +18051,18 @@ pub type PFNGLCOLOR4UBVERTEX3FSUNPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLCOLOR4UBVERTEX3FVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(c: *const GLubyte, v: *const GLfloat)>;
-pub type PFNGLCOLOR3FVERTEX3FSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(c: *const GLubyte, v: *const GLfloat)>;
+pub type PFNGLCOLOR3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(r: GLfloat, g: GLfloat, b: GLfloat, x: GLfloat, y: GLfloat, z: GLfloat),
 >;
 pub type PFNGLCOLOR3FVERTEX3FVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(c: *const GLfloat, v: *const GLfloat)>;
-pub type PFNGLNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(c: *const GLfloat, v: *const GLfloat)>;
+pub type PFNGLNORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(nx: GLfloat, ny: GLfloat, nz: GLfloat, x: GLfloat, y: GLfloat, z: GLfloat),
 >;
 pub type PFNGLNORMAL3FVERTEX3FVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(n: *const GLfloat, v: *const GLfloat)>;
-pub type PFNGLCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(n: *const GLfloat, v: *const GLfloat)>;
+pub type PFNGLCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         r: GLfloat,
         g: GLfloat,
@@ -18076,15 +18076,15 @@ pub type PFNGLCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(c: *const GLfloat, n: *const GLfloat, v: *const GLfloat),
 >;
-pub type PFNGLTEXCOORD2FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(s: GLfloat, t: GLfloat, x: GLfloat, y: GLfloat, z: GLfloat),
 >;
 pub type PFNGLTEXCOORD2FVERTEX3FVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(tc: *const GLfloat, v: *const GLfloat)>;
-pub type PFNGLTEXCOORD4FVERTEX4FSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(tc: *const GLfloat, v: *const GLfloat)>;
+pub type PFNGLTEXCOORD4FVERTEX4FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         s: GLfloat,
         t: GLfloat,
@@ -18097,8 +18097,8 @@ pub type PFNGLTEXCOORD4FVERTEX4FSUNPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLTEXCOORD4FVERTEX4FVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(tc: *const GLfloat, v: *const GLfloat)>;
-pub type PFNGLTEXCOORD2FCOLOR4UBVERTEX3FSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(tc: *const GLfloat, v: *const GLfloat)>;
+pub type PFNGLTEXCOORD2FCOLOR4UBVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         s: GLfloat,
         t: GLfloat,
@@ -18111,10 +18111,10 @@ pub type PFNGLTEXCOORD2FCOLOR4UBVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLTEXCOORD2FCOLOR4UBVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FCOLOR4UBVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(tc: *const GLfloat, c: *const GLubyte, v: *const GLfloat),
 >;
-pub type PFNGLTEXCOORD2FCOLOR3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FCOLOR3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         s: GLfloat,
         t: GLfloat,
@@ -18126,10 +18126,10 @@ pub type PFNGLTEXCOORD2FCOLOR3FVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLTEXCOORD2FCOLOR3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FCOLOR3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(tc: *const GLfloat, c: *const GLfloat, v: *const GLfloat),
 >;
-pub type PFNGLTEXCOORD2FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FNORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         s: GLfloat,
         t: GLfloat,
@@ -18141,10 +18141,10 @@ pub type PFNGLTEXCOORD2FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLTEXCOORD2FNORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FNORMAL3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(tc: *const GLfloat, n: *const GLfloat, v: *const GLfloat),
 >;
-pub type PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         s: GLfloat,
         t: GLfloat,
@@ -18160,7 +18160,7 @@ pub type PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         tc: *const GLfloat,
         c: *const GLfloat,
@@ -18168,7 +18168,7 @@ pub type PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
         v: *const GLfloat,
     ),
 >;
-pub type PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         s: GLfloat,
         t: GLfloat,
@@ -18187,7 +18187,7 @@ pub type PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FSUNPROC = ::std::option::Option<
         w: GLfloat,
     ),
 >;
-pub type PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FVSUNPROC = ::std::option::Option<
+pub type PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         tc: *const GLfloat,
         c: *const GLfloat,
@@ -18196,10 +18196,10 @@ pub type PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FVSUNPROC = ::std::option::Option<
     ),
 >;
 pub type PFNGLREPLACEMENTCODEUIVERTEX3FSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(rc: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
+    ::core::option::Option<unsafe extern "C" fn(rc: GLuint, x: GLfloat, y: GLfloat, z: GLfloat)>;
 pub type PFNGLREPLACEMENTCODEUIVERTEX3FVSUNPROC =
-    ::std::option::Option<unsafe extern "C" fn(rc: *const GLuint, v: *const GLfloat)>;
-pub type PFNGLREPLACEMENTCODEUICOLOR4UBVERTEX3FSUNPROC = ::std::option::Option<
+    ::core::option::Option<unsafe extern "C" fn(rc: *const GLuint, v: *const GLfloat)>;
+pub type PFNGLREPLACEMENTCODEUICOLOR4UBVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: GLuint,
         r: GLubyte,
@@ -18211,10 +18211,10 @@ pub type PFNGLREPLACEMENTCODEUICOLOR4UBVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUICOLOR4UBVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUICOLOR4UBVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(rc: *const GLuint, c: *const GLubyte, v: *const GLfloat),
 >;
-pub type PFNGLREPLACEMENTCODEUICOLOR3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUICOLOR3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: GLuint,
         r: GLfloat,
@@ -18225,10 +18225,10 @@ pub type PFNGLREPLACEMENTCODEUICOLOR3FVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUICOLOR3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUICOLOR3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(rc: *const GLuint, c: *const GLfloat, v: *const GLfloat),
 >;
-pub type PFNGLREPLACEMENTCODEUINORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUINORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: GLuint,
         nx: GLfloat,
@@ -18239,10 +18239,10 @@ pub type PFNGLREPLACEMENTCODEUINORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
         z: GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUINORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUINORMAL3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(rc: *const GLuint, n: *const GLfloat, v: *const GLfloat),
 >;
-pub type PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: GLuint,
         r: GLfloat,
@@ -18257,7 +18257,7 @@ pub type PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std::option::O
         z: GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: *const GLuint,
         c: *const GLfloat,
@@ -18265,13 +18265,13 @@ pub type PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::std::option::
         v: *const GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(rc: GLuint, s: GLfloat, t: GLfloat, x: GLfloat, y: GLfloat, z: GLfloat),
 >;
-pub type PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(rc: *const GLuint, tc: *const GLfloat, v: *const GLfloat),
 >;
-pub type PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: GLuint,
         s: GLfloat,
@@ -18284,7 +18284,7 @@ pub type PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FSUNPROC = ::std::option
         z: GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: *const GLuint,
         tc: *const GLfloat,
@@ -18292,7 +18292,7 @@ pub type PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FVSUNPROC = ::std::optio
         v: *const GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: GLuint,
         s: GLfloat,
@@ -18309,7 +18309,7 @@ pub type PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC = ::std:
         z: GLfloat,
     ),
 >;
-pub type PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::std::option::Option<
+pub type PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC = ::core::option::Option<
     unsafe extern "C" fn(
         rc: *const GLuint,
         tc: *const GLfloat,
@@ -18322,11 +18322,11 @@ extern "C" {
     pub fn glBlendEquationSeparateATI(modeRGB: GLenum, modeA: GLenum);
 }
 pub type PFNGLBLENDEQUATIONSEPARATEATIPROC =
-    ::std::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeA: GLenum)>;
+    ::core::option::Option<unsafe extern "C" fn(modeRGB: GLenum, modeA: GLenum)>;
 pub type PFNGLEGLIMAGETARGETTEXTURE2DOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, image: GLeglImageOES)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, image: GLeglImageOES)>;
 pub type PFNGLEGLIMAGETARGETRENDERBUFFERSTORAGEOESPROC =
-    ::std::option::Option<unsafe extern "C" fn(target: GLenum, image: GLeglImageOES)>;
+    ::core::option::Option<unsafe extern "C" fn(target: GLenum, image: GLeglImageOES)>;
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
 pub struct GLUnurbs {
@@ -18346,7 +18346,7 @@ pub type GLUnurbsObj = GLUnurbs;
 pub type GLUquadricObj = GLUquadric;
 pub type GLUtesselatorObj = GLUtesselator;
 pub type GLUtriangulatorObj = GLUtesselator;
-pub type _GLUfuncptr = ::std::option::Option<unsafe extern "C" fn()>;
+pub type _GLUfuncptr = ::core::option::Option<unsafe extern "C" fn()>;
 extern "C" {
     pub fn gluBeginCurve(nurb: *mut GLUnurbs);
 }
@@ -18369,7 +18369,7 @@ extern "C" {
         level: GLint,
         base: GLint,
         max: GLint,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ) -> GLint;
 }
 extern "C" {
@@ -18379,7 +18379,7 @@ extern "C" {
         width: GLsizei,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ) -> GLint;
 }
 extern "C" {
@@ -18393,7 +18393,7 @@ extern "C" {
         level: GLint,
         base: GLint,
         max: GLint,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ) -> GLint;
 }
 extern "C" {
@@ -18404,7 +18404,7 @@ extern "C" {
         height: GLsizei,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ) -> GLint;
 }
 extern "C" {
@@ -18419,7 +18419,7 @@ extern "C" {
         level: GLint,
         base: GLint,
         max: GLint,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ) -> GLint;
 }
 extern "C" {
@@ -18431,7 +18431,7 @@ extern "C" {
         depth: GLsizei,
         format: GLenum,
         type_: GLenum,
-        data: *const ::std::os::raw::c_void,
+        data: *const libc::c_void,
     ) -> GLint;
 }
 extern "C" {
@@ -18629,7 +18629,7 @@ extern "C" {
         wIn: GLsizei,
         hIn: GLsizei,
         typeIn: GLenum,
-        dataIn: *const ::std::os::raw::c_void,
+        dataIn: *const libc::c_void,
         wOut: GLsizei,
         hOut: GLsizei,
         typeOut: GLenum,
