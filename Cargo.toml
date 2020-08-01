@@ -1,9 +1,9 @@
 [package]
 name = "glu-sys"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["MoAlyousef <mohammed.alyousef@neurosrg.com>"]
 edition = "2018"
-description = "Raw GLU and GL bindings"
+description = "Raw GLU and GL Rust bindings"
 repository = "https://github.com/MoAlyousef/glu-sys"
 keywords = ["bindings", "graphics"]
 categories = ["graphics"]
